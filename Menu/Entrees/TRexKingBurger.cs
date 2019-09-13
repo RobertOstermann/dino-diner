@@ -6,14 +6,14 @@ namespace DinoDiner.Menu.Entrees
 {
     public class TRexKingBurger
     {
-        private bool bun;
-        private bool lettuce;
-        private bool tomato;
-        private bool onion;
-        private bool pickle;
-        private bool ketchup;
-        private bool mustard;
-        private bool mayo;
+        private bool bun = true;
+        private bool lettuce = true;
+        private bool tomato = true;
+        private bool onion = true;
+        private bool pickle = true;
+        private bool ketchup = true;
+        private bool mustard = true;
+        private bool mayo = true;
 
         public double Price { get; set; }
         public uint Calories { get; set; }

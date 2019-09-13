@@ -6,9 +6,9 @@ namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap
     {
-        private bool dressing;
-        private bool lettuce;
-        private bool cheese;
+        private bool dressing = true;
+        private bool lettuce = true;
+        private bool cheese = true;
 
         public double Price { get; set; }
         public uint Calories { get; set; }
@@ -43,7 +43,7 @@ namespace DinoDiner.Menu.Entrees
             this.lettuce = false;
         }
 
-        public void holdCheese()
+        public void HoldCheese()
         {
             this.cheese = false;
         }
