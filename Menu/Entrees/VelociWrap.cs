@@ -4,14 +4,14 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
+        // Indicates the use of dressing.
         private bool dressing = true;
+        // Indicates the use of lettuce.
         private bool lettuce = true;
+        // Indicates the use of cheese.
         private bool cheese = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
 
         public List<string> Ingredients
         {
@@ -26,23 +26,31 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Initializes the Veloci Wrap entree.
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
-
+        /// <summary>
+        /// Removes the dressing.
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
         }
-
+        /// <summary>
+        /// Removes the lettuce.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
+        /// <summary>
+        /// Removes the cheese.
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;
