@@ -15,7 +15,7 @@ namespace DinoDiner.Menu.Entrees
         // Indicates the use of mustard.
         private bool mustard = true;
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

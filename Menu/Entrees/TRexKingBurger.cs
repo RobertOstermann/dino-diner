@@ -23,7 +23,7 @@ namespace DinoDiner.Menu.Entrees
         // Indicates the use of mayo.
         private bool mayo = true;
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

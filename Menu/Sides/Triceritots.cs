@@ -4,19 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class Fryceritops : Side
+    public class Triceritots : Side
     {
         /// <summary>
-        /// Initializes the Fryceritop side.
+        /// Initializes the Triceritots side.
         /// </summary>
-        public Fryceritops()
+        public Triceritots()
         {
             Size = Size.Small;
             Price = 0.99;
-            Calories = 222;
+            Calories = 352;
             Ingredients.Add("Potato");
             Ingredients.Add("Salt");
-            Ingredients.Add("Vegtable Oil");
+            Ingredients.Add("Vegetable Oil");
         }
         /// <summary>
         /// Gets and sets the size.
@@ -34,17 +34,17 @@ namespace DinoDiner.Menu.Sides
                 if (value == Size.Small)
                 {
                     Price = 0.99;
-                    Calories = 222;
+                    Calories = 352;
                 }
                 if (value == Size.Medium)
                 {
                     Price = 1.45;
-                    Calories = 365;
+                    Calories = 410;
                 }
                 if (value == Size.Large)
                 {
                     Price = 1.95;
-                    Calories = 480;
+                    Calories = 590;
                 }
             }
         }

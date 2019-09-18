@@ -13,7 +13,7 @@ namespace DinoDiner.Menu.Entrees
         // Indicates the use of cheese.
         private bool cheese = true;
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
