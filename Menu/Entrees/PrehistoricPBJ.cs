@@ -8,7 +8,9 @@ namespace DinoDiner.Menu.Entrees
         private bool peanutButter = true;
         // Indicates the use of jelly.
         private bool jelly = true;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

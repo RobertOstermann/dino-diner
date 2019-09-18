@@ -12,7 +12,9 @@ namespace DinoDiner.Menu.Entrees
         private bool peppers = true;
         // Indicates the use of onions.
         private bool onions = true;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

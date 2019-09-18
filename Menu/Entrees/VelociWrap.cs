@@ -12,7 +12,9 @@ namespace DinoDiner.Menu.Entrees
         private bool lettuce = true;
         // Indicates the use of cheese.
         private bool cheese = true;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

@@ -6,7 +6,9 @@ namespace DinoDiner.Menu.Entrees
 {
     public class PterodactylWings : Entree
     {
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

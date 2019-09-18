@@ -8,7 +8,9 @@ namespace DinoDiner.Menu.Entrees
     {
         // Indicates the amount of nuggets.
         private int nuggets;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

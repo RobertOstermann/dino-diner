@@ -14,7 +14,9 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         // Indicates the use of mustard.
         private bool mustard = true;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

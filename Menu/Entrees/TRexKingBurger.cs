@@ -22,7 +22,9 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         // Indicates the use of mayo.
         private bool mayo = true;
-
+        /// <summary>
+        /// Gets the ingredients of the entree.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
