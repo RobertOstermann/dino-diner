@@ -10,11 +10,11 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets and sets the sweetener.
         /// </summary>
-        public bool Sweet { get; set; }
+        public bool Sweet { get; private set; }
         /// <summary>
         /// Gets and sets the lemon.
         /// </summary>
-        public bool Lemon { get; set; }
+        public bool Lemon { get; private set; }
         /// <summary>
         /// Gets the ingredients of the drink.
         /// </summary>
@@ -29,7 +29,7 @@ namespace DinoDiner.Menu.Drinks
             }
         }
         /// <summary>
-        /// Initializes the Sodasaurus drink.
+        /// Initializes the Tyrannotea drink.
         /// </summary>
         public Tyrannotea()
         {
@@ -58,17 +58,32 @@ namespace DinoDiner.Menu.Drinks
                 }
                 if (size == Size.Medium)
                 {
-                    this.Price = 2.00;
+                    this.Price = 1.49;
                     if (this.Sweet) this.Calories = 32;
                     else this.Calories = 16;
                 }
                 if (size == Size.Large)
                 {
-                    this.Price = 2.50;
+                    this.Price = 1.99;
                     if (this.Sweet) this.Calories = 64;
                     else this.Calories = 32;
                 }
             }
+        }
+        /// <summary>
+        /// Sets the Lemon property to true.
+        /// </summary>
+        public void AddLemon()
+        {
+            this.Lemon = true;
+        }
+        /// <summary>
+        /// Sets the Sweet property to true;
+        /// </summary>
+        public void AddSweetener()
+        {
+            this.Sweet = true;
+            this.Calories = this.Calories * 2;
         }
     }
 }
