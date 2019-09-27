@@ -45,6 +45,31 @@ namespace DinoDiner.Menu
                 return Entree.Calories + Drink.Calories + Side.Calories;
             }
         }
+        /// <summary>
+        /// Gets the ingredients of the combo.
+        /// </summary>
+        public List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.AddRange(Entree.Ingredients);
+                ingredients.AddRange(Side.Ingredients);
+                ingredients.AddRange(Drink.Ingredients);
+                return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Initializes the CretaceousCombo.
+        /// </summary>
+        /// <param name="entree">Entree chosen by the customer.</param>
+        public CretaceousCombo(Entree entree)
+        {
+            Entree = entree;
+            Side = new Fryceritops();
+            Drink = new Sodasaurus();
+        }
 
         public override string ToString()
         {

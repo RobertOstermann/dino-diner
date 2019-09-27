@@ -29,7 +29,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets the ice.
         /// </summary>
-        public bool Ice { get; private set; } = true;
+        public bool Ice { get; set; } = true;
         /// <summary>
         /// Sets the Ice property to false.
         /// </summary>

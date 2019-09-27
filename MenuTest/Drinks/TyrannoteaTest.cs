@@ -116,9 +116,56 @@ namespace DinoDiner.MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Small;
-            tea.AddSweetener();
+            tea.Sweet = true;
             Assert.Equal<uint>(16, tea.Calories);
         }
 
+        [Fact]
+        public void ShouldUseCorrectCaloriesForSweetMedium()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Size = Size.Medium;
+            tea.Sweet = true;
+            Assert.Equal<uint>(32, tea.Calories);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectCaloriesForSweetLarge()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Size = Size.Large;
+            tea.Sweet = true;
+            Assert.Equal<uint>(64, tea.Calories);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectCaloriesForSweetToNotSweetSmall()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Size = Size.Small;
+            tea.Sweet = false;
+            Assert.Equal<uint>(8, tea.Calories);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectCaloriesForSweetToNotSweetMedium()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Size = Size.Medium;
+            tea.Sweet = false;
+            Assert.Equal<uint>(16, tea.Calories);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectCaloriesForSweetToNotSweetLarge()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Size = Size.Large;
+            tea.Sweet = false;
+            Assert.Equal<uint>(32, tea.Calories);
+        }
     }
 }

@@ -7,10 +7,27 @@ namespace DinoDiner.Menu.Drinks
     public class Tyrannotea : Drink
     {
         private Size size;
+
+        private bool sweet;
         /// <summary>
         /// Gets and sets the sweetener.
         /// </summary>
-        public bool Sweet { get; private set; }
+        public bool Sweet {
+            get
+            {
+                return sweet;
+            }
+            set
+            {
+                if (sweet != value)
+                {
+                    sweet = value;
+                    if (sweet) Calories *= 2;
+                    else Calories /= 2;
+                }
+            }
+        }
+
         /// <summary>
         /// Gets and sets the lemon.
         /// </summary>
@@ -76,14 +93,6 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             Lemon = true;
-        }
-        /// <summary>
-        /// Sets the Sweet property to true;
-        /// </summary>
-        public void AddSweetener()
-        {
-            Sweet = true;
-            Calories *= 2;
         }
     }
 }
