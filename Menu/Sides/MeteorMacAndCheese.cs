@@ -38,11 +38,11 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.size;
+                return size;
             }
             set
             {
-                this.size = value;
+                size = value;
                 if (size == Size.Small)
                 {
                     Price = 0.99;

@@ -22,9 +22,9 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public Fryceritops()
         {
-            this.Size = Size.Small;
-            this.Price = 0.99;
-            this.Calories = 222;
+            Size = Size.Small;
+            Price = 0.99;
+            Calories = 222;
         }
         /// <summary>
         /// Gets and sets the size.
@@ -34,25 +34,25 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return this.size;
+                return size;
             }
             set
             {
-                this.size = value;
+                size = value;
                 if (size == Size.Small)
                 {
-                    this.Price = 0.99;
-                    this.Calories = 222;
+                    Price = 0.99;
+                    Calories = 222;
                 }
                 if (size == Size.Medium)
                 {
-                    this.Price = 1.45;
-                    this.Calories = 365;
+                    Price = 1.45;
+                    Calories = 365;
                 }
                 if (size == Size.Large)
                 {
-                    this.Price = 1.95;
-                    this.Calories = 480;
+                    Price = 1.95;
+                    Calories = 480;
                 }
             }
         }

@@ -33,9 +33,9 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public Tyrannotea()
         {
-            this.Size = Size.Small;
-            this.Price = 0.99;
-            this.Calories = 8;
+            Size = Size.Small;
+            Price = 0.99;
+            Calories = 8;
         }
         /// <summary>
         /// Gets and sets the size.
@@ -45,28 +45,28 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return this.size;
+                return size;
             }
             set
             {
-                this.size = value;
+                size = value;
                 if (size == Size.Small)
                 {
-                    this.Price = 0.99;
-                    if (this.Sweet) this.Calories = 16;
-                    else this.Calories = 8;
+                    Price = 0.99;
+                    if (Sweet) Calories = 16;
+                    else Calories = 8;
                 }
                 if (size == Size.Medium)
                 {
-                    this.Price = 1.49;
-                    if (this.Sweet) this.Calories = 32;
-                    else this.Calories = 16;
+                    Price = 1.49;
+                    if (Sweet) Calories = 32;
+                    else Calories = 16;
                 }
                 if (size == Size.Large)
                 {
-                    this.Price = 1.99;
-                    if (this.Sweet) this.Calories = 64;
-                    else this.Calories = 32;
+                    Price = 1.99;
+                    if (Sweet) Calories = 64;
+                    else Calories = 32;
                 }
             }
         }
@@ -75,15 +75,15 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public void AddLemon()
         {
-            this.Lemon = true;
+            Lemon = true;
         }
         /// <summary>
         /// Sets the Sweet property to true;
         /// </summary>
         public void AddSweetener()
         {
-            this.Sweet = true;
-            this.Calories = this.Calories * 2;
+            Sweet = true;
+            Calories *= 2;
         }
     }
 }

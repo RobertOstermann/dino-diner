@@ -27,9 +27,9 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public Sodasaurus()
         {
-            this.Size = Size.Small;
-            this.Price = 1.50;
-            this.Calories = 112;
+            Size = Size.Small;
+            Price = 1.50;
+            Calories = 112;
         }
         /// <summary>
         /// Gets and sets the size.
@@ -39,25 +39,25 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return this.size;
+                return size;
             }
             set
             {
-                this.size = value;
+                size = value;
                 if (size == Size.Small)
                 {
-                    this.Price = 1.50;
-                    this.Calories = 112;
+                    Price = 1.50;
+                    Calories = 112;
                 }
                 if (size == Size.Medium)
                 {
-                    this.Price = 2.00;
-                    this.Calories = 156;
+                    Price = 2.00;
+                    Calories = 156;
                 }
                 if (size == Size.Large)
                 {
-                    this.Price = 2.50;
-                    this.Calories = 208;
+                    Price = 2.50;
+                    Calories = 208;
                 }
             }
         }

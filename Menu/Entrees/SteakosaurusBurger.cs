@@ -34,36 +34,36 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public SteakosaurusBurger()
         {
-            this.Price = 5.15;
-            this.Calories = 621;
+            Price = 5.15;
+            Calories = 621;
         }
         /// <summary>
         /// Removes the bun.
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            bun = false;
         }
         /// <summary>
         /// Removes the pickles.
         /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
+            pickle = false;
         }
         /// <summary>
         /// Removes the ketchup.
         /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            ketchup = false;
         }
         /// <summary>
         /// Removes the mustard.
         /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
+            mustard = false;
         }
     }
 }

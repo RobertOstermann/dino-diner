@@ -31,29 +31,29 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public Brontowurst()
         {
-            this.Price = 5.36;
-            this.Calories = 498;
+            Price = 5.36;
+            Calories = 498;
         }
         /// <summary>
         /// Removes the bun.
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            bun = false;
         }
         /// <summary>
         /// Removes the peppers.
         /// </summary>
         public void HoldPeppers()
         {
-            this.peppers = false;
+            peppers = false;
         }
         /// <summary>
         /// Removes the onions.
         /// </summary>
         public void HoldOnion()
         {
-            this.onions = false;
+            onions = false;
         }
     }
 }

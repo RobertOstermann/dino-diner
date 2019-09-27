@@ -28,18 +28,18 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public DinoNuggets()
         {
-            this.nuggets = 6;
-            this.Price = 4.25;
-            this.Calories = 59 * 6;
+            nuggets = 6;
+            Price = 4.25;
+            Calories = 59 * 6;
         }
         /// <summary>
         /// Adds a dinonugget.
         /// </summary>
         public void AddNugget()
         {
-            this.nuggets += 1;
-            this.Price += 0.25;
-            this.Calories += 59;
+            nuggets += 1;
+            Price += 0.25;
+            Calories += 59;
         }
     }
 }

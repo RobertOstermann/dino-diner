@@ -49,64 +49,64 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public TRexKingBurger()
         {
-            this.Price = 8.45;
-            this.Calories = 728;
+            Price = 8.45;
+            Calories = 728;
         }
         /// <summary>
         /// Removes the bun.
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            bun = false;
         }
         /// <summary>
         /// Removes the lettuce.
         /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            lettuce = false;
         }
         /// <summary>
         /// Removes the tomato.
         /// </summary>
         public void HoldTomato()
         {
-            this.tomato = false;
+            tomato = false;
         }
         /// <summary>
         /// Removes the onion.
         /// </summary>
         public void HoldOnion()
         {
-            this.onion = false;
+            onion = false;
         }
         /// <summary>
         /// Removes the pickle.
         /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
+            pickle = false;
         }
         /// <summary>
         /// Removes the ketchup.
         /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            ketchup = false;
         }
         /// <summary>
         /// Removes the mustard.
         /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
+            mustard = false;
         }
         /// <summary>
         /// Removes the mayo.
         /// </summary>
         public void HoldMayo()
         {
-            this.mayo = false;
+            mayo = false;
         }
     }
 }

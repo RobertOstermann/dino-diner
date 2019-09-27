@@ -33,29 +33,29 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public VelociWrap()
         {
-            this.Price = 6.86;
-            this.Calories = 356;
+            Price = 6.86;
+            Calories = 356;
         }
         /// <summary>
         /// Removes the dressing.
         /// </summary>
         public void HoldDressing()
         {
-            this.dressing = false;
+            dressing = false;
         }
         /// <summary>
         /// Removes the lettuce.
         /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            lettuce = false;
         }
         /// <summary>
         /// Removes the cheese.
         /// </summary>
         public void HoldCheese()
         {
-            this.cheese = false;
+            cheese = false;
         }
     }
 }
