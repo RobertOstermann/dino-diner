@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
         public Entree Entree;
         public Drink Drink;
@@ -67,10 +67,13 @@ namespace DinoDiner.Menu
             Side = new Fryceritops();
             Drink = new Sodasaurus();
         }
-
+        /// <summary>
+        /// Overrides the ToString method.
+        /// </summary>
+        /// <returns>Name of the item.</returns>
         public override string ToString()
         {
-            return base.ToString();
+            return $"{Entree} Combo";
         }
     }
 }

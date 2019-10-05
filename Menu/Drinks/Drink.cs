@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// Gets and sets the price.

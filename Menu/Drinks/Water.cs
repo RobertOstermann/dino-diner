@@ -54,5 +54,13 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
         }
+        /// <summary>
+        /// Overrides the ToString method.
+        /// </summary>
+        /// <returns>Name of the item.</returns>
+        public override string ToString()
+        {
+            return $"{Size} Water";
+        }
     }
 }

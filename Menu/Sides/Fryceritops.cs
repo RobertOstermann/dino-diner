@@ -56,5 +56,13 @@ namespace DinoDiner.Menu
                 }
             }
         }
+        /// <summary>
+        /// Overrides the ToString method.
+        /// </summary>
+        /// <returns>Name of the item.</returns>
+        public override string ToString()
+        {
+            return $"{Size} Friceritops";
+        }
     }
 }

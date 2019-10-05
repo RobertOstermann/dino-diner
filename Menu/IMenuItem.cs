@@ -4,22 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree : IMenuItem
+    public interface IMenuItem
     {
         /// <summary>
-        /// Gets and sets the price.
+        /// Gets the price.
         /// </summary>
-        public double Price { get; set; }
-
+        double Price { get; }
         /// <summary>
-        /// Gets and sets the calories.
+        /// Gets the calories.
         /// </summary>
-        public uint Calories { get; set; }
-
+        uint Calories { get; }
         /// <summary>
         /// Gets the ingredients list.
         /// </summary>
-        public abstract List<string> Ingredients { get; }
-
+        List<string> Ingredients { get; }
     }
 }

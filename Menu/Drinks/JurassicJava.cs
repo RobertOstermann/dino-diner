@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         private Size size;
 
@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Initializes the Tyrannotea drink.
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             Size = Size.Small;
             Ice = false;
@@ -80,6 +80,14 @@ namespace DinoDiner.Menu
         {
             Ice = true;
         }
-
+        /// <summary>
+        /// Overrides the ToString method.
+        /// </summary>
+        /// <returns>Name of the item.</returns>
+        public override string ToString()
+        {
+            if (Decaf) return $"{Size} Decaf Jurassic Java";
+            else return $"{Size} Jurassic Java";
+        }
     }
 }
