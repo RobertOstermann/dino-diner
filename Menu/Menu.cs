@@ -156,7 +156,10 @@ namespace DinoDiner.Menu
                 return items;
             }
         }
-
+        /// <summary>
+        /// Displays  the full menu contents.
+        /// </summary>
+        /// <returns>Menu contents seperated by new line.</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
