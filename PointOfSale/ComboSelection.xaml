@@ -37,7 +37,9 @@
                 </TextBlock>
             </DockPanel>
         </Button>
-        <Button>T-Rex King Burger Combo</Button>
+        <Button  BorderThickness="2" BorderBrush="Violet">
+            T-Rex King Burger Combo
+        </Button>
         <Button>Veloci-Wrap Combo</Button>
     </WrapPanel>
 </Page>

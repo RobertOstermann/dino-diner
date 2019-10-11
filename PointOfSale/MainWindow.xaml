@@ -7,7 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
+        <Grid DockPanel.Dock="Right" Width="200" Background="LightPink">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Grid.Row="0" Grid.ColumnSpan="2">
+            // TODO: Order
+            </TextBlock>
+            <Button Grid.Row="1" Grid.Column="0" Margin="10, 10, 10, 10" Background="Transparent">Cancel</Button>
+            <Button Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10" Background="Transparent">Pay</Button>
+        </Grid>
         <Frame Source="MenuCategorySelection.xaml"></Frame>
     </DockPanel>
 </Window>
