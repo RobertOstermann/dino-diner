@@ -33,5 +33,66 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new CustomizeCombo());
         }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void DinoNuggetsCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void PrehistoricPBJCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void PterodactylWingsCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SteakosaurusBurgerCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void TRexKingburgerCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void VelociWrapCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
     }
 }

@@ -16,9 +16,21 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Style="{StaticResource SimpleButton}" Click="SelectCombo" Grid.Row="0" Grid.Column="0">Combos</Button>
-        <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Grid.Column="1">Entrees</Button>
-        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.Column="0">Drinks</Button>
-        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.Column="1">Sides</Button>
+        <Button Style="{StaticResource SimpleButton}" 
+                Grid.Row="0" Grid.Column="0" Click="SelectCombo">
+            Combos
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" 
+                Grid.Row="0" Grid.Column="1" Click="SelectEntree">
+            Entrees
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" 
+                Grid.Row="1" Grid.Column="0">
+            Drinks
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" 
+                Grid.Row="1" Grid.Column="1">
+            Sides
+        </Button>
     </Grid>
 </Page>

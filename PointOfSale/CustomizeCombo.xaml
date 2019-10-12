@@ -51,21 +51,21 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="0">
+                <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="0">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Small
                     </TextBlock>
-                </Button>
-                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="1">
+                </RadioButton>
+                <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="1">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Medium
                     </TextBlock>
-                </Button>
-                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="2">
+                </RadioButton>
+                <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="2">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Large
                     </TextBlock>
-                </Button>
+                </RadioButton>
             </Grid>
         </DockPanel>
     </Grid>

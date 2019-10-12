@@ -33,5 +33,15 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new ComboSelection());
         }
+
+        /// <summary>
+        /// Navigate to the EntreeSelection page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectEntree(object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new EntreeSelection());
+        }
     }
 }

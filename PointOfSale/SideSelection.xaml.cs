@@ -15,25 +15,14 @@ using System.Windows.Shapes;
 
 namespace PointOfSale
 {
-
     /// <summary>
-    /// Interaction logic for CustomizeCombo.xaml
+    /// Interaction logic for SideSelection.xaml
     /// </summary>
-    public partial class CustomizeCombo : Page
+    public partial class SideSelection : Page
     {
-        public string Side { get; private set; }
-
-        public string Drink { get; private set; }
-
-        public int Size { get; private set; }
-
-        public CustomizeCombo()
+        public SideSelection()
         {
             InitializeComponent();
-            this.Side = "TODO: Side";
-            this.Drink = "TODO: Drink";
-            this.Size = 1;
-            this.DataContext = this;
         }
     }
 }
