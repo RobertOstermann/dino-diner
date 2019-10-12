@@ -4,6 +4,24 @@
              xmlns:local="clr-namespace:PointOfSale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="CategoryButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <Style x:Key="ComboButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <Style x:Key="ComboTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -8,38 +8,37 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Combo Selection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="140"/>
-                <Setter Property="Height" Value="140"/>
-            </Style>
-        </WrapPanel.Resources>
-        <Button>
-            <StackPanel>
-                <Image Source="Assets/DinoDiner-01.png"/>
-                <TextBlock>Brontowurst Combo</TextBlock>
-            </StackPanel>
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="0">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Brontowurst Combo</TextBlock>
         </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
-            </Button.Background>
-            Dino-Nuggets Combo
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="1">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Dino-Nuggets Combo</TextBlock>
         </Button>
-        <Button>Prehistoric PB&amp;J Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>
-            <DockPanel>
-                <Image Source="Assets/DinoDiner-03.png"/>
-                <TextBlock DockPanel.Dock="Bottom">
-                    Steakosarus Burger Combo
-                </TextBlock>
-            </DockPanel>
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="3">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Prehistoric PB&amp;J Combo</TextBlock>
         </Button>
-        <Button  BorderThickness="2" BorderBrush="Violet">
-            T-Rex King Burger Combo
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="1" Grid.Column="1">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Pterodactyl Wings Combo</TextBlock>
         </Button>
-        <Button>Veloci-Wrap Combo</Button>
-    </WrapPanel>
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="0">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Steakosaurus Burger Combo</TextBlock>
+        </Button>
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">T-Rex Kingburger Combo</TextBlock>
+        </Button>
+        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="2">
+            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Veloci-Wrap Combo</TextBlock>
+        </Button>
+    </Grid>
 </Page>

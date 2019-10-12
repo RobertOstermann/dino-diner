@@ -24,7 +24,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Takes the user to the ComboSelection page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
         private void SelectCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new ComboSelection());

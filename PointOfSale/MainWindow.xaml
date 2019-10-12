@@ -7,21 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <Grid DockPanel.Dock="Right" Width="200" Background="LightPink">
+        <Grid DockPanel.Dock="Right" Width="200" Background="WhiteSmoke">
             <Grid.RowDefinitions>
-                <RowDefinition Height="8*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="7.5*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Grid.Row="0" Grid.ColumnSpan="2">
-            // TODO: Order
+            <Border BorderThickness="0,1,1,1" BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2">
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontFamily="Tahoma" FontSize="16">
+            Current Order
+                </TextBlock>
+            </Border>
+            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2"
+                       FontFamily="Tahoma" FontSize="16">
+            //TODO: Order
             </TextBlock>
-            <Button Grid.Row="1" Grid.Column="0" Margin="10, 10, 10, 10" Background="Transparent">Cancel</Button>
-            <Button Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10" Background="Transparent">Pay</Button>
+            <Button Style="{StaticResource CategoryButtonStyle}" FontSize="14" Grid.Row="2" Grid.Column="0">Cancel</Button>
+            <Button Style="{StaticResource CategoryButtonStyle}" FontSize="14" Grid.Row="2" Grid.Column="1">Pay</Button>
         </Grid>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <Frame Source="MenuCategorySelection.xaml" BorderThickness="0,0,1,0" BorderBrush="Black"></Frame>
     </DockPanel>
 </Window>
