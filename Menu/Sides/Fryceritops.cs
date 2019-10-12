@@ -62,7 +62,7 @@ namespace DinoDiner.Menu
         /// <returns>Name of the item.</returns>
         public override string ToString()
         {
-            return $"{Size} Friceritops";
+            return $"{Size} Fryceritops";
         }
     }
 }

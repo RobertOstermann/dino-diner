@@ -111,6 +111,15 @@ namespace DinoDiner.MenuTest.Drinks
         }
 
         [Fact]
+        public void AddSweetShouldAddCaneSugar()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            List<string> ingredients = tea.Ingredients;
+            Assert.Contains<string>("Cane Sugar", ingredients);
+        }
+
+        [Fact]
         public void ShouldUseCorrectCaloriesForSweetSmall()
         {
             Tyrannotea tea = new Tyrannotea();
