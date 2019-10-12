@@ -11,8 +11,8 @@
             <Setter Property="FontSize" Value="32"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
-        <!--Button style for ComboSelection page.-->
-        <Style x:Key="ComboButton" TargetType="Button">
+        <!--Button style for button with background images.-->
+        <Style x:Key="BackgroundImageButton" TargetType="Button">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Background" Value="Gainsboro"/>
             <Setter Property="FontSize" Value="24"/>
@@ -63,8 +63,8 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
-        <!--TextBlock style for ComboSelection page.-->
-        <Style x:Key="ComboTextBlock" TargetType="TextBlock">
+        <!--TextBlock style for button with background image.-->
+        <Style x:Key="BackgroundImageTextBlock" TargetType="TextBlock">
             <Setter Property="Height" Value="Auto"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="TextAlignment" Value="Center"/>

@@ -79,7 +79,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="0">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Click="SelectFlavor">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         TODO: Dynamic Add Sweet/Decaf/Flavor
                     </TextBlock>
