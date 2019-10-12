@@ -27,7 +27,7 @@
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Side
             </TextBlock>
-            <Button Style="{StaticResource CustomizeSideButton}">
+            <Button Style="{StaticResource CustomizeSideButton}" Click="SelectSide">
                 <TextBlock DataContext="" Style="{StaticResource CustomizeSideTextBlock}"/>
             </Button>
         </DockPanel>
@@ -35,7 +35,7 @@
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Drink
             </TextBlock>
-            <Button Style="{StaticResource CustomizeDrinkButton}">
+            <Button Style="{StaticResource CustomizeDrinkButton}" Click="SelectDrink">
                 <TextBlock Style="{StaticResource SimpleTextBlock}">
                     //TODO: Current Drink
                 </TextBlock>
@@ -52,19 +52,13 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="0">
-                    <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        Small
-                    </TextBlock>
+                    Small
                 </RadioButton>
                 <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="1">
-                    <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        Medium
-                    </TextBlock>
+                    Medium
                 </RadioButton>
                 <RadioButton Style="{StaticResource CustomizeSizeButton}" Grid.Column="2">
-                    <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        Large
-                    </TextBlock>
+                    Large
                 </RadioButton>
             </Grid>
         </DockPanel>

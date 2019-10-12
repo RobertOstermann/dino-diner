@@ -23,8 +23,10 @@
         <Style x:Key="CustomizeSizeButton" TargetType="RadioButton">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Background" Value="Gainsboro"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="32"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
         <!--Add DataBinding to determine text of button.-->
         <Style x:Key="CustomizeSideButton" TargetType="Button">

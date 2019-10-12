@@ -43,5 +43,25 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new EntreeSelection());
         }
+
+        /// <summary>
+        /// Navigate to the SideSelection page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectSide(object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Navigate to the DrinkSelection page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectDrink(object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new DrinkSelection());
+        }
     }
 }

@@ -25,11 +25,11 @@
             Entrees
         </Button>
         <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="1" Grid.Column="0">
+                Grid.Row="1" Grid.Column="0" Click="SelectDrink">
             Drinks
         </Button>
         <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="1" Grid.Column="1">
+                Grid.Row="1" Grid.Column="1" Click="SelectSide">
             Sides
         </Button>
     </Grid>
