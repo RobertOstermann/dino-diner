@@ -24,5 +24,14 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Navigate to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void BrontowurstCombo(Object obj, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
     }
 }

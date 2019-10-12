@@ -19,26 +19,62 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="0">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Brontowurst Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}"
+                Grid.Row="0" Grid.Column="0" Click="BrontowurstCombo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-01.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Brontowurst Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="1">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Dino-Nuggets Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="0" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Dino-Nuggets Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="0" Grid.Column="3">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Prehistoric PB&amp;J Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="0" Grid.Column="3">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-03.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Prehistoric PB&amp;J Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="1" Grid.Column="1">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Pterodactyl Wings Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="1" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-04.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Pterodactyl Wings Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="0">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Steakosaurus Burger Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="2" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-05.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Steakosaurus Burger Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="1">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">T-Rex Kingburger Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="2" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-06.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                T-Rex Kingburger Combo
+            </TextBlock>
         </Button>
-        <Button Style="{StaticResource ComboButtonStyle}" Grid.Row="2" Grid.Column="2">
-            <TextBlock Style="{StaticResource ComboTextBlockStyle}">Veloci-Wrap Combo</TextBlock>
+        <Button Style="{StaticResource ComboButton}" Grid.Row="2" Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-07.png" Opacity="0.25"/>
+            </Button.Background>
+            <TextBlock Style="{StaticResource ComboTextBlock}">
+                Veloci-Wrap Combo
+            </TextBlock>
         </Button>
     </Grid>
 </Page>

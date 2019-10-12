@@ -1,0 +1,72 @@
+﻿<Page x:Class="PointOfSale.CustomizeCombo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeCombo">
+
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{StaticResource SimpleTextBlock}" Grid.Row="0" Grid.ColumnSpan="4">
+            Customize Combo
+        </TextBlock>
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
+                Side
+            </TextBlock>
+            <Button Style="{StaticResource CustomizeSideButton}">
+                <TextBlock DataContext="" Style="{StaticResource CustomizeSideTextBlock}"/>
+            </Button>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
+                Drink
+            </TextBlock>
+            <Button Style="{StaticResource CustomizeDrinkButton}">
+                <TextBlock Style="{StaticResource SimpleTextBlock}">
+                    //TODO: Current Drink
+                </TextBlock>
+            </Button>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.ColumnSpan="4">
+            <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
+                Size
+            </TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="0">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Small
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="1">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Medium
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource CustomizeSizeButton}" Grid.Column="2">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Large
+                    </TextBlock>
+                </Button>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Page>

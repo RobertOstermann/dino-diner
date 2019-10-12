@@ -4,22 +4,70 @@
              xmlns:local="clr-namespace:PointOfSale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="CategoryButtonStyle" TargetType="Button">
+        <!--Simple Button Style.-->
+        <Style x:Key="SimpleButton" TargetType="Button">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="Background" Value="Gainsboro"/>
             <Setter Property="FontSize" Value="32"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
-        <Style x:Key="ComboButtonStyle" TargetType="Button">
+        <!--Button style for ComboSelection page.-->
+        <Style x:Key="ComboButton" TargetType="Button">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Background" Value="Gainsboro"/>
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
-        <Style x:Key="ComboTextBlockStyle" TargetType="TextBlock">
+
+        <!--Add DataBinding to determine color of button.-->
+        <Style x:Key="CustomizeSizeButton" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <!--Add DataBinding to determine text of button.-->
+        <Style x:Key="CustomizeSideButton" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <!--CustomizeSide TextBlock Style.-->
+        <Style x:Key="CustomizeSideTextBlock" TargetType="TextBlock">
             <Setter Property="Height" Value="Auto"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Text" Value="{Binding Side}"/>
+        </Style>
+        <!--Add DataBinding to determine text of button.-->
+        <Style x:Key="CustomizeDrinkButton" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        
+        
+        <!--Simple TextBlock Style.-->
+        <Style x:Key="SimpleTextBlock" TargetType="TextBlock">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <!--TextBlock style for ComboSelection page.-->
+        <Style x:Key="ComboTextBlock" TargetType="TextBlock">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
