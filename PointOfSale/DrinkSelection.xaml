@@ -26,7 +26,8 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="0">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" 
+                        Name="SodasaurusButton" Click="SelectSodasaurus">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-14.png" Opacity="0.25"/>
                     </Button.Background>
@@ -34,7 +35,7 @@
                         Sodasaurus
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="1">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Name="TyrannoteaButton">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-13.png" Opacity="0.25"/>
                     </Button.Background>
@@ -42,7 +43,7 @@
                         Tyrannotea
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="2">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Name="JurassicJavaButton">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-12.png" Opacity="0.25"/>
                     </Button.Background>
@@ -50,7 +51,7 @@
                         Jurrasic Java
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Name="WaterButton">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-15.png" Opacity="0.25"/>
                     </Button.Background>
@@ -100,14 +101,28 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Click="SelectFlavor">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" 
+                        Name="SelectFlavorButton" Click="SelectFlavor">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        TODO: Dynamic Add Sweet/Decaf/Flavor
+                        Flavor
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="1">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" 
+                        Name="SelectDecafButton" Click="SelectDecaf">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        TODO: Dynamic Add Lemon
+                        Decaf
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" 
+                        Name="SelectSweetButton" Click="SelectSweet">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Sweet
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1"
+                        Name="AddLemonButton">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Add Lemon
                     </TextBlock>
                 </Button>
                 <Button Style="{StaticResource SimpleButton}" Grid.Row="2">

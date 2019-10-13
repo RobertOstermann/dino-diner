@@ -34,6 +34,46 @@ namespace PointOfSale
             InitializeComponent();
             Drink = new Water();
             SmallButton.Background = Brushes.LightGreen;
+            SelectSweetButton.IsEnabled = false;
+            SelectSweetButton.Visibility = Visibility.Hidden;
+            SelectDecafButton.IsEnabled = false;
+            SelectDecafButton.Visibility = Visibility.Hidden;
+            SelectFlavorButton.IsEnabled = false;
+            SelectFlavorButton.Visibility = Visibility.Hidden;
+            WaterButton.BorderBrush = Brushes.LightGreen;
+            WaterButton.BorderThickness = new Thickness(2.5);
+            //WaterButton.ClearValue(Control.BorderBrushProperty);
+            //WaterButton.ClearValue(Control.BorderThicknessProperty);
+        }
+
+        /// <summary>
+        /// Sets the drink to sodasaurus.
+        /// Enables the flavor button.
+        /// Disables the lemon button.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectSodasaurus(object obj, RoutedEventArgs args)
+        {
+            Drink = new Sodasaurus();
+            SmallButton.Background = Brushes.LightGreen;
+            MediumButton.ClearValue(Control.BackgroundProperty);
+            LargeButton.ClearValue(Control.BackgroundProperty);
+            SelectSweetButton.IsEnabled = false;
+            SelectSweetButton.Visibility = Visibility.Hidden;
+            SelectDecafButton.IsEnabled = false;
+            SelectDecafButton.Visibility = Visibility.Hidden;
+            SelectFlavorButton.IsEnabled = true;
+            SelectFlavorButton.Visibility = Visibility.Visible;
+            SodasaurusButton.BorderBrush = Brushes.LightGreen;
+            SodasaurusButton.BorderThickness = new Thickness(2.5);
+
+            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
+            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
+            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
+            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+            WaterButton.ClearValue(Control.BorderBrushProperty);
+            WaterButton.ClearValue(Control.BorderThicknessProperty);
         }
 
         /// <summary>
@@ -44,6 +84,25 @@ namespace PointOfSale
         private void SelectFlavor(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new FlavorSelection());
+        }
+        /// <summary>
+        /// Adds or removes sweet.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectSweet(object obj, RoutedEventArgs args)
+        {
+            
+        }
+
+        /// <summary>
+        /// Determines wheter the Tyrannotea is decaf.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectDecaf(object obj, RoutedEventArgs args)
+        {
+
         }
 
         /// <summary>
