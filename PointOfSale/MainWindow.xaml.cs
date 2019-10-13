@@ -1,6 +1,12 @@
-﻿using System;
+﻿/* MainWindow.xaml.cs
+ * Author: Robert Ostermann
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
+/* MainWindow.xaml.cs
+ * Author: Robert Ostermann
+ */
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
