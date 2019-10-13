@@ -25,7 +25,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        public CretaceousCombo Combo { get; set; }
+        public CretaceousCombo Combo { get; private set; }
 
         /// <summary>
         /// Initialize the CustomizeCombo page.
