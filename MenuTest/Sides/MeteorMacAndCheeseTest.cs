@@ -1,4 +1,7 @@
-﻿using Xunit;
+﻿/* MeteorMacAndCheeseTest.cs
+ * Author: Nathan Bean
+ */
+using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Sides

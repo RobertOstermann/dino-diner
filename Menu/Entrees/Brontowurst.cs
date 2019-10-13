@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Brontowurst.cs
+ * Author: Robert Ostermann
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

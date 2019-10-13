@@ -1,4 +1,7 @@
-﻿using Xunit;
+﻿/* FryceritopsTest.cs
+ * Author: Nathan Bean
+ */
+using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Sides

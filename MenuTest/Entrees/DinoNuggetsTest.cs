@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/* DinoNuggetsTest.cs
+ * Author: Nathan Bean
+ * Modified By: Robert Ostermann
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 

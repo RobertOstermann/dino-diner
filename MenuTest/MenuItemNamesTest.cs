@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* MenuItemNamesTest.cs
+ * Author: Nathan Bean
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;

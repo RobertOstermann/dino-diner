@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* ImmutableIngredientsTest.cs
+ * Author: Nathan Bean
+ */
+using System;
 using Xunit;
 using DinoDiner.Menu;
 
