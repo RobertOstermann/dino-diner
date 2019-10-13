@@ -28,7 +28,7 @@
                 Side
             </TextBlock>
             <Button Style="{StaticResource CustomizeSideButton}" Click="SelectSide">
-                <TextBlock DataContext="" Style="{StaticResource CustomizeSideTextBlock}"/>
+                <TextBlock Style="{StaticResource SimpleTextBlock}" Name="SideChoice"/>
             </Button>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
@@ -36,9 +36,7 @@
                 Drink
             </TextBlock>
             <Button Style="{StaticResource CustomizeDrinkButton}" Click="SelectDrink">
-                <TextBlock Style="{StaticResource SimpleTextBlock}">
-                    //TODO: Current Drink
-                </TextBlock>
+                <TextBlock Style="{StaticResource SimpleTextBlock}" Name="DrinkChoice"/>
             </Button>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.ColumnSpan="4">
