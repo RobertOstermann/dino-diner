@@ -35,7 +35,8 @@
                         Sodasaurus
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Name="TyrannoteaButton">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1" 
+                        Name="TyrannoteaButton" Click="SelectTyrannotea">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-13.png" Opacity="0.25"/>
                     </Button.Background>
@@ -43,7 +44,8 @@
                         Tyrannotea
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Name="JurassicJavaButton">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2" 
+                        Name="JurassicJavaButton" Click="SelectJurrasicJava">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-12.png" Opacity="0.25"/>
                     </Button.Background>
@@ -51,7 +53,8 @@
                         Jurrasic Java
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Name="WaterButton">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" 
+                        Name="WaterButton" Click="SelectWater">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-15.png" Opacity="0.25"/>
                     </Button.Background>
