@@ -7,7 +7,7 @@ using System.Text;
 using Xunit;
 using DinoDiner.Menu;
 
-namespace DinoDiner.MenuTest.Drinks
+namespace MenuTest.Drinks
 {
     public class JurrasicJavaTest
     {
@@ -125,6 +125,90 @@ namespace DinoDiner.MenuTest.Drinks
             JurassicJava java = new JurassicJava();
             java.LeaveRoomForCream();
             Assert.True(java.RoomForCream);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfPricePropertyChange(Size size)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = size;
+            });
+        }
+
+        [Fact] 
+        public void LeaveRoomForCreamShouldNotifyOfSpecialPropertyChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldNotifyOfSpecialPropertyChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.AddIce();
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.Empty(java.Special);
+        }
+
+        [Fact]
+        public void ShouldHaveAddIceWhenAddingIce()
+        {
+            JurassicJava java = new JurassicJava();
+            java.AddIce();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Add Ice", item);
+                }
+            );
+        }
+
+        [Fact]
+        public void ShouldHaveRoomForCreamWhenLeavingRoomForCream()
+        {
+            JurassicJava java = new JurassicJava();
+            java.LeaveRoomForCream();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Room for Cream", item);
+                }
+            );
+        }
+
+        [Fact]
+        public void ShouldHaveAddIceAndRoomForCreamWhenAddingIceAndLeavingRoomForCream()
+        {
+            JurassicJava java = new JurassicJava();
+            java.AddIce();
+            java.LeaveRoomForCream();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Add Ice", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Room for Cream", item);
+                }
+            );
         }
     }
 }

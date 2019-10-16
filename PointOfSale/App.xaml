@@ -11,6 +11,19 @@
             <Setter Property="FontSize" Value="32"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
         </Style>
+
+        <Style x:Key="SimpleRadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter Property="Background" Value="LightGreen"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+              
         <!--Button style for button with background images.-->
         <Style x:Key="BackgroundImageButton" TargetType="Button">
             <Setter Property="Margin" Value="5"/>

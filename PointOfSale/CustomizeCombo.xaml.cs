@@ -37,7 +37,6 @@ namespace PointOfSale
             Combo = new CretaceousCombo(entree);
             DrinkChoice.Text = Combo.Drink.ToString();
             SideChoice.Text = Combo.Side.ToString();
-            SmallButton.Background = Brushes.LightGreen;
         }
 
         /// <summary>
@@ -68,9 +67,6 @@ namespace PointOfSale
         private void SelectSmall(Object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -81,9 +77,6 @@ namespace PointOfSale
         private void SelectMedium(Object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Medium;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.Background = Brushes.LightGreen;
-            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -94,9 +87,6 @@ namespace PointOfSale
         private void SelectLarge(Object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Large;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = Brushes.LightGreen;
         }
     }
 }
