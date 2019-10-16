@@ -15,7 +15,9 @@ namespace DinoDiner.Menu
         /// Gets and sets the lemon.
         /// </summary>
         public bool Lemon { get; private set; }
-
+        /// <summary>
+        /// Gets the ingredients of the drink.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -23,6 +25,19 @@ namespace DinoDiner.Menu
                 List<string> ingredients = new List<string>() { "Water" };
                 if (Lemon) ingredients.Add("Lemon");
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// Gets the preparation instruction for the drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (!Lemon) special.Add("Hold Lemon");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -47,6 +62,7 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -56,6 +72,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
         /// <summary>
         /// Overrides the ToString method.

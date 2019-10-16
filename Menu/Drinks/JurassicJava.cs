@@ -30,6 +30,20 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets the preparation instruction for the drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (RoomForCream) special.Add("Room for Cream");
+                if (Decaf) special.Add("Decaf");
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Tyrannotea drink.
         /// </summary>
         public JurassicJava()
@@ -56,16 +70,22 @@ namespace DinoDiner.Menu
                 {
                     Price = 0.59;
                     Calories = 2;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Medium)
                 {
                     Price = 0.99;
                     Calories = 4;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Large)
                 {
                     Price = 1.49;
                     Calories = 8;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
             }
         }
@@ -75,6 +95,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Sets the ice property to true.
@@ -82,6 +103,7 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Overrides the ToString method.

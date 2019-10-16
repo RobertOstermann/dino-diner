@@ -9,9 +9,9 @@ namespace DinoDiner.Menu
 {
     public class CretaceousCombo : IMenuItem
     {
-        public Entree Entree;
-        public Drink Drink;
-        public Side Side;
+        public Entree Entree { get; set; }
+        public Drink Drink { get; set; }
+        public Side Side { get; set; }
 
         private Size size = Size.Small;
         /// <summary>
@@ -57,6 +57,30 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Side.Ingredients);
                 ingredients.AddRange(Drink.Ingredients);
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// Gets a description of the combo.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return ToString();
+            }
+        }
+
+        public string [] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                //special.AddRange(Entree.Special);
+                special.Add(Side.ToString());
+                //special.AddRange(Side.Special);
+                special.Add(Drink.ToString());
+                special.AddRange(Drink.Special);
+                return special.ToArray();
             }
         }
 

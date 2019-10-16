@@ -4,12 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IOrderItem
     {
         private Size size;
+
         /// <summary>
         /// Gets and sets the flavor of the drink.
         /// </summary>
@@ -23,6 +25,19 @@ namespace DinoDiner.Menu
             get
             {
                 return new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
+            }
+        }
+
+        /// <summary>
+        /// Gets the preparation instruction for the drink.
+        /// </summary>
+        public override string [] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -51,16 +66,22 @@ namespace DinoDiner.Menu
                 {
                     Price = 1.50;
                     Calories = 112;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Medium)
                 {
                     Price = 2.00;
                     Calories = 156;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Large)
                 {
                     Price = 2.50;
                     Calories = 208;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
             }
         }

@@ -27,6 +27,7 @@ namespace DinoDiner.Menu
                     sweet = value;
                     if (sweet) Calories *= 2;
                     else Calories /= 2;
+                    NotifyOfPropertyChange("Special");
                 }
             }
         }
@@ -46,6 +47,20 @@ namespace DinoDiner.Menu
                 if (Lemon) ingredients.Add("Lemon");
                 if (Sweet) ingredients.Add("Cane Sugar");
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// Gets the preparation instruction for the drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (!Lemon) special.Add("Hold Lemon");
+                if (!Sweet) special.Add("Hold Sweet");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -75,18 +90,24 @@ namespace DinoDiner.Menu
                     Price = 0.99;
                     if (Sweet) Calories = 16;
                     else Calories = 8;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Medium)
                 {
                     Price = 1.49;
                     if (Sweet) Calories = 32;
                     else Calories = 16;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Large)
                 {
                     Price = 1.99;
                     if (Sweet) Calories = 64;
                     else Calories = 32;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
             }
         }
@@ -96,6 +117,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Overrides the ToString method.
