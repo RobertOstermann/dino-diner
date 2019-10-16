@@ -58,8 +58,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (!Ice) special.Add("Hold Ice");
-                if (!Lemon) special.Add("Hold Lemon");
-                if (!Sweet) special.Add("Hold Sweet");
+                if (Lemon) special.Add("Add Lemon");
                 return special.ToArray();
             }
         }

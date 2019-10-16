@@ -39,7 +39,6 @@ namespace DinoDiner.Menu
                 List<string> special = new List<string>();
                 if (!Ice) special.Add("Hold Ice");
                 if (RoomForCream) special.Add("Room for Cream");
-                if (Decaf) special.Add("Decaf");
                 return special.ToArray();
             }
         }
