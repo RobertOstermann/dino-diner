@@ -33,6 +33,21 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the entree.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Steakosaurus Burger entree.
         /// </summary>
         public SteakosaurusBurger()
@@ -46,6 +61,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             bun = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the pickles.
@@ -53,6 +69,7 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             pickle = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the ketchup.
@@ -60,6 +77,7 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             ketchup = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the mustard.
@@ -67,6 +85,7 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             mustard = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Overrides the ToString method.

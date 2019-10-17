@@ -23,6 +23,17 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the entree.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Pterodactyl Wings entree.
         /// </summary>
         public PterodactylWings()

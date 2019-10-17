@@ -30,6 +30,20 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the entree.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onions) special.Add("Hold Onions");
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Brontowurst entree.
         /// </summary>
         public Brontowurst()
@@ -43,6 +57,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             bun = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the peppers.
@@ -50,6 +65,7 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             peppers = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the onions.
@@ -57,6 +73,7 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             onions = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Overrides the ToString method.

@@ -27,6 +27,22 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the entree.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (nuggets > 6)
+                {
+                    int i = nuggets - 6;
+                    special.Add($"Add {i} Nuggets");
+                }
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the DinoNuggets entree.
         /// </summary>
         public DinoNuggets()
@@ -43,6 +59,8 @@ namespace DinoDiner.Menu
             nuggets += 1;
             Price += 0.25;
             Calories += 59;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Price");
         }
         /// <summary>
         /// Overrides the ToString method.

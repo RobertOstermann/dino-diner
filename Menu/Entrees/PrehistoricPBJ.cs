@@ -5,23 +5,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged//, IOrderItem
+    public class PrehistoricPBJ : Entree
     {
         // Indicates the use of peanut butter.
         private bool peanutButter = true;
         // Indicates the use of jelly.
         private bool jelly = true;
-        /// <summary>
-        /// The PropertyChanged event handler; notifies of changes
-        /// to the Price, Description, and Special properties.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //Helper function for notifying of property changes.
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -35,20 +25,11 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-        /// <summary>
-        /// Gets the description of the entree.
-        /// </summary>
-        public string Description
-        {
-            get
-            {
-                return ToString();
-            }
-        }
+
         /// <summary>
         /// Gets preparation instructions for the entree.
         /// </summary>
-        public string [] Special
+        public override string [] Special
         {
             get
             {
@@ -73,7 +54,6 @@ namespace DinoDiner.Menu
         {
             peanutButter = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Removes the jelly.
@@ -82,7 +62,6 @@ namespace DinoDiner.Menu
         {
             jelly = false;
             NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Overrides the ToString method.

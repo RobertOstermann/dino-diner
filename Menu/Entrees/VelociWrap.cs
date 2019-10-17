@@ -32,6 +32,20 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the entree.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Dressing");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Veloci Wrap entree.
         /// </summary>
         public VelociWrap()
@@ -45,6 +59,7 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             dressing = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the lettuce.
@@ -52,6 +67,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             lettuce = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Removes the cheese.
@@ -59,6 +75,7 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             cheese = false;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Overrides the ToString method.
