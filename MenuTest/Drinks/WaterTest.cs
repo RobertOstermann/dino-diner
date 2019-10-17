@@ -7,7 +7,7 @@ using System.Text;
 using Xunit;
 using DinoDiner.Menu;
 
-namespace DinoDiner.MenuTest.Drinks
+namespace MenuTest.Drinks
 {
     public class WaterTest
     {
@@ -111,5 +111,49 @@ namespace DinoDiner.MenuTest.Drinks
             List<string> ingredients = water.Ingredients;
             Assert.Contains<string>("Lemon", ingredients);
         }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Description", () =>
+            {
+                water.Size = size;
+            });
+        }
+
+        [Fact]
+        public void HoldIceShouldNotifyOfSpecialPropertyChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Special", () =>
+            {
+                water.HoldIce();
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Water water = new Water();
+            Assert.Empty(water.Special);
+        }
+
+        [Fact]
+        public void ShouldHaveHoldIceWhenHoldingIce()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            Assert.Collection<string>(water.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                }
+            );
+        }
+
     }
 }

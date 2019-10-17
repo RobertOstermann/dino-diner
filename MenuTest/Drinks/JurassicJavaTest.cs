@@ -140,6 +140,19 @@ namespace MenuTest.Drinks
             });
         }
 
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.Size = size;
+            });
+        }
+
         [Fact] 
         public void LeaveRoomForCreamShouldNotifyOfSpecialPropertyChange()
         {
