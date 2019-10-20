@@ -33,7 +33,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the sales tax rate.
         /// </summary>
-        public double SalesTaxRate { get; protected set; }
+        public double SalesTaxRate { get; protected set; } = 0.15;
         /// <summary>
         /// Calculates the sales tax.
         /// </summary>
@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return SalesTaxCost * SalesTaxRate;
+                return SubtotalCost * SalesTaxRate;
             }
         }
         /// <summary>
