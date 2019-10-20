@@ -244,7 +244,6 @@ namespace MenuTest.Entrees
                 }
             );
         }
-
         //Tests do not cover all permutation of the Special options.
     }
 
