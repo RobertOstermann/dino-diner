@@ -1,5 +1,6 @@
 ﻿/* MeteorMacAndCheeseTest.cs
  * Author: Nathan Bean
+ * Modified By: Robert Ostermann
  */
 using Xunit;
 using DinoDiner.Menu;
@@ -85,6 +86,39 @@ namespace MenuTest.Sides
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, mmc.Size);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfPricePropertyChange(Size size)
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Price", () =>
+            {
+                mmc.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Description", () =>
+            {
+                mmc.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.Empty(mmc.Special);
         }
     }
 }

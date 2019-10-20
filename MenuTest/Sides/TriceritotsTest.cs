@@ -1,5 +1,6 @@
 ﻿/* TriceritotsTest.cs
  * Author: Nathan Bean
+ * Modified By: Robert Ostermann
  */
 using Xunit;
 using DinoDiner.Menu;
@@ -85,6 +86,39 @@ namespace MenuTest.Sides
             Triceritots tt = new Triceritots();
             tt.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, tt.Size);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfPricePropertyChange(Size size)
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Price", () =>
+            {
+                tt.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Description", () =>
+            {
+                tt.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.Empty(tt.Special);
         }
     }
 }
