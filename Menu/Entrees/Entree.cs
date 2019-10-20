@@ -31,7 +31,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public uint Calories { get; set; }
         /// <summary>
-        /// Gets the desription of the drink.
+        /// Gets the desription of the entree.
         /// </summary>
         public string Description
         {
@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// Gets the preparation instruction for the drink.
+        /// Gets the preparation instruction for the entree.
         /// </summary>
         public abstract string[] Special { get; }
         /// <summary>

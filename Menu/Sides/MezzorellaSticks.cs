@@ -22,6 +22,17 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// Gets preparation instructions for the side.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Initializes the Mezzorella Sticks side.
         /// </summary>
         public MezzorellaSticks()
@@ -50,16 +61,22 @@ namespace DinoDiner.Menu
                 {
                     Price = 0.99;
                     Calories = 540;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Medium)
                 {
                     Price = 1.45;
                     Calories = 610;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
                 if (size == Size.Large)
                 {
                     Price = 1.95;
                     Calories = 720;
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Description");
                 }
             }
         }
