@@ -1,4 +1,4 @@
-﻿/* DinoNuggets.cs
+﻿ /* DinoNuggets.cs
  * Author: Robert Ostermann
  */
 using System;
