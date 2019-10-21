@@ -30,6 +30,16 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            Order order = (Order)DataContext;
+            order.Items.Add(new Fryceritops());
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            tea.Sweet = true;
+            tea.Size = DinoDiner.Menu.Size.Medium;
+            order.Items.Add(tea);
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            mmc.Size = DinoDiner.Menu.Size.Medium;
+            order.Items.Add(mmc);
         }
     }
 }
