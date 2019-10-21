@@ -6,38 +6,40 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="22.5"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="22.5"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Border BorderThickness="0,.5,.5,.5" BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2">
-            <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontFamily="Tahoma" FontSize="16">
+    <Border BorderThickness=".5,0,0,0" BorderBrush="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22.5"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="22.5"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="0,.5,.5,.5" BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2">
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" FontFamily="Tahoma" FontSize="16">
                 Current Order
-            </TextBlock>
-        </Border>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}"
+                </TextBlock>
+            </Border>
+            <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}"
                        FontFamily="Tahoma" FontSize="16" Background="Transparent" Name="OrderList">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Border BorderThickness="0, 0, .5, .5" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2">
-            <TextBlock TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2"
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <ListBox ItemsSource="{Binding Path=Special}" Background="Transparent" BorderThickness="0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Border BorderThickness="0, 0, .5, .5" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2">
+                <TextBlock TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2"
                        FontFamily="Tahoma" FontSize="16" Name="OrderPrice" Text="Price - $___"/>
-        </Border>
-        <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="0">Cancel</Button>
-        <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="1">Pay</Button>
-    </Grid>
+            </Border>
+            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="0">Cancel</Button>
+            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="1">Pay</Button>
+        </Grid>
+    </Border>
 </UserControl>

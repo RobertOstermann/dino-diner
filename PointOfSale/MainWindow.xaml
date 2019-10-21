@@ -11,9 +11,9 @@
         <menu:Order/>
     </Window.DataContext>
     <DockPanel>
-        <Grid DockPanel.Dock="Right" Width="200" Background="WhiteSmoke">
+        <Grid DockPanel.Dock="Right" Width="200" Background="LightSteelBlue">
             <local:OrderControl x:Name="OrderList"/>
         </Grid>
-        <Frame Source="MenuCategorySelection.xaml" BorderThickness="0,0,.5,0" BorderBrush="Black" Name="OrderInterface"/>
+        <Frame Source="MenuCategorySelection.xaml" BorderBrush="Black" Name="OrderInterface"/>
     </DockPanel>
 </Window>
