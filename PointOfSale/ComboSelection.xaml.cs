@@ -33,7 +33,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void BrontowurstCombo(Object obj, RoutedEventArgs args)
+        private void BrontowurstCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new Brontowurst()));
         }
@@ -43,7 +43,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void DinoNuggetsCombo(Object obj, RoutedEventArgs args)
+        private void DinoNuggetsCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new DinoNuggets()));
         }
@@ -53,7 +53,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void PrehistoricPBJCombo(Object obj, RoutedEventArgs args)
+        private void PrehistoricPBJCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new PrehistoricPBJ()));
         }
@@ -63,7 +63,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void PterodactylWingsCombo(Object obj, RoutedEventArgs args)
+        private void PterodactylWingsCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new PterodactylWings()));
         }
@@ -73,7 +73,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SteakosaurusBurgerCombo(Object obj, RoutedEventArgs args)
+        private void SteakosaurusBurgerCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new SteakosaurusBurger()));
         }
@@ -83,7 +83,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void TRexKingburgerCombo(Object obj, RoutedEventArgs args)
+        private void TRexKingburgerCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new TRexKingBurger()));
         }
@@ -93,7 +93,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void VelociWrapCombo(Object obj, RoutedEventArgs args)
+        private void VelociWrapCombo(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo(new VelociWrap()));
         }

@@ -202,7 +202,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSmall(Object obj, RoutedEventArgs args)
+        private void SelectSmall(object obj, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Small;
             SmallButton.Background = Brushes.LightGreen;
@@ -215,7 +215,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectMedium(Object obj, RoutedEventArgs args)
+        private void SelectMedium(object obj, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
@@ -228,7 +228,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectLarge(Object obj, RoutedEventArgs args)
+        private void SelectLarge(object obj, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);
