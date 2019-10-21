@@ -27,7 +27,7 @@
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Side
             </TextBlock>
-            <Button Style="{StaticResource CustomizeSideButton}" Click="SelectSide">
+            <Button Style="{StaticResource SimpleButton}" Click="SelectSide">
                 <TextBlock Style="{StaticResource SimpleTextBlock}" Name="SideChoice"/>
             </Button>
         </DockPanel>
@@ -35,7 +35,7 @@
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Drink
             </TextBlock>
-            <Button Style="{StaticResource CustomizeDrinkButton}" Click="SelectDrink">
+            <Button Style="{StaticResource SimpleButton}" Click="SelectDrink">
                 <TextBlock Style="{StaticResource SimpleTextBlock}" Name="DrinkChoice"/>
             </Button>
         </DockPanel>

@@ -41,23 +41,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-        <!--Add DataBinding to determine text of button.-->
-        <Style x:Key="CustomizeSideButton" TargetType="Button">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="Gainsboro"/>
-            <Setter Property="FontSize" Value="24"/>
-            <Setter Property="FontFamily" Value="Tahoma"/>
-        </Style>
 
-        <!--Add DataBinding to determine text of button.-->
-        <Style x:Key="CustomizeDrinkButton" TargetType="Button">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="Gainsboro"/>
-            <Setter Property="FontSize" Value="24"/>
-            <Setter Property="FontFamily" Value="Tahoma"/>
-        </Style>
-        
-        
         <!--Simple TextBlock Style.-->
         <Style x:Key="SimpleTextBlock" TargetType="TextBlock">
             <Setter Property="Height" Value="Auto"/>
