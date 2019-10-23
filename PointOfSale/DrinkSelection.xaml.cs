@@ -26,6 +26,10 @@ namespace PointOfSale
     {
         public Drink Drink { get; private set; }
 
+        private Brush buttonColor = Brushes.LightGreen;
+
+        private Thickness buttonBorderThickness = new Thickness(2.5);
+
         /// <summary>
         /// Initialize the DrinkSelection page.
         /// </summary>
@@ -33,15 +37,15 @@ namespace PointOfSale
         {
             InitializeComponent();
             Drink = new Water();
-            SmallButton.Background = Brushes.LightGreen;
-            SelectSweetButton.IsEnabled = false;
-            SelectSweetButton.Visibility = Visibility.Hidden;
-            SelectDecafButton.IsEnabled = false;
-            SelectDecafButton.Visibility = Visibility.Hidden;
-            SelectFlavorButton.IsEnabled = false;
-            SelectFlavorButton.Visibility = Visibility.Visible;
-            WaterButton.BorderBrush = Brushes.LightGreen;
-            WaterButton.BorderThickness = new Thickness(2.5);
+            SmallButton.Background = buttonColor;
+            SweetButton.IsEnabled = false;
+            SweetButton.Visibility = Visibility.Hidden;
+            DecafButton.IsEnabled = false;
+            DecafButton.Visibility = Visibility.Hidden;
+            FlavorButton.IsEnabled = false;
+            FlavorButton.Visibility = Visibility.Visible;
+            WaterButton.BorderBrush = buttonColor;
+            WaterButton.BorderThickness = buttonBorderThickness;
         }
 
         /// <summary>
@@ -53,26 +57,35 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSodasaurus(object obj, RoutedEventArgs args)
         {
-            Drink = new Sodasaurus();
-            SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
-            SelectSweetButton.IsEnabled = false;
-            SelectSweetButton.Visibility = Visibility.Hidden;
-            SelectDecafButton.IsEnabled = false;
-            SelectDecafButton.Visibility = Visibility.Hidden;
-            SelectFlavorButton.IsEnabled = true;
-            SelectFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.IsEnabled = false;
-            SodasaurusButton.BorderBrush = Brushes.LightGreen;
-            SodasaurusButton.BorderThickness = new Thickness(2.5);
+            if (Drink.GetType() != typeof(Sodasaurus))
+            {
+                Drink = new Sodasaurus();
 
-            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
-            WaterButton.ClearValue(Control.BorderBrushProperty);
-            WaterButton.ClearValue(Control.BorderThicknessProperty);
+                //Set the size buttons to represent small as selected.
+                SmallButton.Background = buttonColor;
+                MediumButton.ClearValue(Control.BackgroundProperty);
+                LargeButton.ClearValue(Control.BackgroundProperty);
+
+                //Show or hide correct property buttons for the drink.
+                SweetButton.IsEnabled = false;
+                SweetButton.Visibility = Visibility.Hidden;
+                DecafButton.IsEnabled = false;
+                DecafButton.Visibility = Visibility.Hidden;
+                FlavorButton.IsEnabled = true;
+                FlavorButton.Visibility = Visibility.Visible;
+                LemonButton.IsEnabled = false;
+
+                SodasaurusButton.BorderBrush = buttonColor;
+                SodasaurusButton.BorderThickness = buttonBorderThickness;
+
+                //Clear border values for other drink buttons.
+                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
+                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
+                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
+                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+                WaterButton.ClearValue(Control.BorderBrushProperty);
+                WaterButton.ClearValue(Control.BorderThicknessProperty);
+            }
         }
 
         /// <summary>
@@ -84,26 +97,36 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectTyrannotea(object obj, RoutedEventArgs args)
         {
-            Drink = new Tyrannotea();
-            SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
-            SelectSweetButton.IsEnabled = true;
-            SelectSweetButton.Visibility = Visibility.Visible;
-            SelectDecafButton.IsEnabled = false;
-            SelectDecafButton.Visibility = Visibility.Hidden;
-            SelectFlavorButton.IsEnabled = false;
-            SelectFlavorButton.Visibility = Visibility.Hidden;
-            AddLemonButton.IsEnabled = true;
-            TyrannoteaButton.BorderBrush = Brushes.LightGreen;
-            TyrannoteaButton.BorderThickness = new Thickness(2.5);
+            if (Drink.GetType() != typeof(Tyrannotea))
+            {
+                Drink = new Tyrannotea();
 
-            SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-            SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
-            WaterButton.ClearValue(Control.BorderBrushProperty);
-            WaterButton.ClearValue(Control.BorderThicknessProperty);
+                //Set the size buttons to represent small as selected.
+                SmallButton.Background = buttonColor;
+                MediumButton.ClearValue(Control.BackgroundProperty);
+                LargeButton.ClearValue(Control.BackgroundProperty);
+
+                //Show or hide correct property buttons for the drink.
+                SweetButton.IsEnabled = true;
+                SweetButton.Visibility = Visibility.Visible;
+                DecafButton.IsEnabled = false;
+                DecafButton.Visibility = Visibility.Hidden;
+                FlavorButton.IsEnabled = false;
+                FlavorButton.Visibility = Visibility.Hidden;
+                LemonButton.IsEnabled = true;
+
+                TyrannoteaButton.BorderBrush = buttonColor;
+                TyrannoteaButton.BorderThickness = buttonBorderThickness;
+                SweetButton.ClearValue(Control.BackgroundProperty);
+
+                //Clear border values for other drink buttons.
+                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
+                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
+                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
+                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+                WaterButton.ClearValue(Control.BorderBrushProperty);
+                WaterButton.ClearValue(Control.BorderThicknessProperty);
+            }
         }
 
         /// <summary>
@@ -115,26 +138,36 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectJurrasicJava(object obj, RoutedEventArgs args)
         {
-            Drink = new JurassicJava();
-            SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
-            SelectSweetButton.IsEnabled = false;
-            SelectSweetButton.Visibility = Visibility.Hidden;
-            SelectDecafButton.IsEnabled = true;
-            SelectDecafButton.Visibility = Visibility.Visible;
-            SelectFlavorButton.IsEnabled = false;
-            SelectFlavorButton.Visibility = Visibility.Hidden;
-            AddLemonButton.IsEnabled = false;
-            JurassicJavaButton.BorderBrush = Brushes.LightGreen;
-            JurassicJavaButton.BorderThickness = new Thickness(2.5);
+            if (Drink.GetType() != typeof(Sodasaurus))
+            {
+                Drink = new JurassicJava();
 
-            SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-            SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-            WaterButton.ClearValue(Control.BorderBrushProperty);
-            WaterButton.ClearValue(Control.BorderThicknessProperty);
+                //Set the size buttons to represent small as selected.
+                SmallButton.Background = buttonColor;
+                MediumButton.ClearValue(Control.BackgroundProperty);
+                LargeButton.ClearValue(Control.BackgroundProperty);
+
+                //Show or hide correct property buttons for the drink.
+                SweetButton.IsEnabled = false;
+                SweetButton.Visibility = Visibility.Hidden;
+                DecafButton.IsEnabled = true;
+                DecafButton.Visibility = Visibility.Visible;
+                FlavorButton.IsEnabled = false;
+                FlavorButton.Visibility = Visibility.Hidden;
+                LemonButton.IsEnabled = false;
+
+                JurassicJavaButton.BorderBrush = buttonColor;
+                JurassicJavaButton.BorderThickness = buttonBorderThickness;
+                DecafButton.ClearValue(Control.BackgroundProperty);
+
+                //Clear border values for other drink buttons.
+                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
+                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
+                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
+                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
+                WaterButton.ClearValue(Control.BorderBrushProperty);
+                WaterButton.ClearValue(Control.BorderThicknessProperty);
+            }
         }
 
         /// <summary>
@@ -146,26 +179,34 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectWater(object obj, RoutedEventArgs args)
         {
-            Drink = new Water();
-            SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
-            SelectSweetButton.IsEnabled = false;
-            SelectSweetButton.Visibility = Visibility.Hidden;
-            SelectDecafButton.IsEnabled = false;
-            SelectDecafButton.Visibility = Visibility.Hidden;
-            SelectFlavorButton.IsEnabled = false;
-            SelectFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.IsEnabled = true;
-            WaterButton.BorderBrush = Brushes.LightGreen;
-            WaterButton.BorderThickness = new Thickness(2.5);
+            if (Drink.GetType() != typeof(Sodasaurus))
+            {
+                Drink = new Water();
 
-            SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-            SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+                //Set the size buttons to represent small as selected.
+                SmallButton.Background = buttonColor;
+                MediumButton.ClearValue(Control.BackgroundProperty);
+                LargeButton.ClearValue(Control.BackgroundProperty);
+
+                //Show or hide correct property buttons for the drink.
+                SweetButton.IsEnabled = false;
+                SweetButton.Visibility = Visibility.Hidden;
+                DecafButton.IsEnabled = false;
+                DecafButton.Visibility = Visibility.Hidden;
+                FlavorButton.IsEnabled = false;
+                FlavorButton.Visibility = Visibility.Visible;
+                LemonButton.IsEnabled = true;
+                WaterButton.BorderBrush = buttonColor;
+                WaterButton.BorderThickness = buttonBorderThickness;
+
+                //Clear border values for other drink buttons.
+                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
+                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
+                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
+                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
+                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
+                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+            }
         }
 
         /// <summary>
@@ -184,17 +225,73 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSweet(object obj, RoutedEventArgs args)
         {
-            
+            Tyrannotea tea = (Tyrannotea)Drink;
+            if (tea.Sweet)
+            {
+                tea.Sweet = false;
+                SweetButton.ClearValue(Control.BackgroundProperty);
+            }
+            else
+            {
+                tea.Sweet = true;
+                SweetButton.Background = buttonColor;
+            }
         }
 
         /// <summary>
-        /// Determines wheter the Tyrannotea is decaf.
+        /// Determines whether the Jurassic Java is decaf.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
         private void SelectDecaf(object obj, RoutedEventArgs args)
         {
-
+            JurassicJava java = (JurassicJava)Drink;
+            if (java.Decaf)
+            {
+                java.Decaf = false;
+                DecafButton.ClearValue(Control.BackgroundProperty);
+            }
+            else
+            {
+                java.Decaf = true;
+                DecafButton.Background = buttonColor;
+            }
+        }
+        /// <summary>
+        /// Determines
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectLemon(object obj, RoutedEventArgs args)
+        {
+            if (Drink.GetType() == typeof(Water))
+            {
+                Water water = (Water)Drink;
+                if (water.Lemon)
+                {
+                    water.RemoveLemon();
+                    LemonButton.ClearValue(BackgroundProperty);
+                }
+                else
+                {
+                    water.AddLemon();
+                    LemonButton.Background = buttonColor;
+                }
+            }
+            if (Drink.GetType() == typeof(Tyrannotea))
+            {
+                Tyrannotea tea = (Tyrannotea)Drink;
+                if (tea.Lemon)
+                {
+                    tea.RemoveLemon();
+                    LemonButton.ClearValue(BackgroundProperty);
+                }
+                else
+                { 
+                    tea.AddLemon();
+                    LemonButton.Background = buttonColor;
+                }
+            }
         }
 
         /// <summary>
@@ -205,7 +302,7 @@ namespace PointOfSale
         private void SelectSmall(object obj, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = Brushes.LightGreen;
+            SmallButton.Background = buttonColor;
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.ClearValue(Control.BackgroundProperty);
         }
@@ -219,7 +316,7 @@ namespace PointOfSale
         {
             Drink.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.Background = Brushes.LightGreen;
+            MediumButton.Background = buttonColor;
             LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
@@ -233,7 +330,7 @@ namespace PointOfSale
             Drink.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);
             MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = Brushes.LightGreen;
+            LargeButton.Background = buttonColor;
         }
     }
 }

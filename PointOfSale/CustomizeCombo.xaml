@@ -49,24 +49,24 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <RadioButton Style="{StaticResource SimpleRadioButton}" Grid.Column="0"
-                        Name="SmallButton" >
+                <Button Style="{StaticResource SimpleButton}" Grid.Column="0"
+                        Name="SmallButton" Click="SelectSmall">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Small
                     </TextBlock>
-                </RadioButton>
-                <RadioButton Style="{StaticResource SimpleRadioButton}" Grid.Column="1"
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Column="1"
                         Name="MediumButton" Click="SelectMedium">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Medium
                     </TextBlock>
-                </RadioButton>
-                <RadioButton Style="{StaticResource SimpleRadioButton}" Grid.Column="2"
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Column="2"
                         Name="LargeButton" Click="SelectLarge">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Large
                     </TextBlock>
-                </RadioButton>
+                </Button>
             </Grid>
         </DockPanel>
     </Grid>

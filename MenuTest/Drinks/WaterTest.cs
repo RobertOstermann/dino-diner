@@ -112,6 +112,15 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Lemon", ingredients);
         }
 
+        [Fact]
+        public void RemoveLemonShouldRemoveLemon()
+        {
+            Water water = new Water();
+            water.AddLemon();
+            water.RemoveLemon();
+            Assert.False(water.Lemon);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

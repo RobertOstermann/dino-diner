@@ -118,6 +118,16 @@ namespace DinoDiner.Menu
             Lemon = true;
             NotifyOfPropertyChange("Special");
         }
+
+        /// <summary>
+        /// Sets the Lemon property to false.
+        /// </summary>
+        public void RemoveLemon()
+        {
+            Lemon = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+        }
         /// <summary>
         /// Overrides the ToString method.
         /// </summary>

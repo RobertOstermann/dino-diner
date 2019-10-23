@@ -67,6 +67,9 @@ namespace PointOfSale
         private void SelectSmall(object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Small;
+            SmallButton.Background = Brushes.LightGreen;
+            MediumButton.ClearValue(Control.BackgroundProperty);
+            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -77,6 +80,9 @@ namespace PointOfSale
         private void SelectMedium(object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Medium;
+            SmallButton.ClearValue(Control.BackgroundProperty);
+            MediumButton.Background = Brushes.LightGreen;
+            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -87,6 +93,9 @@ namespace PointOfSale
         private void SelectLarge(object obj, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Large;
+            SmallButton.ClearValue(Control.BackgroundProperty);
+            MediumButton.ClearValue(Control.BackgroundProperty);
+            LargeButton.Background = Brushes.LightGreen;
         }
     }
 }

@@ -114,6 +114,15 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void RemoveLemonShouldRemoveLemon()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            tea.RemoveLemon();
+            Assert.False(tea.Lemon);
+        }
+
+        [Fact]
         public void AddSweetShouldAddCaneSugar()
         {
             Tyrannotea tea = new Tyrannotea();
