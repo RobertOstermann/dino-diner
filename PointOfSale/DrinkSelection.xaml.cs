@@ -47,7 +47,7 @@ namespace PointOfSale
             WaterButton.BorderBrush = buttonColor;
             WaterButton.BorderThickness = buttonBorderThickness;
             IceButton.Background = buttonColor;
-            //CHANGE
+            //Wait until DataContext is loaded.
             if (DataContext is Order order)
             {
                 order.Items.Add(Drink);
