@@ -44,7 +44,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSide(object obj, RoutedEventArgs args)
+        private void SelectSide(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection());
         }
@@ -54,7 +54,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectDrink(object obj, RoutedEventArgs args)
+        private void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());
         }
@@ -64,7 +64,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSmall(object obj, RoutedEventArgs args)
+        private void SelectSmall(object sender, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Small;
             SmallButton.Background = Brushes.LightGreen;
@@ -77,7 +77,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectMedium(object obj, RoutedEventArgs args)
+        private void SelectMedium(object sender, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
@@ -90,7 +90,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectLarge(object obj, RoutedEventArgs args)
+        private void SelectLarge(object sender, RoutedEventArgs args)
         {
             Combo.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);

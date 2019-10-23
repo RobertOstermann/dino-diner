@@ -128,9 +128,10 @@
                         Lemon
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="2">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2"
+                        Name="IceButton" Click="SelectIce">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        Hold Ice
+                        Ice
                     </TextBlock>
                 </Button>
             </Grid>

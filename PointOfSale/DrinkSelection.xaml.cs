@@ -46,6 +46,12 @@ namespace PointOfSale
             FlavorButton.Visibility = Visibility.Visible;
             WaterButton.BorderBrush = buttonColor;
             WaterButton.BorderThickness = buttonBorderThickness;
+            IceButton.Background = buttonColor;
+            //CHANGE
+            if (DataContext is Order order)
+            {
+                order.Items.Add(Drink);
+            }
         }
 
         /// <summary>
@@ -55,16 +61,14 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSodasaurus(object obj, RoutedEventArgs args)
+        private void SelectSodasaurus(object sender, RoutedEventArgs args)
         {
             if (Drink.GetType() != typeof(Sodasaurus))
             {
                 Drink = new Sodasaurus();
-
+                ClearButtonValues();
                 //Set the size buttons to represent small as selected.
                 SmallButton.Background = buttonColor;
-                MediumButton.ClearValue(Control.BackgroundProperty);
-                LargeButton.ClearValue(Control.BackgroundProperty);
 
                 //Show or hide correct property buttons for the drink.
                 SweetButton.IsEnabled = false;
@@ -77,14 +81,7 @@ namespace PointOfSale
 
                 SodasaurusButton.BorderBrush = buttonColor;
                 SodasaurusButton.BorderThickness = buttonBorderThickness;
-
-                //Clear border values for other drink buttons.
-                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
-                WaterButton.ClearValue(Control.BorderBrushProperty);
-                WaterButton.ClearValue(Control.BorderThicknessProperty);
+                IceButton.Background = buttonColor;
             }
         }
 
@@ -95,16 +92,14 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectTyrannotea(object obj, RoutedEventArgs args)
+        private void SelectTyrannotea(object sender, RoutedEventArgs args)
         {
             if (Drink.GetType() != typeof(Tyrannotea))
             {
                 Drink = new Tyrannotea();
-
+                ClearButtonValues();
                 //Set the size buttons to represent small as selected.
                 SmallButton.Background = buttonColor;
-                MediumButton.ClearValue(Control.BackgroundProperty);
-                LargeButton.ClearValue(Control.BackgroundProperty);
 
                 //Show or hide correct property buttons for the drink.
                 SweetButton.IsEnabled = true;
@@ -117,15 +112,7 @@ namespace PointOfSale
 
                 TyrannoteaButton.BorderBrush = buttonColor;
                 TyrannoteaButton.BorderThickness = buttonBorderThickness;
-                SweetButton.ClearValue(Control.BackgroundProperty);
-
-                //Clear border values for other drink buttons.
-                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
-                WaterButton.ClearValue(Control.BorderBrushProperty);
-                WaterButton.ClearValue(Control.BorderThicknessProperty);
+                IceButton.Background = buttonColor;
             }
         }
 
@@ -136,17 +123,15 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectJurrasicJava(object obj, RoutedEventArgs args)
+        private void SelectJurrasicJava(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(Sodasaurus))
+            if (Drink.GetType() != typeof(JurassicJava))
             {
                 Drink = new JurassicJava();
-
+                ClearButtonValues();
                 //Set the size buttons to represent small as selected.
                 SmallButton.Background = buttonColor;
-                MediumButton.ClearValue(Control.BackgroundProperty);
-                LargeButton.ClearValue(Control.BackgroundProperty);
-
+                
                 //Show or hide correct property buttons for the drink.
                 SweetButton.IsEnabled = false;
                 SweetButton.Visibility = Visibility.Hidden;
@@ -158,15 +143,7 @@ namespace PointOfSale
 
                 JurassicJavaButton.BorderBrush = buttonColor;
                 JurassicJavaButton.BorderThickness = buttonBorderThickness;
-                DecafButton.ClearValue(Control.BackgroundProperty);
 
-                //Clear border values for other drink buttons.
-                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-                WaterButton.ClearValue(Control.BorderBrushProperty);
-                WaterButton.ClearValue(Control.BorderThicknessProperty);
             }
         }
 
@@ -177,16 +154,14 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectWater(object obj, RoutedEventArgs args)
+        private void SelectWater(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(Sodasaurus))
+            if (Drink.GetType() != typeof(Water))
             {
                 Drink = new Water();
-
+                ClearButtonValues();
                 //Set the size buttons to represent small as selected.
                 SmallButton.Background = buttonColor;
-                MediumButton.ClearValue(Control.BackgroundProperty);
-                LargeButton.ClearValue(Control.BackgroundProperty);
 
                 //Show or hide correct property buttons for the drink.
                 SweetButton.IsEnabled = false;
@@ -196,16 +171,10 @@ namespace PointOfSale
                 FlavorButton.IsEnabled = false;
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
+
                 WaterButton.BorderBrush = buttonColor;
                 WaterButton.BorderThickness = buttonBorderThickness;
-
-                //Clear border values for other drink buttons.
-                SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-                SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-                TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-                TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-                JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-                JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+                IceButton.Background = buttonColor;
             }
         }
 
@@ -214,7 +183,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectFlavor(object obj, RoutedEventArgs args)
+        private void SelectFlavor(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new FlavorSelection());
         }
@@ -223,18 +192,21 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSweet(object obj, RoutedEventArgs args)
+        private void SelectSweet(object sender, RoutedEventArgs args)
         {
-            Tyrannotea tea = (Tyrannotea)Drink;
-            if (tea.Sweet)
+            Tyrannotea tea = Drink as Tyrannotea;
+            if (tea != null)
             {
-                tea.Sweet = false;
-                SweetButton.ClearValue(Control.BackgroundProperty);
-            }
-            else
-            {
-                tea.Sweet = true;
-                SweetButton.Background = buttonColor;
+                if (tea.Sweet)
+                {
+                    tea.Sweet = false;
+                    SweetButton.ClearValue(Control.BackgroundProperty);
+                }
+                else
+                {
+                    tea.Sweet = true;
+                    SweetButton.Background = buttonColor;
+                }
             }
         }
 
@@ -243,30 +215,31 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectDecaf(object obj, RoutedEventArgs args)
+        private void SelectDecaf(object sender, RoutedEventArgs args)
         {
-            JurassicJava java = (JurassicJava)Drink;
-            if (java.Decaf)
+            if (Drink is JurassicJava java)
             {
-                java.Decaf = false;
-                DecafButton.ClearValue(Control.BackgroundProperty);
-            }
-            else
-            {
-                java.Decaf = true;
-                DecafButton.Background = buttonColor;
+                if (java.Decaf)
+                {
+                    java.Decaf = false;
+                    DecafButton.ClearValue(Control.BackgroundProperty);
+                }
+                else
+                {
+                    java.Decaf = true;
+                    DecafButton.Background = buttonColor;
+                }
             }
         }
         /// <summary>
-        /// Determines
+        /// Determines whether the drink has a lemon.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectLemon(object obj, RoutedEventArgs args)
+        private void SelectLemon(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() == typeof(Water))
+            if (Drink is Water water)
             {
-                Water water = (Water)Drink;
                 if (water.Lemon)
                 {
                     water.RemoveLemon();
@@ -278,9 +251,8 @@ namespace PointOfSale
                     LemonButton.Background = buttonColor;
                 }
             }
-            if (Drink.GetType() == typeof(Tyrannotea))
+            if (Drink is Tyrannotea tea)
             {
-                Tyrannotea tea = (Tyrannotea)Drink;
                 if (tea.Lemon)
                 {
                     tea.RemoveLemon();
@@ -293,13 +265,31 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// Determines whether the drink has ice.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectIce(object sender, RoutedEventArgs args)
+        {
+            if (Drink.Ice)
+            {
+                Drink.HoldIce();
+                IceButton.ClearValue(BackgroundProperty);
+            }
+            else
+            {
+                Drink.Ice = true;
+                IceButton.Background = buttonColor;
+            }
+        }
 
         /// <summary>
         /// Sets the size of the combo to small.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSmall(object obj, RoutedEventArgs args)
+        private void SelectSmall(object sender, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Small;
             SmallButton.Background = buttonColor;
@@ -312,7 +302,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectMedium(object obj, RoutedEventArgs args)
+        private void SelectMedium(object sender, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
@@ -325,12 +315,34 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectLarge(object obj, RoutedEventArgs args)
+        private void SelectLarge(object sender, RoutedEventArgs args)
         {
             Drink.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.Background = buttonColor;
+        }
+
+        private void ClearButtonValues()
+        {
+            WaterButton.ClearValue(Control.BorderBrushProperty);
+            WaterButton.ClearValue(Control.BorderThicknessProperty);
+            SodasaurusButton.ClearValue(Control.BorderBrushProperty);
+            SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
+            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
+            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
+            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
+            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+
+            SmallButton.ClearValue(Control.BackgroundProperty);
+            MediumButton.ClearValue(Control.BackgroundProperty);
+            LargeButton.ClearValue(Control.BackgroundProperty);
+
+            FlavorButton.ClearValue(Control.BackgroundProperty);
+            DecafButton.ClearValue(Control.BackgroundProperty);
+            SweetButton.ClearValue(Control.BackgroundProperty);
+            LemonButton.ClearValue(Control.BackgroundProperty);
+            IceButton.ClearValue(Control.BackgroundProperty);
         }
     }
 }

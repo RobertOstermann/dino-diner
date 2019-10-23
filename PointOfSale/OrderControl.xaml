@@ -24,7 +24,8 @@
                 </TextBlock>
             </Border>
             <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}"
-                       FontFamily="Tahoma" FontSize="16" Background="Transparent" Name="OrderList">
+                     FontFamily="Tahoma" FontSize="16" Background="Transparent" Name="OrderList"
+                     IsSynchronizedWithCurrentItem="True" SelectionChanged="OnSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

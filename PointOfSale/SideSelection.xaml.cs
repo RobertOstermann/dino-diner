@@ -38,9 +38,10 @@ namespace PointOfSale
 
         public void AddFryceritops(object sender, RoutedEventArgs args)
         {
-            Order order = (Order)DataContext;
-            side = new Fryceritops();
-            order.Items.Add(side);
+            if (DataContext is Order order)
+            {
+                order.Items.Add(side);
+            }
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectSmall(object obj, RoutedEventArgs args)
+        private void SelectSmall(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Small;
             SmallButton.Background = Brushes.LightGreen;
@@ -61,7 +62,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectMedium(object obj, RoutedEventArgs args)
+        private void SelectMedium(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
@@ -74,7 +75,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
-        private void SelectLarge(object obj, RoutedEventArgs args)
+        private void SelectLarge(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);
