@@ -193,6 +193,16 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void HoldIceShouldNotifyOfSpecialPropertyChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.HoldIce();
+            });
+        }
+
+        [Fact]
         public void ShouldHaveEmptySpecialListByDefault()
         {
             JurassicJava java = new JurassicJava();

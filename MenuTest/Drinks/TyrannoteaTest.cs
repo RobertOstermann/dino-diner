@@ -97,6 +97,15 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void AddIceShouldAddIce()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.HoldIce();
+            tea.AddIce();
+            Assert.True(tea.Ice);
+        }
+
+        [Fact]
         public void HoldIceShouldRemoveIce()
         {
             Tyrannotea tea = new Tyrannotea();

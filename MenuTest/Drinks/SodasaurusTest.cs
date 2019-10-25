@@ -154,6 +154,15 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void AddIceShouldAddIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            soda.AddIce();
+            Assert.True(soda.Ice);
+        }
+
+        [Fact]
         public void HoldIceShouldRemoveIce()
         {
             Sodasaurus soda = new Sodasaurus();
@@ -194,6 +203,16 @@ namespace MenuTest.Drinks
             Assert.PropertyChanged(soda, "Special", () =>
             {
                 soda.HoldIce();
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldNotifyOfSpecialPropertyChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Special", () =>
+            {
+                soda.AddIce();
             });
         }
 

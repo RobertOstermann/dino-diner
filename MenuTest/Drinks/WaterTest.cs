@@ -96,6 +96,15 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void AddIceShouldAddIce()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            water.AddIce();
+            Assert.True(water.Ice);
+        }
+
+        [Fact]
         public void HoldIceShouldRemoveIce()
         {
             Water water = new Water();
@@ -141,6 +150,16 @@ namespace MenuTest.Drinks
             Assert.PropertyChanged(water, "Special", () =>
             {
                 water.HoldIce();
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldNotifyOfSpecialPropertyChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Special", () =>
+            {
+                water.AddIce();
             });
         }
 

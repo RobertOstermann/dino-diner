@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
         public JurassicJava()
         {
             Size = Size.Small;
-            Ice = false;
+            HoldIce();
             Price = 0.59;
             Calories = 2;
         }
@@ -105,14 +105,7 @@ namespace DinoDiner.Menu
             RoomForCream = false;
             NotifyOfPropertyChange("Special");
         }
-        /// <summary>
-        /// Sets the ice property to true.
-        /// </summary>
-        public void AddIce()
-        {
-            Ice = true;
-            NotifyOfPropertyChange("Special");
-        }
+
         /// <summary>
         /// Overrides the ToString method.
         /// </summary>

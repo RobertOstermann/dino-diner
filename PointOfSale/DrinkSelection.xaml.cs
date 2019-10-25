@@ -289,7 +289,7 @@ namespace PointOfSale
             }
             else
             {
-                Drink.Ice = true;
+                Drink.AddIce();
                 IceButton.Background = buttonColor;
             }
         }
