@@ -128,6 +128,12 @@
                         Lemon
                     </TextBlock>
                 </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1"
+                        Name="CreamButton" Click="SelectCream">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Room for Cream
+                    </TextBlock>
+                </Button>
                 <Button Style="{StaticResource SimpleButton}" Grid.Row="2"
                         Name="IceButton" Click="SelectIce">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">

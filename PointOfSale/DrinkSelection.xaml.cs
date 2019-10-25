@@ -36,14 +36,12 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            HideAndDisableButtons();
             Drink = new Water();
             SmallButton.Background = buttonColor;
-            SweetButton.IsEnabled = false;
-            SweetButton.Visibility = Visibility.Hidden;
-            DecafButton.IsEnabled = false;
-            DecafButton.Visibility = Visibility.Hidden;
-            FlavorButton.IsEnabled = false;
             FlavorButton.Visibility = Visibility.Visible;
+            LemonButton.IsEnabled = true;
+            LemonButton.Visibility = Visibility.Visible;
             WaterButton.BorderBrush = buttonColor;
             WaterButton.BorderThickness = buttonBorderThickness;
             IceButton.Background = buttonColor;
@@ -67,17 +65,12 @@ namespace PointOfSale
             {
                 Drink = new Sodasaurus();
                 ClearButtonValues();
-                //Set the size buttons to represent small as selected.
+                HideAndDisableButtons();
+                //Activate the correct buttons.
                 SmallButton.Background = buttonColor;
-
-                //Show or hide correct property buttons for the drink.
-                SweetButton.IsEnabled = false;
-                SweetButton.Visibility = Visibility.Hidden;
-                DecafButton.IsEnabled = false;
-                DecafButton.Visibility = Visibility.Hidden;
                 FlavorButton.IsEnabled = true;
                 FlavorButton.Visibility = Visibility.Visible;
-                LemonButton.IsEnabled = false;
+                LemonButton.Visibility = Visibility.Visible;
 
                 SodasaurusButton.BorderBrush = buttonColor;
                 SodasaurusButton.BorderThickness = buttonBorderThickness;
@@ -98,17 +91,13 @@ namespace PointOfSale
             {
                 Drink = new Tyrannotea();
                 ClearButtonValues();
-                //Set the size buttons to represent small as selected.
+                HideAndDisableButtons();
+                //Activate the correct buttons.
                 SmallButton.Background = buttonColor;
-
-                //Show or hide correct property buttons for the drink.
                 SweetButton.IsEnabled = true;
                 SweetButton.Visibility = Visibility.Visible;
-                DecafButton.IsEnabled = false;
-                DecafButton.Visibility = Visibility.Hidden;
-                FlavorButton.IsEnabled = false;
-                FlavorButton.Visibility = Visibility.Hidden;
                 LemonButton.IsEnabled = true;
+                LemonButton.Visibility = Visibility.Visible;
 
                 TyrannoteaButton.BorderBrush = buttonColor;
                 TyrannoteaButton.BorderThickness = buttonBorderThickness;
@@ -129,17 +118,13 @@ namespace PointOfSale
             {
                 Drink = new JurassicJava();
                 ClearButtonValues();
-                //Set the size buttons to represent small as selected.
+                HideAndDisableButtons();
+                //Activate the correct buttons.
                 SmallButton.Background = buttonColor;
-                
-                //Show or hide correct property buttons for the drink.
-                SweetButton.IsEnabled = false;
-                SweetButton.Visibility = Visibility.Hidden;
                 DecafButton.IsEnabled = true;
                 DecafButton.Visibility = Visibility.Visible;
-                FlavorButton.IsEnabled = false;
-                FlavorButton.Visibility = Visibility.Hidden;
-                LemonButton.IsEnabled = false;
+                CreamButton.IsEnabled = true;
+                CreamButton.Visibility = Visibility.Visible;
 
                 JurassicJavaButton.BorderBrush = buttonColor;
                 JurassicJavaButton.BorderThickness = buttonBorderThickness;
@@ -160,17 +145,14 @@ namespace PointOfSale
             {
                 Drink = new Water();
                 ClearButtonValues();
+                HideAndDisableButtons();
                 //Set the size buttons to represent small as selected.
                 SmallButton.Background = buttonColor;
 
                 //Show or hide correct property buttons for the drink.
-                SweetButton.IsEnabled = false;
-                SweetButton.Visibility = Visibility.Hidden;
-                DecafButton.IsEnabled = false;
-                DecafButton.Visibility = Visibility.Hidden;
-                FlavorButton.IsEnabled = false;
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
+                LemonButton.Visibility = Visibility.Visible;
 
                 WaterButton.BorderBrush = buttonColor;
                 WaterButton.BorderThickness = buttonBorderThickness;
@@ -266,6 +248,28 @@ namespace PointOfSale
             }
         }
         /// <summary>
+        /// Determines whether the drink has room for cream.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectCream(object sender, RoutedEventArgs args)
+        {
+            if (Drink is JurassicJava java)
+            {
+                if (java.RoomForCream)
+                {
+                    java.RemoveRoomForCream();
+                    CreamButton.ClearValue(BackgroundProperty);
+                }
+                else
+                {
+                    java.LeaveRoomForCream();
+                    CreamButton.Background = buttonColor;
+                }
+            }
+        }
+
+        /// <summary>
         /// Determines whether the drink has ice.
         /// </summary>
         /// <param name="sender"></param>
@@ -342,7 +346,23 @@ namespace PointOfSale
             DecafButton.ClearValue(Control.BackgroundProperty);
             SweetButton.ClearValue(Control.BackgroundProperty);
             LemonButton.ClearValue(Control.BackgroundProperty);
+            CreamButton.ClearValue(Control.BackgroundProperty);
             IceButton.ClearValue(Control.BackgroundProperty);
+        }
+
+        private void HideAndDisableButtons()
+        {
+            FlavorButton.IsEnabled = false;
+            FlavorButton.Visibility = Visibility.Hidden;
+            DecafButton.IsEnabled = false;
+            DecafButton.Visibility = Visibility.Hidden;
+            SweetButton.IsEnabled = false;
+            SweetButton.Visibility = Visibility.Hidden;
+            LemonButton.IsEnabled = false;
+            LemonButton.Visibility = Visibility.Hidden;
+            CreamButton.IsEnabled = false;
+            CreamButton.Visibility = Visibility.Hidden;
+            IceButton.IsEnabled = true;
         }
     }
 }

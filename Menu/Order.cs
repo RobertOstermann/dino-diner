@@ -4,16 +4,22 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event handler for the property changes.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Represents the items added to the order.
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
+        public ObservableCollection<IOrderItem> Items { get; set; }
         /// <summary>
         /// Calculates the price of all order items.
         /// </summary>
@@ -26,8 +32,7 @@ namespace DinoDiner.Menu
                 {
                     subtotalCost += i.Price;
                 }
-                if (subtotalCost < 0) subtotalCost = 0;
-                return subtotalCost;
+                return Math.Max(subtotalCost, 0);
             }
         }
         /// <summary>
@@ -53,6 +58,19 @@ namespace DinoDiner.Menu
             {
                 return SubtotalCost + SalesTaxCost;
             }
+        }
+
+        public Order()
+        {
+            Items = new ObservableCollection<IOrderItem>();
+            Items.CollectionChanged += OnCollectionChanged;
+        }
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
     }
 }

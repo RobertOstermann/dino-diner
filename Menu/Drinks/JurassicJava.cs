@@ -88,12 +88,21 @@ namespace DinoDiner.Menu
                 }
             }
         }
+
         /// <summary>
         /// Sets the room for cream property to true.
         /// </summary>
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Sets the room for cream property to true.
+        /// </summary>
+        public void RemoveRoomForCream()
+        {
+            RoomForCream = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

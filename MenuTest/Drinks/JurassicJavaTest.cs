@@ -127,6 +127,15 @@ namespace MenuTest.Drinks
             Assert.True(java.RoomForCream);
         }
 
+        [Fact]
+        public void RemoveSpaceForCreamShouldRemoveSpaceForCream()
+        {
+            JurassicJava java = new JurassicJava();
+            java.LeaveRoomForCream();
+            java.RemoveRoomForCream();
+            Assert.False(java.RoomForCream);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
@@ -160,6 +169,16 @@ namespace MenuTest.Drinks
             Assert.PropertyChanged(java, "Special", () =>
             {
                 java.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void RemoveRoomForCreamShouldNotifyOfSpecialPropertyChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.RemoveRoomForCream();
             });
         }
 
