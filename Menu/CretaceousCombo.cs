@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -14,6 +15,9 @@ namespace DinoDiner.Menu
         public Side Side { get; set; }
 
         private Size size = Size.Small;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets and sets the size of the combo.
         /// </summary>

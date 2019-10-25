@@ -66,11 +66,17 @@ namespace DinoDiner.Menu
             Items.CollectionChanged += OnCollectionChanged;
         }
 
-        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+        private void OnCollectionChanged(object sender, EventArgs args)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+        }
+
+        public void Add(IOrderItem item)
+        {
+            item.PropertyChanged += OnCollectionChanged;
+            Items.Add(item);
         }
     }
 }

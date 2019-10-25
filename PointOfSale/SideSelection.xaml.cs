@@ -36,14 +36,6 @@ namespace PointOfSale
             SmallButton.Background = Brushes.LightGreen;
         }
 
-        public void AddFryceritops(object sender, RoutedEventArgs args)
-        {
-            if (DataContext is Order order)
-            {
-                order.Items.Add(side);
-            }
-        }
-
         /// <summary>
         /// Sets the size of the combo to small.
         /// </summary>
