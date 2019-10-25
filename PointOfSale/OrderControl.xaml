@@ -11,7 +11,9 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="22.5"/>
                 <RowDefinition Height="8*"/>
-                <RowDefinition Height="22.5"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -28,19 +30,33 @@
                      IsSynchronizedWithCurrentItem="True" SelectionChanged="OnSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Path=Description}"/>
-                            <ListBox ItemsSource="{Binding Path=Special}" Background="Transparent" BorderThickness="0"/>
+                        <StackPanel Width="190">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" 
+                                           Text="{Binding Path=Description}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>
+                                <Button Click="OnRemoveItem" Height="20" FontSize="14" Background="Red" Foreground="White" Grid.Column="1">
+                                    X
+                                </Button>
+                            </Grid>
+                            <ListBox ItemsSource="{Binding Path=Special}" Margin="15,0,0,0" FontSize="14" Background="Transparent" BorderThickness="0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Border BorderThickness="0, 0, .5, .5" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2">
-                <TextBlock TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2"
-                       FontFamily="Tahoma" FontSize="16" Name="OrderPrice" Text="Price - $___"/>
-            </Border>
-            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="0">Cancel</Button>
-            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="3" Grid.Column="1">Pay</Button>
+            <Border BorderThickness="0, 0, .5, 0" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <TextBlock TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2"
+                       FontFamily="Tahoma" FontSize="14" Name="OrderSubtotal" Text="{Binding Path=SubtotalCost, StringFormat='Subtotal - {0:c}'}"/>
+            <TextBlock TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="2"
+                       FontFamily="Tahoma" FontSize="14" Name="OrderTax" Text="{Binding Path=SalesTaxCost, StringFormat='Tax - {0:c}'}"/>
+            <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.ColumnSpan="2"
+                       FontFamily="Tahoma" FontSize="14" Name="OrderTotal" Text="{Binding Path=TotalCost, StringFormat='Total - {0:c}'}"/>
+            <Border BorderThickness="0, .5, 0, 0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="5" Grid.Column="0">Cancel</Button>
+            <Button Style="{StaticResource SimpleButton}" FontSize="16" Grid.Row="5" Grid.Column="1">Pay</Button>
         </Grid>
     </Border>
 </UserControl>

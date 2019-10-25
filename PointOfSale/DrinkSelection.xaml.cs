@@ -75,6 +75,12 @@ namespace PointOfSale
                 SodasaurusButton.BorderBrush = buttonColor;
                 SodasaurusButton.BorderThickness = buttonBorderThickness;
                 IceButton.Background = buttonColor;
+
+                //DELETE
+                if (DataContext is Order order)
+                {
+                    order.Items.Add(Drink);
+                }
             }
         }
 

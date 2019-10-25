@@ -30,7 +30,6 @@ namespace PointOfSale
             OrderList.NavigationService = OrderInterface.NavigationService;
             //Bunch of BS
             Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
             tea.Sweet = true;
@@ -39,6 +38,7 @@ namespace PointOfSale
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = DinoDiner.Menu.Size.Medium;
             order.Items.Add(mmc);
+            order.Items.Add(new Brontowurst());
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
