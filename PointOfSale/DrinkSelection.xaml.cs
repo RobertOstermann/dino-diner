@@ -45,11 +45,16 @@ namespace PointOfSale
             WaterButton.BorderBrush = buttonColor;
             WaterButton.BorderThickness = buttonBorderThickness;
             IceButton.Background = buttonColor;
-            //Wait until DataContext is loaded.
+        }
+
+        private void SelectAddItem(object sender, RoutedEventArgs args)
+        {
             if (DataContext is Order order)
             {
                 order.Items.Add(Drink);
+                NavigationService.Navigate(new MenuCategorySelection());
             }
+
         }
 
         /// <summary>
@@ -75,12 +80,6 @@ namespace PointOfSale
                 SodasaurusButton.BorderBrush = buttonColor;
                 SodasaurusButton.BorderThickness = buttonBorderThickness;
                 IceButton.Background = buttonColor;
-
-                //DELETE
-                if (DataContext is Order order)
-                {
-                    order.Items.Add(Drink);
-                }
             }
         }
 
