@@ -6,7 +6,7 @@
     <Application.Resources>
         <!--Simple Button Style.-->
         <Style x:Key="SimpleButton" TargetType="Button">
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
             <Setter Property="Background" Value="Gainsboro"/>
             <Setter Property="FontSize" Value="32"/>
             <Setter Property="FontFamily" Value="Tahoma"/>

@@ -19,8 +19,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource BackgroundImageButton}"
-                Grid.Row="0" Grid.Column="0">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="0" Grid.Column="0" 
+                Name="BrontowurstButton" Click="SelectBrontowurst">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png" Opacity="0.25"/>
             </Button.Background>
@@ -28,8 +28,8 @@
                 Brontowurst
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="0" Grid.Column="1">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="0" Grid.Column="1"
+                Name="DinoNuggetsButton" Click="SelectDinoNuggets">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png" Opacity="0.25"/>
             </Button.Background>
@@ -37,8 +37,8 @@
                 Dino-Nuggets
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="0" Grid.Column="3">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="0" Grid.Column="3"
+                Name="PrehistoricPBJButton" Click="SelectPrehistoricPBJ">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png" Opacity="0.25"/>
             </Button.Background>
@@ -46,8 +46,8 @@
                 Prehistoric PB&amp;J
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="1" Grid.Column="1">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="1" Grid.Column="0"
+                Name="PterodactylWingsButton" Click="SelectPterodactylWings">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png" Opacity="0.25"/>
             </Button.Background>
@@ -55,8 +55,8 @@
                 Pterodactyl Wings
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="2" Grid.Column="0">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="1" Grid.Column="1"
+                Name="SteakosaurusBurgerButton" Click="SelectSteakosaurusBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png" Opacity="0.25"/>
             </Button.Background>
@@ -64,8 +64,8 @@
                 Steakosaurus Burger
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="2" Grid.Column="1">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="1" Grid.Column="3"
+                Name="TRexKingburgerButton" Click="SelectTRexKingburger">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png" Opacity="0.25"/>
             </Button.Background>
@@ -73,13 +73,25 @@
                 T-Rex Kingburger
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource BackgroundImageButton}" 
-                Grid.Row="2" Grid.Column="2">
+        <Button Style="{StaticResource BackgroundImageButton}" Grid.Row="2" Grid.Column="0"
+                Name="VelociWrapButton" Click="SelectVelociWrap">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Veloci-Wrap
+            </TextBlock>
+        </Button>
+        <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="2" Grid.Column="1"
+                        Name="CancelButton" Click="SelectCancel">
+            <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Cancel
+            </TextBlock>
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.Column="2"
+                        Name="AddToOrderButton" Click="SelectAddToOrder">
+            <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Add to Order
             </TextBlock>
         </Button>
     </Grid>

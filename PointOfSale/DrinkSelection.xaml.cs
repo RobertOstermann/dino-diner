@@ -36,25 +36,33 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
-            HideAndDisableButtons();
-            Drink = new Water();
-            SmallButton.Background = buttonColor;
+            DisableButtons();
             FlavorButton.Visibility = Visibility.Visible;
-            LemonButton.IsEnabled = true;
             LemonButton.Visibility = Visibility.Visible;
-            WaterButton.BorderBrush = buttonColor;
-            WaterButton.BorderThickness = buttonBorderThickness;
-            IceButton.Background = buttonColor;
         }
-
-        private void SelectAddItem(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Adds the drink to the order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectAddToOrder(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
                 order.Add(Drink);
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+        }
 
+        /// <summary>
+        /// Returns to the category selection page.
+        /// Does not add the drink to the order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectCancel(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -66,7 +74,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSodasaurus(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(Sodasaurus))
+            if (!(Drink is Sodasaurus))
             {
                 Drink = new Sodasaurus();
                 ClearButtonValues();
@@ -92,7 +100,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectTyrannotea(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(Tyrannotea))
+            if (!(Drink is Tyrannotea))
             {
                 Drink = new Tyrannotea();
                 ClearButtonValues();
@@ -119,7 +127,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectJurrasicJava(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(JurassicJava))
+            if (!(Drink is JurassicJava))
             {
                 Drink = new JurassicJava();
                 ClearButtonValues();
@@ -146,7 +154,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectWater(object sender, RoutedEventArgs args)
         {
-            if (Drink.GetType() != typeof(Water))
+            if (!(Drink is Water))
             {
                 Drink = new Water();
                 ClearButtonValues();
@@ -368,6 +376,26 @@ namespace PointOfSale
             CreamButton.IsEnabled = false;
             CreamButton.Visibility = Visibility.Hidden;
             IceButton.IsEnabled = true;
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+            AddToOrderButton.IsEnabled = true;
+        }
+        /// <summary>
+        /// Disables all the non-drink buttons.
+        /// </summary>
+        private void DisableButtons()
+        {
+            SmallButton.IsEnabled = false;
+            MediumButton.IsEnabled = false;
+            LargeButton.IsEnabled = false;
+            FlavorButton.IsEnabled = false;
+            DecafButton.IsEnabled = false;
+            SweetButton.IsEnabled = false;
+            LemonButton.IsEnabled = false;
+            CreamButton.IsEnabled = false;
+            IceButton.IsEnabled = false;
+            AddToOrderButton.IsEnabled = false;
         }
     }
 }

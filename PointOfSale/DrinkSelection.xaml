@@ -73,6 +73,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button Style="{StaticResource SimpleButton}" Grid.Row="0"
                         Name="SmallButton" Click="SelectSmall">
@@ -92,6 +93,12 @@
                         Large
                     </TextBlock>
                 </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3"
+                        Name="CancelButton" Click="SelectCancel">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Cancel
+                    </TextBlock>
+                </Button>
             </Grid>
         </DockPanel>
         <DockPanel Grid.Column="2">
@@ -100,6 +107,7 @@
             </TextBlock>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -138,6 +146,12 @@
                         Name="IceButton" Click="SelectIce">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Ice
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3"
+                        Name="AddToOrderButton" Click="SelectAddToOrder">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Add to Order
                     </TextBlock>
                 </Button>
             </Grid>

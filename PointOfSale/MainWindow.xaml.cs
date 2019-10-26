@@ -28,17 +28,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             OrderList.NavigationService = OrderInterface.NavigationService;
-            //Bunch of BS
-            Order order = (Order)DataContext;
-            Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
-            tea.Sweet = true;
-            tea.Size = DinoDiner.Menu.Size.Medium;
-            order.Items.Add(tea);
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = DinoDiner.Menu.Size.Medium;
-            order.Items.Add(mmc);
-            order.Items.Add(new Brontowurst());
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
