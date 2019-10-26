@@ -24,7 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-        public Entree Entree { get; private set; }
+        private Entree entree;
 
         private Brush buttonColor = Brushes.LightGreen;
 
@@ -45,7 +45,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Add(Entree);
+                order.Add(entree);
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
@@ -66,7 +66,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectBrontowurst(object sender, RoutedEventArgs args)
         {
-            Entree = new Brontowurst();
+            entree = new Brontowurst();
             EnableButtons();
             ClearButtonValues();
             BrontowurstButton.BorderBrush = buttonColor;
@@ -80,7 +80,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectDinoNuggets(object sender, RoutedEventArgs args)
         {
-            Entree = new DinoNuggets();
+            entree = new DinoNuggets();
             EnableButtons();
             ClearButtonValues();
             DinoNuggetsButton.BorderBrush = buttonColor;
@@ -94,7 +94,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
-            Entree = new PrehistoricPBJ();
+            entree = new PrehistoricPBJ();
             EnableButtons();
             ClearButtonValues();
             PrehistoricPBJButton.BorderBrush = buttonColor;
@@ -108,7 +108,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPterodactylWings(object sender, RoutedEventArgs args)
         {
-            Entree = new PterodactylWings();
+            entree = new PterodactylWings();
             EnableButtons();
             ClearButtonValues();
             PterodactylWingsButton.BorderBrush = buttonColor;
@@ -122,7 +122,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
-            Entree = new SteakosaurusBurger();
+            entree = new SteakosaurusBurger();
             EnableButtons();
             ClearButtonValues();
             SteakosaurusBurgerButton.BorderBrush = buttonColor;
@@ -136,7 +136,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectTRexKingburger(object sender, RoutedEventArgs args)
         {
-            Entree = new TRexKingBurger();
+            entree = new TRexKingBurger();
             EnableButtons();
             ClearButtonValues();
             TRexKingburgerButton.BorderBrush = buttonColor;
@@ -150,7 +150,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectVelociWrap(object sender, RoutedEventArgs args)
         {
-            Entree = new VelociWrap();
+            entree = new VelociWrap();
             EnableButtons();
             ClearButtonValues();
             VelociWrapButton.BorderBrush = buttonColor;
@@ -173,7 +173,6 @@ namespace PointOfSale
             TRexKingburgerButton.ClearValue(Control.BorderThicknessProperty);
             VelociWrapButton.ClearValue(Control.BorderBrushProperty);
             VelociWrapButton.ClearValue(Control.BorderThicknessProperty);
-
         }
 
         private void EnableButtons()

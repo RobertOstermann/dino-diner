@@ -26,7 +26,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button Style="{StaticResource SimpleButton}" Grid.Row="0"
-                        Name="SelectFryceritops">
+                        Name="FryceritopsButton" Click="SelectFryceritops">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-08.png" Opacity="0.25"/>
                     </Button.Background>
@@ -34,7 +34,8 @@
                         Fryceritops
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="1">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1"
+                        Name="MeteorMacAndCheeseButton" Click="SelectMeteorMacAndCheese">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-09.png" Opacity="0.25"/>
                     </Button.Background>
@@ -42,7 +43,8 @@
                         Meteor Mac &amp; Cheese
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="2">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2"
+                        Name="MezzorellaSticksButton" Click="SelectMezzorellaSticks">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-10.png" Opacity="0.25"/>
                     </Button.Background>
@@ -50,7 +52,8 @@
                         Mezzorella Sticks
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3">
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3"
+                        Name="TriceritotsButton" Click="SelectTriceritots">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-11.png" Opacity="0.25"/>
                     </Button.Background>
@@ -69,23 +72,40 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="0"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Grid.ColumnSpan="2"
                         Name="SmallButton" Click="SelectSmall">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Small
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="1"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.ColumnSpan="2"
                         Name="MediumButton" Click="SelectMedium">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Medium
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="2"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Grid.ColumnSpan="2"
                         Name="LargeButton" Click="SelectLarge">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Large
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="0"
+                        Name="CancelButton" Click="SelectCancel">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Cancel
+                    </TextBlock>
+                </Button>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="1"
+                        Name="AddToOrderButton" Click="SelectAddToOrder">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Add to Order
                     </TextBlock>
                 </Button>
             </Grid>
