@@ -72,6 +72,7 @@ namespace PointOfSale
             EnableButtons();
             ClearButtonValues();
             side = new Fryceritops();
+            SmallButton.Background = buttonColor;
             FryceritopsButton.BorderBrush = buttonColor;
             FryceritopsButton.BorderThickness = buttonBorderThickness;
         }
@@ -86,6 +87,7 @@ namespace PointOfSale
             EnableButtons();
             ClearButtonValues();
             side = new MeteorMacAndCheese();
+            SmallButton.Background = buttonColor;
             MeteorMacAndCheeseButton.BorderBrush = buttonColor;
             MeteorMacAndCheeseButton.BorderThickness = buttonBorderThickness;
         }
@@ -99,7 +101,8 @@ namespace PointOfSale
         {
             EnableButtons();
             ClearButtonValues();
-            side = new Fryceritops();
+            side = new MezzorellaSticks();
+            SmallButton.Background = buttonColor;
             MezzorellaSticksButton.BorderBrush = buttonColor;
             MezzorellaSticksButton.BorderThickness = buttonBorderThickness;
         }
@@ -113,7 +116,8 @@ namespace PointOfSale
         {
             EnableButtons();
             ClearButtonValues();
-            side = new Fryceritops();
+            side = new Triceritots();
+            SmallButton.Background = buttonColor;
             TriceritotsButton.BorderBrush = buttonColor;
             TriceritotsButton.BorderThickness = buttonBorderThickness;
         }
@@ -167,6 +171,10 @@ namespace PointOfSale
             MezzorellaSticksButton.ClearValue(Control.BorderThicknessProperty);
             TriceritotsButton.ClearValue(Control.BorderBrushProperty);
             TriceritotsButton.ClearValue(Control.BorderThicknessProperty);
+
+            SmallButton.ClearValue(Control.BackgroundProperty);
+            MediumButton.ClearValue(Control.BackgroundProperty);
+            LargeButton.ClearValue(Control.BackgroundProperty);
         }
         /// <summary>
         /// Enables all buttons.
