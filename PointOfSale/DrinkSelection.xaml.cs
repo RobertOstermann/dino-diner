@@ -306,6 +306,9 @@ namespace PointOfSale
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.Background = buttonColor;
         }
+        /// <summary>
+        /// Sets the correct button properties and visibilities.
+        /// </summary>
         private void SetUpDrinkSelection()
         {
             DisableButtons();

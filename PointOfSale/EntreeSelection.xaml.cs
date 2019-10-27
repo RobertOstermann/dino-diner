@@ -67,10 +67,7 @@ namespace PointOfSale
         private void SelectBrontowurst(object sender, RoutedEventArgs args)
         {
             entree = new Brontowurst();
-            EnableButtons();
-            ClearButtonValues();
-            BrontowurstButton.BorderBrush = buttonColor;
-            BrontowurstButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -81,10 +78,7 @@ namespace PointOfSale
         private void SelectDinoNuggets(object sender, RoutedEventArgs args)
         {
             entree = new DinoNuggets();
-            EnableButtons();
-            ClearButtonValues();
-            DinoNuggetsButton.BorderBrush = buttonColor;
-            DinoNuggetsButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -95,10 +89,7 @@ namespace PointOfSale
         private void SelectPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
             entree = new PrehistoricPBJ();
-            EnableButtons();
-            ClearButtonValues();
-            PrehistoricPBJButton.BorderBrush = buttonColor;
-            PrehistoricPBJButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -109,10 +100,7 @@ namespace PointOfSale
         private void SelectPterodactylWings(object sender, RoutedEventArgs args)
         {
             entree = new PterodactylWings();
-            EnableButtons();
-            ClearButtonValues();
-            PterodactylWingsButton.BorderBrush = buttonColor;
-            PterodactylWingsButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -123,10 +111,7 @@ namespace PointOfSale
         private void SelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
             entree = new SteakosaurusBurger();
-            EnableButtons();
-            ClearButtonValues();
-            SteakosaurusBurgerButton.BorderBrush = buttonColor;
-            SteakosaurusBurgerButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -137,10 +122,7 @@ namespace PointOfSale
         private void SelectTRexKingburger(object sender, RoutedEventArgs args)
         {
             entree = new TRexKingBurger();
-            EnableButtons();
-            ClearButtonValues();
-            TRexKingburgerButton.BorderBrush = buttonColor;
-            TRexKingburgerButton.BorderThickness = buttonBorderThickness;
+            SetUpEntreeSelection();
         }
 
         /// <summary>
@@ -151,10 +133,54 @@ namespace PointOfSale
         private void SelectVelociWrap(object sender, RoutedEventArgs args)
         {
             entree = new VelociWrap();
-            EnableButtons();
+            SetUpEntreeSelection();
+        }
+
+        private void SetUpEntreeSelection()
+        {
             ClearButtonValues();
-            VelociWrapButton.BorderBrush = buttonColor;
-            VelociWrapButton.BorderThickness = buttonBorderThickness;
+            if (entree is Brontowurst)
+            {
+                AddToOrderButton.IsEnabled = true;
+                BrontowurstButton.BorderBrush = buttonColor;
+                BrontowurstButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is DinoNuggets)
+            {
+                AddToOrderButton.IsEnabled = true;
+                DinoNuggetsButton.BorderBrush = buttonColor;
+                DinoNuggetsButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is PrehistoricPBJ)
+            {
+                AddToOrderButton.IsEnabled = true;
+                PrehistoricPBJButton.BorderBrush = buttonColor;
+                PrehistoricPBJButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is PterodactylWings)
+            {
+                AddToOrderButton.IsEnabled = true;
+                PterodactylWingsButton.BorderBrush = buttonColor;
+                PterodactylWingsButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is SteakosaurusBurger)
+            {
+                AddToOrderButton.IsEnabled = true;
+                SteakosaurusBurgerButton.BorderBrush = buttonColor;
+                SteakosaurusBurgerButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is TRexKingBurger)
+            {
+                AddToOrderButton.IsEnabled = true;
+                TRexKingburgerButton.BorderBrush = buttonColor;
+                TRexKingburgerButton.BorderThickness = buttonBorderThickness;
+            }
+            if (entree is VelociWrap)
+            {
+                AddToOrderButton.IsEnabled = true;
+                VelociWrapButton.BorderBrush = buttonColor;
+                VelociWrapButton.BorderThickness = buttonBorderThickness;
+            }
         }
 
         private void ClearButtonValues()
@@ -173,11 +199,6 @@ namespace PointOfSale
             TRexKingburgerButton.ClearValue(Control.BorderThicknessProperty);
             VelociWrapButton.ClearValue(Control.BorderBrushProperty);
             VelociWrapButton.ClearValue(Control.BorderThicknessProperty);
-        }
-
-        private void EnableButtons()
-        {
-            AddToOrderButton.IsEnabled = true;
         }
     }
 }

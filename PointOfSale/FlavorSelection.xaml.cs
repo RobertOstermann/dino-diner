@@ -34,6 +34,8 @@ namespace PointOfSale
         {
             InitializeComponent();
             soda = drink;
+            flavor = soda.Flavor;
+            SetUpFlavorSelection();
         }
 
         /// <summary>
@@ -140,6 +142,20 @@ namespace PointOfSale
             ClearButtonValues();
             VanillaButton.Background = buttonColor;
             flavor = SodasaurusFlavor.Vanilla;
+        }
+        /// <summary>
+        /// Sets the correct flavor button.
+        /// </summary>
+        private void SetUpFlavorSelection()
+        {
+            ClearButtonValues();
+            if (flavor == SodasaurusFlavor.Cherry) CherryButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Chocolate) ChocolateButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Cola) ColaButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Lime) LimeButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Orange) OrangeButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.RootBeer) RootBeerButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Vanilla) VanillaButton.Background = buttonColor;
         }
         /// <summary>
         /// Clears the background property of all buttons.
