@@ -27,7 +27,7 @@
             </Border>
             <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}"
                      FontFamily="Tahoma" FontSize="16" Background="Transparent" Name="OrderList"
-                     IsSynchronizedWithCurrentItem="True" SelectionChanged="OnSelectionChanged">
+                     IsSynchronizedWithCurrentItem="True">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Width="190">

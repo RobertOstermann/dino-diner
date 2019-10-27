@@ -36,9 +36,20 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
-            DisableButtons();
+            SetUpDrinkSelection();
             FlavorButton.Visibility = Visibility.Visible;
             LemonButton.Visibility = Visibility.Visible;
+        }
+        /// <summary>
+        /// Initializes the DrinkSelection page.
+        /// Allows for a drink to be passed in.
+        /// </summary>
+        /// <param name="currentDrink"></param>
+        public DrinkSelection(Drink currentDrink)
+        {
+            InitializeComponent();
+            drink = currentDrink;
+            SetUpDrinkSelection();
         }
         /// <summary>
         /// Adds the drink to the order.
@@ -64,7 +75,21 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new MenuCategorySelection());
         }
-
+        /// <summary>
+        /// Sets the drink to Water.
+        /// Disables Decaf/Sweet/Flavor buttons.
+        /// Enables the lemon button.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
+        private void SelectWater(object sender, RoutedEventArgs args)
+        {
+            if (!(drink is Water))
+            {
+                drink = new Water();
+                SetUpDrinkSelection();
+            }
+        }
         /// <summary>
         /// Sets the drink to sodasaurus.
         /// Enables the flavor button.
@@ -77,17 +102,7 @@ namespace PointOfSale
             if (!(drink is Sodasaurus))
             {
                 drink = new Sodasaurus();
-                ClearButtonValues();
-                HideAndDisableButtons();
-                //Activate the correct buttons.
-                SmallButton.Background = buttonColor;
-                FlavorButton.IsEnabled = true;
-                FlavorButton.Visibility = Visibility.Visible;
-                LemonButton.Visibility = Visibility.Visible;
-
-                SodasaurusButton.BorderBrush = buttonColor;
-                SodasaurusButton.BorderThickness = buttonBorderThickness;
-                IceButton.Background = buttonColor;
+                SetUpDrinkSelection();
             }
         }
 
@@ -103,18 +118,7 @@ namespace PointOfSale
             if (!(drink is Tyrannotea))
             {
                 drink = new Tyrannotea();
-                ClearButtonValues();
-                HideAndDisableButtons();
-                //Activate the correct buttons.
-                SmallButton.Background = buttonColor;
-                SweetButton.IsEnabled = true;
-                SweetButton.Visibility = Visibility.Visible;
-                LemonButton.IsEnabled = true;
-                LemonButton.Visibility = Visibility.Visible;
-
-                TyrannoteaButton.BorderBrush = buttonColor;
-                TyrannoteaButton.BorderThickness = buttonBorderThickness;
-                IceButton.Background = buttonColor;
+                SetUpDrinkSelection();
             }
         }
 
@@ -130,49 +134,9 @@ namespace PointOfSale
             if (!(drink is JurassicJava))
             {
                 drink = new JurassicJava();
-                ClearButtonValues();
-                HideAndDisableButtons();
-                //Activate the correct buttons.
-                SmallButton.Background = buttonColor;
-                DecafButton.IsEnabled = true;
-                DecafButton.Visibility = Visibility.Visible;
-                CreamButton.IsEnabled = true;
-                CreamButton.Visibility = Visibility.Visible;
-
-                JurassicJavaButton.BorderBrush = buttonColor;
-                JurassicJavaButton.BorderThickness = buttonBorderThickness;
-
+                SetUpDrinkSelection();
             }
         }
-
-        /// <summary>
-        /// Sets the drink to Water.
-        /// Disables Decaf/Sweet/Flavor buttons.
-        /// Enables the lemon button.
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="args"></param>
-        private void SelectWater(object sender, RoutedEventArgs args)
-        {
-            if (!(drink is Water))
-            {
-                drink = new Water();
-                ClearButtonValues();
-                HideAndDisableButtons();
-                //Set the size buttons to represent small as selected.
-                SmallButton.Background = buttonColor;
-
-                //Show or hide correct property buttons for the drink.
-                FlavorButton.Visibility = Visibility.Visible;
-                LemonButton.IsEnabled = true;
-                LemonButton.Visibility = Visibility.Visible;
-
-                WaterButton.BorderBrush = buttonColor;
-                WaterButton.BorderThickness = buttonBorderThickness;
-                IceButton.Background = buttonColor;
-            }
-        }
-
         /// <summary>
         /// Navigate to the FlavorSelection page.
         /// </summary>
@@ -180,7 +144,10 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectFlavor(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            if (drink is Sodasaurus soda)
+            {
+                NavigationService.Navigate(new FlavorSelection(soda));
+            }
         }
         /// <summary>
         /// Adds or removes sweet.
@@ -339,6 +306,82 @@ namespace PointOfSale
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.Background = buttonColor;
         }
+        private void SetUpDrinkSelection()
+        {
+            DisableButtons();
+            ClearButtonValues();
+            if (drink is Water water)
+            {
+                HideAndDisableAndEnableButtons();
+                //Set the correct button backgrounds.
+                if (water.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
+                if (water.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
+                if (water.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
+                if (water.Ice) IceButton.Background = buttonColor;
+                if (water.Lemon) LemonButton.Background = buttonColor;
+                //Show or hide the correct property buttons for the drink.
+                FlavorButton.Visibility = Visibility.Visible;
+                LemonButton.IsEnabled = true;
+                LemonButton.Visibility = Visibility.Visible;
+
+                WaterButton.BorderBrush = buttonColor;
+                WaterButton.BorderThickness = buttonBorderThickness;
+            }
+            if (drink is Sodasaurus soda)
+            {
+                HideAndDisableAndEnableButtons();
+                //Set the correct button backgrounds.
+                if (soda.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
+                if (soda.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
+                if (soda.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
+                if (soda.Ice) IceButton.Background = buttonColor;
+                //Show or hide the correct property buttons for the drink.
+                FlavorButton.IsEnabled = true;
+                FlavorButton.Visibility = Visibility.Visible;
+                LemonButton.Visibility = Visibility.Visible;
+
+                SodasaurusButton.BorderBrush = buttonColor;
+                SodasaurusButton.BorderThickness = buttonBorderThickness;
+            }
+            if (drink is Tyrannotea tea)
+            {
+                HideAndDisableAndEnableButtons();
+                //Set the correct button backgrounds.
+                if (tea.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
+                if (tea.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
+                if (tea.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
+                if (tea.Ice) IceButton.Background = buttonColor;
+                if (tea.Sweet) SweetButton.Background = buttonColor;
+                if (tea.Lemon) LemonButton.Background = buttonColor;
+                //Show or hide the correct property buttons for the drink.
+                SweetButton.IsEnabled = true;
+                SweetButton.Visibility = Visibility.Visible;
+                LemonButton.IsEnabled = true;
+                LemonButton.Visibility = Visibility.Visible;
+
+                TyrannoteaButton.BorderBrush = buttonColor;
+                TyrannoteaButton.BorderThickness = buttonBorderThickness;
+            }
+            if (drink is JurassicJava java)
+            {
+                HideAndDisableAndEnableButtons();
+                //Set the correct button backgrounds.
+                if (java.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
+                if (java.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
+                if (java.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
+                if (java.Ice) IceButton.Background = buttonColor;
+                if (java.Decaf) DecafButton.Background = buttonColor;
+                if (java.RoomForCream) CreamButton.Background = buttonColor;
+                //Show or hide the correct property buttons for the drink.
+                DecafButton.IsEnabled = true;
+                DecafButton.Visibility = Visibility.Visible;
+                CreamButton.IsEnabled = true;
+                CreamButton.Visibility = Visibility.Visible;
+
+                JurassicJavaButton.BorderBrush = buttonColor;
+                JurassicJavaButton.BorderThickness = buttonBorderThickness;
+            }
+        }
         /// <summary>
         /// Clears the border values of all buttons.
         /// </summary>
@@ -368,7 +411,7 @@ namespace PointOfSale
         /// Disables property buttons.
         /// Enables size buttons.
         /// </summary>
-        private void HideAndDisableButtons()
+        private void HideAndDisableAndEnableButtons()
         {
             FlavorButton.IsEnabled = false;
             FlavorButton.Visibility = Visibility.Hidden;

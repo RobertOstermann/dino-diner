@@ -19,46 +19,58 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource SimpleButton}"
-                Grid.Row="0" Grid.Column="0">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Grid.Column="0"
+                Name="CherryButton" Click="SelectCherry">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Cherry
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="0" Grid.Column="1">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Grid.Column="1"
+                Name="ChocolateButton" Click="SelectChocolate">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Chocolate
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="0" Grid.Column="3">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="0" Grid.Column="3"
+                Name="ColaButton" Click="SelectCola">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Cola
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="1" Grid.Column="1">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.Column="0"
+                Name="LimeButton" Click="SelectLime">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Lime
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="2" Grid.Column="0">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.Column="1"
+                Name="OrangeButton" Click="SelectOrange">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Orange
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="2" Grid.Column="1">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.Column="2"
+                Name="RootBeerButton" Click="SelectRootBeer">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Root Beer
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" 
-                Grid.Row="2" Grid.Column="2">
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Grid.Column="0"
+                Name="VanillaButton" Click="SelectVanilla">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Vanilla
+            </TextBlock>
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Grid.Column="1"
+                        Name="CancelButton" Click="SelectCancel">
+            <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Cancel
+            </TextBlock>
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Grid.Column="2"
+                        Name="FlavorButton" Click="SelectFlavor">
+            <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Select Flavor
             </TextBlock>
         </Button>
     </Grid>

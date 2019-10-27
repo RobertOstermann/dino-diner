@@ -26,16 +26,25 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
-        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        /// <summary>
+        /// Edits the selected order item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void EditItem(object sender, MouseButtonEventArgs args)
         {
-            if (OrderList.SelectedItem is Side)
+            //TODO: Allow user to edit all items. Add this code to the OrderControl UI.
+            if (OrderList.SelectedItem is Side side)
             {
                 //Pass in side.
-                NavigationService?.Navigate(new SideSelection());
+                //NavigationService?.Navigate(new SideSelection(side));
             }
         }
-
+        /// <summary>
+        /// Removes the selected order item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnRemoveItem(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
