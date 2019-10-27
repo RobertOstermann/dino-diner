@@ -29,7 +29,9 @@ namespace PointOfSale
         private Brush buttonColor = Brushes.LightGreen;
 
         private Thickness buttonBorderThickness = new Thickness(2.5);
-
+        /// <summary>
+        /// Initialize the EntreeSelection page.
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
@@ -60,7 +62,7 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects brontowurst as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -71,7 +73,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects dino-nuggets as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -82,7 +84,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects prehistoric pb&j as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -93,7 +95,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects pterodactyl wings as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -104,7 +106,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects steakosaurus burger as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -115,7 +117,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects trex kingburger as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -126,7 +128,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the brontowurst as the entree.
+        /// Selects veloci wrap as the entree.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -135,7 +137,9 @@ namespace PointOfSale
             entree = new VelociWrap();
             SetUpEntreeSelection();
         }
-
+        /// <summary>
+        /// Prepares the EntreeSelection user interface.
+        /// </summary>
         private void SetUpEntreeSelection()
         {
             ClearButtonValues();
@@ -182,7 +186,9 @@ namespace PointOfSale
                 VelociWrapButton.BorderThickness = buttonBorderThickness;
             }
         }
-
+        /// <summary>
+        /// Resets the button values.
+        /// </summary>
         private void ClearButtonValues()
         {
             BrontowurstButton.ClearValue(Control.BorderBrushProperty);

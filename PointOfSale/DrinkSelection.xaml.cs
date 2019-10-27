@@ -42,7 +42,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Initializes the DrinkSelection page.
-        /// Allows for a drink to be passed in.
         /// </summary>
         /// <param name="currentDrink"></param>
         public DrinkSelection(Drink currentDrink)
@@ -77,8 +76,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the drink to Water.
-        /// Disables Decaf/Sweet/Flavor buttons.
-        /// Enables the lemon button.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
@@ -92,8 +89,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the drink to sodasaurus.
-        /// Enables the flavor button.
-        /// Disables the lemon button.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
@@ -108,8 +103,6 @@ namespace PointOfSale
 
         /// <summary>
         /// Sets the drink to tyrannotea.
-        /// Enables the sweet button.
-        /// Enables the lemon button.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
@@ -124,8 +117,6 @@ namespace PointOfSale
 
         /// <summary>
         /// Sets the drink to Jurrasic Java.
-        /// Enables the Decaf button.
-        /// Disables the lemon button.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
@@ -150,14 +141,13 @@ namespace PointOfSale
             }
         }
         /// <summary>
-        /// Adds or removes sweet.
+        /// Determines whether the tea is sweet.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
         private void SelectSweet(object sender, RoutedEventArgs args)
         {
-            Tyrannotea tea = drink as Tyrannotea;
-            if (tea != null)
+            if (drink is Tyrannotea tea)
             {
                 if (tea.Sweet)
                 {
@@ -307,7 +297,7 @@ namespace PointOfSale
             LargeButton.Background = buttonColor;
         }
         /// <summary>
-        /// Sets the correct button properties and visibilities.
+        /// Prepares the DrinkSelection user interface.
         /// </summary>
         private void SetUpDrinkSelection()
         {
@@ -386,7 +376,7 @@ namespace PointOfSale
             }
         }
         /// <summary>
-        /// Clears the border values of all buttons.
+        /// Resets the button values.
         /// </summary>
         private void ClearButtonValues()
         {
@@ -411,7 +401,7 @@ namespace PointOfSale
             IceButton.ClearValue(Control.BackgroundProperty);
         }
         /// <summary>
-        /// Disables property buttons.
+        /// Hides and disables property buttons.
         /// Enables size buttons.
         /// </summary>
         private void HideAndDisableAndEnableButtons()

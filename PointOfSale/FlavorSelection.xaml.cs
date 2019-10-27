@@ -29,7 +29,10 @@ namespace PointOfSale
         private SodasaurusFlavor flavor;
 
         private Brush buttonColor = Brushes.LightGreen;
-
+        /// <summary>
+        /// Initialize the FlavorSelection page.
+        /// </summary>
+        /// <param name="drink"></param>
         public FlavorSelection(Sodasaurus drink)
         {
             InitializeComponent();
@@ -61,7 +64,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to cherry.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -73,7 +75,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to chocolate.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -85,7 +86,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to cola.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -97,7 +97,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to lime.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -109,7 +108,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to orange.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -121,7 +119,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to root beer.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -133,7 +130,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Sets the flavor to cherry.
-        /// Alters the user interface accordingly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -144,7 +140,7 @@ namespace PointOfSale
             flavor = SodasaurusFlavor.Vanilla;
         }
         /// <summary>
-        /// Sets the correct flavor button.
+        /// Prepares the FlavorSelection user interface.
         /// </summary>
         private void SetUpFlavorSelection()
         {
@@ -158,7 +154,7 @@ namespace PointOfSale
             if (flavor == SodasaurusFlavor.Vanilla) VanillaButton.Background = buttonColor;
         }
         /// <summary>
-        /// Clears the background property of all buttons.
+        /// Resets the button values.
         /// </summary>
         private void ClearButtonValues()
         {

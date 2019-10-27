@@ -38,6 +38,17 @@ namespace PointOfSale
             InitializeComponent();
             DisableButtons();
         }
+        /// <summary>
+        /// Initialize the SideSelection page.
+        /// </summary>
+        /// <param name="currentSide"></param>
+        public SideSelection(Side currentSide)
+        {
+            InitializeComponent();
+            DisableButtons();
+            side = currentSide;
+            SetUpSideSelection();
+        }
 
         /// <summary>
         /// Adds the entree to the order.
@@ -148,7 +159,9 @@ namespace PointOfSale
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.Background = Brushes.LightGreen;
         }
-
+        /// <summary>
+        /// Prepares the SideSelection user interface.
+        /// </summary>
         private void SetUpSideSelection()
         {
             ClearButtonValues();
@@ -185,7 +198,9 @@ namespace PointOfSale
                 TriceritotsButton.BorderThickness = buttonBorderThickness;
             }
         }
-
+        /// <summary>
+        /// Resets the button values.
+        /// </summary>
         private void ClearButtonValues()
         {
             FryceritopsButton.ClearValue(Control.BorderBrushProperty);

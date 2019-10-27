@@ -25,7 +25,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        public CretaceousCombo Combo { get; private set; }
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Initialize the CustomizeCombo page.
@@ -34,9 +34,9 @@ namespace PointOfSale
         public CustomizeCombo(Entree entree)
         {
             InitializeComponent();
-            Combo = new CretaceousCombo(entree);
-            DrinkChoice.Text = Combo.Drink.ToString();
-            SideChoice.Text = Combo.Side.ToString();
+            combo = new CretaceousCombo(entree);
+            DrinkChoice.Text = combo.Drink.ToString();
+            SideChoice.Text = combo.Side.ToString();
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(combo.Side));
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo.Drink));
         }
 
         /// <summary>
@@ -66,10 +66,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Small;
+            ClearButtonValues();
+            combo.Size = DinoDiner.Menu.Size.Small;
             SmallButton.Background = Brushes.LightGreen;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -79,10 +78,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectMedium(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Medium;
-            SmallButton.ClearValue(Control.BackgroundProperty);
+            ClearButtonValues();
+            combo.Size = DinoDiner.Menu.Size.Medium;
             MediumButton.Background = Brushes.LightGreen;
-            LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
         /// <summary>
@@ -92,10 +90,18 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectLarge(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Large;
+            ClearButtonValues();
+            combo.Size = DinoDiner.Menu.Size.Large;
+            LargeButton.Background = Brushes.LightGreen;
+        }
+        /// <summary>
+        /// Resets the button values.
+        /// </summary>
+        private void ClearButtonValues()
+        {
             SmallButton.ClearValue(Control.BackgroundProperty);
             MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = Brushes.LightGreen;
+            LargeButton.ClearValue(Control.BackgroundProperty);
         }
     }
 }
