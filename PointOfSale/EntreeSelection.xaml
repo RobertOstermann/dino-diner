@@ -82,13 +82,13 @@
                 Veloci-Wrap
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="2" Grid.Column="1"
+        <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="2" Grid.Column="1" Background="LightPink"
                         Name="CancelButton" Click="SelectCancel">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Cancel
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.Column="2"
+        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.Column="2" Background="SkyBlue"
                         Name="AddToOrderButton" Click="SelectAddToOrder">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Add to Order

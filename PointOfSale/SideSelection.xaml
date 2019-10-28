@@ -96,13 +96,13 @@
                         Large
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="0"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="0" Background="LightPink"
                         Name="CancelButton" Click="SelectCancel">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Cancel
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="1"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="1" Background="SkyBlue"
                         Name="AddToOrderButton" Click="SelectAddToOrder">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Add to Order

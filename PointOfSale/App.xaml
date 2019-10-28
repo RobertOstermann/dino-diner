@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
         <!--Simple Button Style.-->
         <Style x:Key="SimpleButton" TargetType="Button">
             <Setter Property="Margin" Value="5"/>

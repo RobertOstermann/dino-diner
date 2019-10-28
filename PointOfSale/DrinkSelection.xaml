@@ -93,7 +93,7 @@
                         Large
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Background="LightPink"
                         Name="CancelButton" Click="SelectCancel">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Cancel
@@ -148,7 +148,7 @@
                         Ice
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Row="3"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Background="SkyBlue"
                         Name="AddToOrderButton" Click="SelectAddToOrder">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Add to Order
