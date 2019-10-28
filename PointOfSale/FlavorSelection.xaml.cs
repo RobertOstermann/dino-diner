@@ -28,7 +28,7 @@ namespace PointOfSale
 
         private SodasaurusFlavor flavor;
 
-        private Brush buttonColor = Brushes.LightGreen;
+        private Brush buttonColor = Brushes.SpringGreen;
         /// <summary>
         /// Initialize the FlavorSelection page.
         /// </summary>

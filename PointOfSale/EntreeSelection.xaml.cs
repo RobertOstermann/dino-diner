@@ -26,7 +26,7 @@ namespace PointOfSale
     {
         private Entree entree;
 
-        private Brush buttonColor = Brushes.LightGreen;
+        private Brush buttonColor = Brushes.SpringGreen;
 
         private Thickness buttonBorderThickness = new Thickness(2.5);
         /// <summary>

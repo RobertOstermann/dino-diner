@@ -26,7 +26,7 @@ namespace PointOfSale
     {
         private Side side;
 
-        private Brush buttonColor = Brushes.LightGreen;
+        private Brush buttonColor = Brushes.SpringGreen;
 
         private Thickness buttonBorderThickness = new Thickness(2.5);
 
@@ -129,7 +129,7 @@ namespace PointOfSale
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = Brushes.LightGreen;
+            SmallButton.Background = buttonColor;
             MediumButton.ClearValue(Control.BackgroundProperty);
             LargeButton.ClearValue(Control.BackgroundProperty);
         }
@@ -143,7 +143,7 @@ namespace PointOfSale
         {
             side.Size = DinoDiner.Menu.Size.Medium;
             SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.Background = Brushes.LightGreen;
+            MediumButton.Background = buttonColor;
             LargeButton.ClearValue(Control.BackgroundProperty);
         }
 
@@ -157,7 +157,7 @@ namespace PointOfSale
             side.Size = DinoDiner.Menu.Size.Large;
             SmallButton.ClearValue(Control.BackgroundProperty);
             MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = Brushes.LightGreen;
+            LargeButton.Background = buttonColor;
         }
         /// <summary>
         /// Prepares the SideSelection user interface.
