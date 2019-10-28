@@ -90,8 +90,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
-            entree = new PrehistoricPBJ();
-            SetUpEntreeSelection();
+            if (entree is PrehistoricPBJ pbj)
+            {
+                NavigationService.Navigate(new PrehistoricPBJSelection(pbj));
+            }
+            else
+            {
+                entree = new PrehistoricPBJ();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new PrehistoricPBJSelection((PrehistoricPBJ)entree));
+            }
         }
 
         /// <summary>

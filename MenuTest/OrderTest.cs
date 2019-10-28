@@ -17,7 +17,7 @@ namespace MenuTest
             Order order = new Order();
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.Price -= 10;
-            order.Items.Add(pbj);
+            order.Add(pbj);
             Assert.Equal(0, order.SubtotalCost, 1);
         }
 
@@ -26,7 +26,7 @@ namespace MenuTest
         {
             Order order = new Order();
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            order.Items.Add(pbj);
+            order.Add(pbj);
             Assert.Equal(6.52, order.SubtotalCost, 2);
         }
 
@@ -35,7 +35,7 @@ namespace MenuTest
         {
             Order order = new Order();
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            order.Items.Add(pbj);
+            order.Add(pbj);
             Assert.Equal(0.98, order.SalesTaxCost, 2);
         }
 
@@ -44,7 +44,7 @@ namespace MenuTest
         {
             Order order = new Order();
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            order.Items.Add(pbj);
+            order.Add(pbj);
             Assert.Equal(7.50, order.TotalCost, 2);
         }
 
@@ -53,7 +53,7 @@ namespace MenuTest
         {
             Order order = new Order();
             CretaceousCombo combo = new CretaceousCombo(new Brontowurst());
-            order.Items.Add(combo);
+            order.Add(combo);
             Assert.Equal(7.60, order.SubtotalCost, 2);
         }
 
@@ -62,7 +62,7 @@ namespace MenuTest
         {
             Order order = new Order();
             CretaceousCombo combo = new CretaceousCombo(new Brontowurst());
-            order.Items.Add(combo);
+            order.Add(combo);
             Assert.Equal(1.14, order.SalesTaxCost, 2);
         }
 
@@ -71,7 +71,7 @@ namespace MenuTest
         {
             Order order = new Order();
             CretaceousCombo combo = new CretaceousCombo(new Brontowurst());
-            order.Items.Add(combo);
+            order.Add(combo);
             Assert.Equal(8.74, order.TotalCost, 2);
         }
     }

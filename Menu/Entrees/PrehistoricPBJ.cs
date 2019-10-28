@@ -8,9 +8,9 @@ namespace DinoDiner.Menu
     public class PrehistoricPBJ : Entree
     {
         // Indicates the use of peanut butter.
-        private bool peanutButter = true;
+        public bool peanutButter { get; private set; } = true;
         // Indicates the use of jelly.
-        private bool jelly = true;
+        public bool jelly { get; private set; } = true;
 
         /// <summary>
         /// Gets the ingredients of the entree.
