@@ -23,8 +23,6 @@ namespace PointOfSale
     {
         private PrehistoricPBJ pbj;
 
-        private Brush buttonColor = Brushes.SpringGreen;
-
         public PrehistoricPBJSelection(PrehistoricPBJ pbj)
         {
             InitializeComponent();
@@ -50,7 +48,7 @@ namespace PointOfSale
         }
         /// <summary>
         /// Returns to the entree selection page.
-        /// Does not add the PBJ to the order.
+        /// Does not add the pbj to the order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -59,7 +57,7 @@ namespace PointOfSale
             NavigationService.Navigate(new EntreeSelection());
         }
         /// <summary>
-        /// Adds or removes peanut butter.
+        /// Determines the peanut butter property.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -70,7 +68,7 @@ namespace PointOfSale
             SetUpPrehistoricPBJSelection();
         }
         /// <summary>
-        /// Adds or removes jelly.
+        /// Determines the jelly property.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -87,8 +85,8 @@ namespace PointOfSale
         private void SetUpPrehistoricPBJSelection()
         {
             ClearButtonValues();
-            if (pbj.PeanutButter) PeanutButterButton.Background = buttonColor;
-            if (pbj.Jelly) JellyButton.Background = buttonColor;
+            if (pbj.PeanutButter) PeanutButterButton.Background = UserInterfaceOptions.ButtonColor;
+            if (pbj.Jelly) JellyButton.Background = UserInterfaceOptions.ButtonColor;
         }
         /// <summary>
         /// Resets the button values.

@@ -24,7 +24,6 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Brush ButtonColor { get; } = Brushes.SpringGreen;
         public MainWindow()
         {
             InitializeComponent();
