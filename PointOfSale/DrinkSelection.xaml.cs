@@ -26,10 +26,6 @@ namespace PointOfSale
     {
         private Drink drink;
 
-        private Brush buttonColor = Brushes.SpringGreen;
-
-        private Thickness buttonBorderThickness = new Thickness(2.5);
-
         /// <summary>
         /// Initialize the DrinkSelection page.
         /// </summary>
@@ -152,12 +148,12 @@ namespace PointOfSale
                 if (tea.Sweet)
                 {
                     tea.Sweet = false;
-                    SweetButton.ClearValue(Control.BackgroundProperty);
+                    SweetButton.Background = UserInterfaceOptions.BaseColor;
                 }
                 else
                 {
                     tea.Sweet = true;
-                    SweetButton.Background = buttonColor;
+                    SweetButton.Background = UserInterfaceOptions.SelectedColor;
                 }
             }
         }
@@ -174,12 +170,12 @@ namespace PointOfSale
                 if (java.Decaf)
                 {
                     java.Decaf = false;
-                    DecafButton.ClearValue(Control.BackgroundProperty);
+                    DecafButton.Background = UserInterfaceOptions.BaseColor;
                 }
                 else
                 {
                     java.Decaf = true;
-                    DecafButton.Background = buttonColor;
+                    DecafButton.Background = UserInterfaceOptions.SelectedColor;
                 }
             }
         }
@@ -195,12 +191,12 @@ namespace PointOfSale
                 if (water.Lemon)
                 {
                     water.RemoveLemon();
-                    LemonButton.ClearValue(BackgroundProperty);
+                    LemonButton.Background = UserInterfaceOptions.BaseColor;
                 }
                 else
                 {
                     water.AddLemon();
-                    LemonButton.Background = buttonColor;
+                    LemonButton.Background = UserInterfaceOptions.SelectedColor;
                 }
             }
             if (drink is Tyrannotea tea)
@@ -208,12 +204,12 @@ namespace PointOfSale
                 if (tea.Lemon)
                 {
                     tea.RemoveLemon();
-                    LemonButton.ClearValue(BackgroundProperty);
+                    LemonButton.Background = UserInterfaceOptions.BaseColor;
                 }
                 else
                 { 
                     tea.AddLemon();
-                    LemonButton.Background = buttonColor;
+                    LemonButton.Background = UserInterfaceOptions.SelectedColor;
                 }
             }
         }
@@ -229,12 +225,12 @@ namespace PointOfSale
                 if (java.RoomForCream)
                 {
                     java.RemoveRoomForCream();
-                    CreamButton.ClearValue(BackgroundProperty);
+                    CreamButton.Background = UserInterfaceOptions.BaseColor;
                 }
                 else
                 {
                     java.LeaveRoomForCream();
-                    CreamButton.Background = buttonColor;
+                    CreamButton.Background = UserInterfaceOptions.SelectedColor;
                 }
             }
         }
@@ -249,12 +245,12 @@ namespace PointOfSale
             if (drink.Ice)
             {
                 drink.HoldIce();
-                IceButton.ClearValue(BackgroundProperty);
+                IceButton.Background = UserInterfaceOptions.BaseColor;
             }
             else
             {
                 drink.AddIce();
-                IceButton.Background = buttonColor;
+                IceButton.Background = UserInterfaceOptions.SelectedColor;
             }
         }
 
@@ -266,9 +262,8 @@ namespace PointOfSale
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
             drink.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = buttonColor;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            ClearSizeButtonValues();
+            SmallButton.Background = UserInterfaceOptions.SelectedColor;
         }
 
         /// <summary>
@@ -279,9 +274,8 @@ namespace PointOfSale
         private void SelectMedium(object sender, RoutedEventArgs args)
         {
             drink.Size = DinoDiner.Menu.Size.Medium;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.Background = buttonColor;
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            ClearSizeButtonValues();
+            MediumButton.Background = UserInterfaceOptions.SelectedColor;
         }
 
         /// <summary>
@@ -292,9 +286,8 @@ namespace PointOfSale
         private void SelectLarge(object sender, RoutedEventArgs args)
         {
             drink.Size = DinoDiner.Menu.Size.Large;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = buttonColor;
+            ClearSizeButtonValues();
+            LargeButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Prepares the DrinkSelection user interface.
@@ -307,72 +300,72 @@ namespace PointOfSale
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (water.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (water.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (water.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                if (water.Ice) IceButton.Background = buttonColor;
-                if (water.Lemon) LemonButton.Background = buttonColor;
+                if (water.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (water.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (water.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                if (water.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
+                if (water.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
                 LemonButton.Visibility = Visibility.Visible;
 
-                WaterButton.BorderBrush = buttonColor;
-                WaterButton.BorderThickness = buttonBorderThickness;
+                WaterButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                WaterButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (drink is Sodasaurus soda)
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (soda.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (soda.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (soda.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                if (soda.Ice) IceButton.Background = buttonColor;
+                if (soda.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (soda.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (soda.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                if (soda.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
                 FlavorButton.IsEnabled = true;
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.Visibility = Visibility.Visible;
 
-                SodasaurusButton.BorderBrush = buttonColor;
-                SodasaurusButton.BorderThickness = buttonBorderThickness;
+                SodasaurusButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                SodasaurusButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (drink is Tyrannotea tea)
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (tea.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (tea.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (tea.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                if (tea.Ice) IceButton.Background = buttonColor;
-                if (tea.Sweet) SweetButton.Background = buttonColor;
-                if (tea.Lemon) LemonButton.Background = buttonColor;
+                if (tea.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (tea.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (tea.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                if (tea.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
+                if (tea.Sweet) SweetButton.Background = UserInterfaceOptions.SelectedColor;
+                if (tea.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
                 SweetButton.IsEnabled = true;
                 SweetButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
                 LemonButton.Visibility = Visibility.Visible;
 
-                TyrannoteaButton.BorderBrush = buttonColor;
-                TyrannoteaButton.BorderThickness = buttonBorderThickness;
+                TyrannoteaButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                TyrannoteaButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (drink is JurassicJava java)
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (java.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (java.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (java.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                if (java.Ice) IceButton.Background = buttonColor;
-                if (java.Decaf) DecafButton.Background = buttonColor;
-                if (java.RoomForCream) CreamButton.Background = buttonColor;
+                if (java.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (java.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (java.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                if (java.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
+                if (java.Decaf) DecafButton.Background = UserInterfaceOptions.SelectedColor;
+                if (java.RoomForCream) CreamButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
                 DecafButton.IsEnabled = true;
                 DecafButton.Visibility = Visibility.Visible;
                 CreamButton.IsEnabled = true;
                 CreamButton.Visibility = Visibility.Visible;
 
-                JurassicJavaButton.BorderBrush = buttonColor;
-                JurassicJavaButton.BorderThickness = buttonBorderThickness;
+                JurassicJavaButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                JurassicJavaButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
         }
         /// <summary>
@@ -380,25 +373,34 @@ namespace PointOfSale
         /// </summary>
         private void ClearButtonValues()
         {
-            WaterButton.ClearValue(Control.BorderBrushProperty);
-            WaterButton.ClearValue(Control.BorderThicknessProperty);
-            SodasaurusButton.ClearValue(Control.BorderBrushProperty);
-            SodasaurusButton.ClearValue(Control.BorderThicknessProperty);
-            TyrannoteaButton.ClearValue(Control.BorderBrushProperty);
-            TyrannoteaButton.ClearValue(Control.BorderThicknessProperty);
-            JurassicJavaButton.ClearValue(Control.BorderBrushProperty);
-            JurassicJavaButton.ClearValue(Control.BorderThicknessProperty);
+            WaterButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            WaterButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            SodasaurusButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            SodasaurusButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            TyrannoteaButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            TyrannoteaButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            JurassicJavaButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            JurassicJavaButton.BorderThickness = UserInterfaceOptions.BaseThickness;
 
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            SmallButton.Background = UserInterfaceOptions.BaseColor;
+            MediumButton.Background = UserInterfaceOptions.BaseColor;
+            LargeButton.Background = UserInterfaceOptions.BaseColor;
 
-            FlavorButton.ClearValue(Control.BackgroundProperty);
-            DecafButton.ClearValue(Control.BackgroundProperty);
-            SweetButton.ClearValue(Control.BackgroundProperty);
-            LemonButton.ClearValue(Control.BackgroundProperty);
-            CreamButton.ClearValue(Control.BackgroundProperty);
-            IceButton.ClearValue(Control.BackgroundProperty);
+            FlavorButton.Background = UserInterfaceOptions.BaseColor;
+            DecafButton.Background = UserInterfaceOptions.BaseColor;
+            SweetButton.Background = UserInterfaceOptions.BaseColor;
+            LemonButton.Background = UserInterfaceOptions.BaseColor;
+            CreamButton.Background = UserInterfaceOptions.BaseColor;
+            IceButton.Background = UserInterfaceOptions.BaseColor;
+        }
+        /// <summary>
+        /// Resets the size button values.
+        /// </summary>
+        private void ClearSizeButtonValues()
+        {
+            SmallButton.Background = UserInterfaceOptions.BaseColor;
+            MediumButton.Background = UserInterfaceOptions.BaseColor; 
+            LargeButton.Background = UserInterfaceOptions.BaseColor;
         }
         /// <summary>
         /// Hides and disables property buttons.

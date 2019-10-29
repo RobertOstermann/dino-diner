@@ -26,6 +26,7 @@ namespace PointOfSale
         public MenuCategorySelection()
         {
             InitializeComponent();
+            SetUpMenuCategorySelection();
         }
         /// <summary>
         /// Navigate to the ComboSelection page.
@@ -65,6 +66,16 @@ namespace PointOfSale
         private void SelectDrink(object obj, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());
+        }
+        /// <summary>
+        /// Prepares the MenuCategorySelection user interface.
+        /// </summary>
+        private void SetUpMenuCategorySelection()
+        {
+            ComboButton.Background = UserInterfaceOptions.BaseColor;
+            EntreeButton.Background = UserInterfaceOptions.BaseColor;
+            DrinkButton.Background = UserInterfaceOptions.BaseColor;
+            SideButton.Background = UserInterfaceOptions.BaseColor;
         }
     }
 }

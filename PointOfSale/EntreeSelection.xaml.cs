@@ -25,10 +25,6 @@ namespace PointOfSale
     public partial class EntreeSelection : Page
     {
         private Entree entree;
-
-        private Brush buttonColor = Brushes.SpringGreen;
-
-        private Thickness buttonBorderThickness = new Thickness(2.5);
         /// <summary>
         /// Initialize the EntreeSelection page.
         /// </summary>
@@ -154,44 +150,44 @@ namespace PointOfSale
             if (entree is Brontowurst)
             {
                 AddToOrderButton.IsEnabled = true;
-                BrontowurstButton.BorderBrush = buttonColor;
-                BrontowurstButton.BorderThickness = buttonBorderThickness;
+                BrontowurstButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                BrontowurstButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (entree is DinoNuggets)
             {
                 AddToOrderButton.IsEnabled = true;
-                DinoNuggetsButton.BorderBrush = buttonColor;
-                DinoNuggetsButton.BorderThickness = buttonBorderThickness;
+                DinoNuggetsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                DinoNuggetsButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
             if (entree is PrehistoricPBJ)
             {
                 AddToOrderButton.IsEnabled = true;
-                PrehistoricPBJButton.BorderBrush = buttonColor;
-                PrehistoricPBJButton.BorderThickness = buttonBorderThickness;
+                PrehistoricPBJButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                PrehistoricPBJButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
             if (entree is PterodactylWings)
             {
                 AddToOrderButton.IsEnabled = true;
-                PterodactylWingsButton.BorderBrush = buttonColor;
-                PterodactylWingsButton.BorderThickness = buttonBorderThickness;
+                PterodactylWingsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                PterodactylWingsButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
             if (entree is SteakosaurusBurger)
             {
                 AddToOrderButton.IsEnabled = true;
-                SteakosaurusBurgerButton.BorderBrush = buttonColor;
-                SteakosaurusBurgerButton.BorderThickness = buttonBorderThickness;
+                SteakosaurusBurgerButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                SteakosaurusBurgerButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
             if (entree is TRexKingBurger)
             {
                 AddToOrderButton.IsEnabled = true;
-                TRexKingburgerButton.BorderBrush = buttonColor;
-                TRexKingburgerButton.BorderThickness = buttonBorderThickness;
+                TRexKingburgerButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                TRexKingburgerButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
             if (entree is VelociWrap)
             {
                 AddToOrderButton.IsEnabled = true;
-                VelociWrapButton.BorderBrush = buttonColor;
-                VelociWrapButton.BorderThickness = buttonBorderThickness;
+                VelociWrapButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                VelociWrapButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
         }
         /// <summary>
@@ -199,20 +195,20 @@ namespace PointOfSale
         /// </summary>
         private void ClearButtonValues()
         {
-            BrontowurstButton.ClearValue(Control.BorderBrushProperty);
-            BrontowurstButton.ClearValue(Control.BorderThicknessProperty);
-            DinoNuggetsButton.ClearValue(Control.BorderBrushProperty);
-            DinoNuggetsButton.ClearValue(Control.BorderThicknessProperty);
-            PrehistoricPBJButton.ClearValue(Control.BorderBrushProperty);
-            PrehistoricPBJButton.ClearValue(Control.BorderThicknessProperty);
-            PterodactylWingsButton.ClearValue(Control.BorderBrushProperty);
-            PterodactylWingsButton.ClearValue(Control.BorderThicknessProperty);
-            SteakosaurusBurgerButton.ClearValue(Control.BorderBrushProperty);
-            SteakosaurusBurgerButton.ClearValue(Control.BorderThicknessProperty);
-            TRexKingburgerButton.ClearValue(Control.BorderBrushProperty);
-            TRexKingburgerButton.ClearValue(Control.BorderThicknessProperty);
-            VelociWrapButton.ClearValue(Control.BorderBrushProperty);
-            VelociWrapButton.ClearValue(Control.BorderThicknessProperty);
+            BrontowurstButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            BrontowurstButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            DinoNuggetsButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            DinoNuggetsButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            PrehistoricPBJButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            PrehistoricPBJButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            PterodactylWingsButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            PterodactylWingsButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            SteakosaurusBurgerButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            SteakosaurusBurgerButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            TRexKingburgerButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            TRexKingburgerButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            VelociWrapButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            VelociWrapButton.BorderThickness = UserInterfaceOptions.BaseThickness;
         }
     }
 }

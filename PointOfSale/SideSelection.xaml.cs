@@ -26,10 +26,6 @@ namespace PointOfSale
     {
         private Side side;
 
-        private Brush buttonColor = Brushes.SpringGreen;
-
-        private Thickness buttonBorderThickness = new Thickness(2.5);
-
         /// <summary>
         /// Initialize the SideSelection page.
         /// </summary>
@@ -129,9 +125,8 @@ namespace PointOfSale
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = buttonColor;
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            ClearSizeButtonValues();
+            SmallButton.Background = UserInterfaceOptions.SelectedColor;
         }
 
         /// <summary>
@@ -142,9 +137,8 @@ namespace PointOfSale
         private void SelectMedium(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Medium;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.Background = buttonColor;
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            ClearSizeButtonValues();
+            MediumButton.Background = UserInterfaceOptions.SelectedColor;
         }
 
         /// <summary>
@@ -155,9 +149,8 @@ namespace PointOfSale
         private void SelectLarge(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Large;
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.Background = buttonColor;
+            ClearSizeButtonValues();
+            LargeButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Prepares the SideSelection user interface.
@@ -167,35 +160,35 @@ namespace PointOfSale
             ClearButtonValues();
             if (side is Fryceritops fryceritops)
             {
-                if (fryceritops.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (fryceritops.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (fryceritops.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                FryceritopsButton.BorderBrush = buttonColor;
-                FryceritopsButton.BorderThickness = buttonBorderThickness;
+                if (fryceritops.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (fryceritops.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (fryceritops.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                FryceritopsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                FryceritopsButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (side is MeteorMacAndCheese mmc)
             {
-                if (mmc.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (mmc.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (mmc.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                MeteorMacAndCheeseButton.BorderBrush = buttonColor;
-                MeteorMacAndCheeseButton.BorderThickness = buttonBorderThickness;
+                if (mmc.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (mmc.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (mmc.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                MeteorMacAndCheeseButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                MeteorMacAndCheeseButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (side is MezzorellaSticks mezzorella)
             {
-                if (mezzorella.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (mezzorella.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (mezzorella.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                MezzorellaSticksButton.BorderBrush = buttonColor;
-                MezzorellaSticksButton.BorderThickness = buttonBorderThickness;
+                if (mezzorella.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (mezzorella.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (mezzorella.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                MezzorellaSticksButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                MezzorellaSticksButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
             if (side is Triceritots triceritots)
             {
-                if (triceritots.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = buttonColor;
-                if (triceritots.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = buttonColor;
-                if (triceritots.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = buttonColor;
-                TriceritotsButton.BorderBrush = buttonColor;
-                TriceritotsButton.BorderThickness = buttonBorderThickness;
+                if (triceritots.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (triceritots.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (triceritots.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                TriceritotsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
+                TriceritotsButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
         }
         /// <summary>
@@ -203,18 +196,27 @@ namespace PointOfSale
         /// </summary>
         private void ClearButtonValues()
         {
-            FryceritopsButton.ClearValue(Control.BorderBrushProperty);
-            FryceritopsButton.ClearValue(Control.BorderThicknessProperty);
-            MeteorMacAndCheeseButton.ClearValue(Control.BorderBrushProperty);
-            MeteorMacAndCheeseButton.ClearValue(Control.BorderThicknessProperty);
-            MezzorellaSticksButton.ClearValue(Control.BorderBrushProperty);
-            MezzorellaSticksButton.ClearValue(Control.BorderThicknessProperty);
-            TriceritotsButton.ClearValue(Control.BorderBrushProperty);
-            TriceritotsButton.ClearValue(Control.BorderThicknessProperty);
+            FryceritopsButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            FryceritopsButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            MeteorMacAndCheeseButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            MeteorMacAndCheeseButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            MezzorellaSticksButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            MezzorellaSticksButton.BorderThickness = UserInterfaceOptions.BaseThickness;
+            TriceritotsButton.BorderBrush = UserInterfaceOptions.BaseColor;
+            TriceritotsButton.BorderThickness = UserInterfaceOptions.BaseThickness;
 
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            SmallButton.Background = UserInterfaceOptions.BaseColor;
+            MediumButton.Background = UserInterfaceOptions.BaseColor;
+            LargeButton.Background = UserInterfaceOptions.BaseColor;
+        }
+        /// <summary>
+        /// Resets the size button values.
+        /// </summary>
+        private void ClearSizeButtonValues()
+        {
+            SmallButton.Background = UserInterfaceOptions.BaseColor;
+            MediumButton.Background = UserInterfaceOptions.BaseColor;
+            LargeButton.Background = UserInterfaceOptions.BaseColor;
         }
         /// <summary>
         /// Enables all buttons.

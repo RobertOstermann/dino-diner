@@ -16,20 +16,20 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Style="{StaticResource SimpleButton}" Margin="10"
-                Grid.Row="0" Grid.Column="0" Click="SelectCombo">
+        <Button Style="{StaticResource SimpleButton}" Margin="10" Grid.Row="0" Grid.Column="0" 
+                Name="ComboButton" Click="SelectCombo">
             Combos
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="10"
-                Grid.Row="0" Grid.Column="1" Click="SelectEntree">
+        <Button Style="{StaticResource SimpleButton}" Margin="10" Grid.Row="0" Grid.Column="1" 
+                Name="EntreeButton" Click="SelectEntree">
             Entrees
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="10"
-                Grid.Row="1" Grid.Column="0" Click="SelectDrink">
+        <Button Style="{StaticResource SimpleButton}" Margin="10" Grid.Row="1" Grid.Column="0" 
+                Name="DrinkButton" Click="SelectDrink">
             Drinks
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="10"
-                Grid.Row="1" Grid.Column="1" Click="SelectSide">
+        <Button Style="{StaticResource SimpleButton}" Margin="10" Grid.Row="1" Grid.Column="1" 
+                Name="SideButton" Click="SelectSide">
             Sides
         </Button>
     </Grid>

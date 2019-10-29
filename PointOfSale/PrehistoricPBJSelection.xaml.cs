@@ -85,16 +85,16 @@ namespace PointOfSale
         private void SetUpPrehistoricPBJSelection()
         {
             ClearButtonValues();
-            if (pbj.PeanutButter) PeanutButterButton.Background = UserInterfaceOptions.ButtonColor;
-            if (pbj.Jelly) JellyButton.Background = UserInterfaceOptions.ButtonColor;
+            if (pbj.PeanutButter) PeanutButterButton.Background = UserInterfaceOptions.SelectedColor;
+            if (pbj.Jelly) JellyButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Resets the button values.
         /// </summary>
         private void ClearButtonValues()
         {
-            PeanutButterButton.ClearValue(Control.BackgroundProperty);
-            JellyButton.ClearValue(Control.BackgroundProperty);
+            PeanutButterButton.Background = UserInterfaceOptions.BaseColor;
+            JellyButton.Background = UserInterfaceOptions.BaseColor;
         }
     }
 }

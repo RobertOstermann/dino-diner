@@ -28,7 +28,6 @@ namespace PointOfSale
 
         private SodasaurusFlavor flavor;
 
-        private Brush buttonColor = Brushes.SpringGreen;
         /// <summary>
         /// Initialize the FlavorSelection page.
         /// </summary>
@@ -84,7 +83,7 @@ namespace PointOfSale
         private void SelectCherry(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            CherryButton.Background = buttonColor;
+            CherryButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Cherry;
         }
         /// <summary>
@@ -95,7 +94,7 @@ namespace PointOfSale
         private void SelectChocolate(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            ChocolateButton.Background = buttonColor;
+            ChocolateButton.Background = UserInterfaceOptions.SelectedColor; 
             flavor = SodasaurusFlavor.Chocolate;
         }
         /// <summary>
@@ -106,7 +105,7 @@ namespace PointOfSale
         private void SelectCola(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            ColaButton.Background = buttonColor;
+            ColaButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Cola;
         }
         /// <summary>
@@ -117,7 +116,7 @@ namespace PointOfSale
         private void SelectLime(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            LimeButton.Background = buttonColor;
+            LimeButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Lime;
         }
         /// <summary>
@@ -128,7 +127,7 @@ namespace PointOfSale
         private void SelectOrange(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            OrangeButton.Background = buttonColor;
+            OrangeButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Orange;
         }
         /// <summary>
@@ -139,7 +138,7 @@ namespace PointOfSale
         private void SelectRootBeer(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            RootBeerButton.Background = buttonColor;
+            RootBeerButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.RootBeer;
         }
         /// <summary>
@@ -150,7 +149,7 @@ namespace PointOfSale
         private void SelectVanilla(object sender, RoutedEventArgs args)
         {
             ClearButtonValues();
-            VanillaButton.Background = buttonColor;
+            VanillaButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Vanilla;
         }
         /// <summary>
@@ -159,26 +158,26 @@ namespace PointOfSale
         private void SetUpFlavorSelection()
         {
             ClearButtonValues();
-            if (flavor == SodasaurusFlavor.Cherry) CherryButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.Chocolate) ChocolateButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.Cola) ColaButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.Lime) LimeButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.Orange) OrangeButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.RootBeer) RootBeerButton.Background = buttonColor;
-            if (flavor == SodasaurusFlavor.Vanilla) VanillaButton.Background = buttonColor;
+            if (flavor == SodasaurusFlavor.Cherry) CherryButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.Chocolate) ChocolateButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.Cola) ColaButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.Lime) LimeButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.Orange) OrangeButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.RootBeer) RootBeerButton.Background = UserInterfaceOptions.SelectedColor;
+            if (flavor == SodasaurusFlavor.Vanilla) VanillaButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Resets the button values.
         /// </summary>
         private void ClearButtonValues()
         {
-            CherryButton.ClearValue(Control.BackgroundProperty);
-            ChocolateButton.ClearValue(Control.BackgroundProperty);
-            ColaButton.ClearValue(Control.BackgroundProperty);
-            LimeButton.ClearValue(Control.BackgroundProperty);
-            OrangeButton.ClearValue(Control.BackgroundProperty);
-            RootBeerButton.ClearValue(Control.BackgroundProperty);
-            VanillaButton.ClearValue(Control.BackgroundProperty);
+            CherryButton.Background = UserInterfaceOptions.BaseColor;
+            ChocolateButton.Background = UserInterfaceOptions.BaseColor;
+            ColaButton.Background = UserInterfaceOptions.BaseColor;
+            LimeButton.Background = UserInterfaceOptions.BaseColor;
+            OrangeButton.Background = UserInterfaceOptions.BaseColor;
+            RootBeerButton.Background = UserInterfaceOptions.BaseColor;
+            VanillaButton.Background = UserInterfaceOptions.BaseColor;
         }
     }
 }

@@ -96,9 +96,9 @@ namespace PointOfSale
         /// </summary>
         private void ClearButtonValues()
         {
-            BunButton.ClearValue(Control.BackgroundProperty);
-            PeppersButton.ClearValue(Control.BackgroundProperty);
-            OnionButton.ClearValue(Control.BackgroundProperty);
+            BunButton.Background = UserInterfaceOptions.BaseColor;
+            PeppersButton.Background = UserInterfaceOptions.BaseColor;
+            OnionButton.Background = UserInterfaceOptions.BaseColor;
         }
     }
 }
