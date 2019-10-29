@@ -34,6 +34,7 @@ namespace PointOfSale
         public CustomizeCombo(Entree entree)
         {
             InitializeComponent();
+            SetUpCustomizeComboSelection();
             combo = new CretaceousCombo(entree);
             DrinkChoice.Text = combo.Drink.ToString();
             SideChoice.Text = combo.Side.ToString();
@@ -95,13 +96,22 @@ namespace PointOfSale
             LargeButton.Background = Brushes.LightGreen;
         }
         /// <summary>
+        /// Prepares the EntreeSelection user interface.
+        /// </summary>
+        private void SetUpCustomizeComboSelection()
+        {
+            ClearButtonValues();
+            SideButton.Background = UserInterfaceOptions.BaseColor;
+            DrinkButton.Background = UserInterfaceOptions.BaseColor;
+        }
+        /// <summary>
         /// Resets the button values.
         /// </summary>
         private void ClearButtonValues()
         {
-            SmallButton.ClearValue(Control.BackgroundProperty);
-            MediumButton.ClearValue(Control.BackgroundProperty);
-            LargeButton.ClearValue(Control.BackgroundProperty);
+            SmallButton.Background = UserInterfaceOptions.BaseColor;
+            MediumButton.Background = UserInterfaceOptions.BaseColor;
+            LargeButton.Background = UserInterfaceOptions.BaseColor;
         }
     }
 }

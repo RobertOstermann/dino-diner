@@ -31,6 +31,7 @@ namespace PointOfSale
         public EntreeSelection()
         {
             InitializeComponent();
+            SetUpEntreeSelection();
             AddToOrderButton.IsEnabled = false;
         }
 

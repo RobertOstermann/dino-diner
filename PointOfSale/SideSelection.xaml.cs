@@ -33,6 +33,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             DisableButtons();
+            ClearButtonValues();
         }
         /// <summary>
         /// Initialize the SideSelection page.
