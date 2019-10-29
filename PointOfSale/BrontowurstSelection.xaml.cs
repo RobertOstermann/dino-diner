@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,9 +21,29 @@ namespace PointOfSale
     /// </summary>
     public partial class BrontowurstSelection : Page
     {
+        private Brontowurst brontowurst;
+
         public BrontowurstSelection()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Prepares the BrontowurstSelection user interface.
+        /// </summary>
+        private void SetUpBrontowurstSelection()
+        {
+            ClearButtonValues();
+            
+        }
+        /// <summary>
+        /// Resets the button values.
+        /// </summary>
+        private void ClearButtonValues()
+        {
+            BunButton.ClearValue(Control.BackgroundProperty);
+            PeppersButton.ClearValue(Control.BackgroundProperty);
+            OnionButton.ClearValue(Control.BackgroundProperty);
         }
     }
 }

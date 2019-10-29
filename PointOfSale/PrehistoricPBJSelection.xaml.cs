@@ -29,7 +29,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.pbj = pbj;
-            SetUpEntreeSelection();
+            SetUpPrehistoricPBJSelection();
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace PointOfSale
         {
             if (pbj.PeanutButter) pbj.HoldPeanutButter();
             else pbj.AddPeanutButter();
-            SetUpEntreeSelection();
+            SetUpPrehistoricPBJSelection();
         }
         /// <summary>
         /// Adds or removes jelly.
@@ -78,13 +78,13 @@ namespace PointOfSale
         {
             if (pbj.Jelly) pbj.HoldJelly();
             else pbj.AddJelly();
-            SetUpEntreeSelection();
+            SetUpPrehistoricPBJSelection();
         }
 
         /// <summary>
-        /// Prepares the EntreeSelection user interface.
+        /// Prepares the PrehistoricPBJSelection user interface.
         /// </summary>
-        private void SetUpEntreeSelection()
+        private void SetUpPrehistoricPBJSelection()
         {
             ClearButtonValues();
             if (pbj.PeanutButter) PeanutButterButton.Background = buttonColor;
