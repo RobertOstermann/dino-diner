@@ -69,6 +69,42 @@ namespace MenuTest.Entrees
         }
 
         [Fact]
+        public void AddBunShouldAddBun()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            sb.AddBun();
+            Assert.Contains("Whole Wheat Bun", sb.Ingredients);
+        }
+
+        [Fact]
+        public void AddPickleShouldAddPickle()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldPickle();
+            sb.AddPickle();
+            Assert.Contains("Pickle", sb.Ingredients);
+        }
+
+        [Fact]
+        public void AddKetchupShouldAddKetchup()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldKetchup();
+            sb.AddKetchup();
+            Assert.Contains("Ketchup", sb.Ingredients);
+        }
+
+        [Fact]
+        public void AddMustardShouldAddMustard()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldMustard();
+            sb.AddMustard();
+            Assert.Contains("Mustard", sb.Ingredients);
+        }
+
+        [Fact]
         public void HoldBunShouldNotifyOfSpecialPropertyChange()
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
@@ -105,6 +141,46 @@ namespace MenuTest.Entrees
             Assert.PropertyChanged(sb, "Special", () =>
             {
                 sb.HoldMustard();
+            });
+        }
+
+        [Fact]
+        public void AddBunShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.AddBun();
+            });
+        }
+
+        [Fact]
+        public void AddPickleShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.AddPickle();
+            });
+        }
+
+        [Fact]
+        public void AddKetchupShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.AddKetchup();
+            });
+        }
+
+        [Fact]
+        public void AddMustardShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.AddMustard();
             });
         }
 

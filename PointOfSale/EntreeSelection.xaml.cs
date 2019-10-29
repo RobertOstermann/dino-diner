@@ -133,8 +133,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
-            entree = new SteakosaurusBurger();
-            SetUpEntreeSelection();
+            if (entree is SteakosaurusBurger steakosaurus)
+            {
+                NavigationService.Navigate(new SteakosaurusBurgerSelection(steakosaurus));
+            }
+            else
+            {
+                entree = new SteakosaurusBurger();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new SteakosaurusBurgerSelection((SteakosaurusBurger)entree));
+            }
         }
 
         /// <summary>

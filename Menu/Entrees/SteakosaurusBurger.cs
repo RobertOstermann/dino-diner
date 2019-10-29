@@ -10,13 +10,13 @@ namespace DinoDiner.Menu
     public class SteakosaurusBurger : Entree
     {
         // Indicates the use of a bun.
-        private bool bun = true;
+        public bool bun { get; private set; } = true;
         // Indicates the use of a pickle.
-        private bool pickle = true;
+        public bool pickle { get; private set; } = true;
         // Indicates the use of ketchup.
-        private bool ketchup = true;
+        public bool ketchup { get; private set; } = true;
         // Indicates the use of mustard.
-        private bool mustard = true;
+        public bool mustard { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -85,6 +85,39 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             mustard = false;
+            NotifyOfPropertyChange("Special");
+        }
+
+        /// <summary>
+        /// Adds the bun.
+        /// </summary>
+        public void AddBun()
+        {
+            bun = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the pickles.
+        /// </summary>
+        public void AddPickle()
+        {
+            pickle = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the ketchup.
+        /// </summary>
+        public void AddKetchup()
+        {
+            ketchup = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the mustard.
+        /// </summary>
+        public void AddMustard()
+        {
+            mustard = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
