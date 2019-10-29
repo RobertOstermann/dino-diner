@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     public class DinoNuggets : Entree
     {
         // Indicates the amount of nuggets.
-        private int nuggets;
+        public int nuggets { get; private set; }
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -50,6 +50,8 @@ namespace DinoDiner.Menu
             nuggets = 6;
             Price = 4.25;
             Calories = 59 * 6;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Price");
         }
         /// <summary>
         /// Adds a dinonugget.

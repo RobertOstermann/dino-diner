@@ -65,8 +65,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectBrontowurst(object sender, RoutedEventArgs args)
         {
-            entree = new Brontowurst();
-            SetUpEntreeSelection();
+            if (entree is Brontowurst brontowurst)
+            {
+                NavigationService.Navigate(new BrontowurstSelection(brontowurst));
+            }
+            else
+            {
+                entree = new Brontowurst();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new BrontowurstSelection((Brontowurst)entree));
+            }
         }
 
         /// <summary>
@@ -76,8 +84,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectDinoNuggets(object sender, RoutedEventArgs args)
         {
-            entree = new DinoNuggets();
-            SetUpEntreeSelection();
+            if (entree is DinoNuggets dinoNuggets)
+            {
+                NavigationService.Navigate(new DinoNuggetsSelection(dinoNuggets));
+            }
+            else
+            {
+                entree = new DinoNuggets();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new DinoNuggetsSelection((DinoNuggets)entree));
+            }
         }
 
         /// <summary>

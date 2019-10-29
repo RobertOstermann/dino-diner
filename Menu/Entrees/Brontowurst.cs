@@ -10,11 +10,11 @@ namespace DinoDiner.Menu
     public class Brontowurst : Entree
     {
         // Indicates the use of a bun.
-        private bool bun = true;
+        public bool Bun { get; private set; } = true;
         // Indicates the use of peppers.
-        private bool peppers = true;
+        public bool Peppers { get; private set; } = true;
         // Indicates the use of onions.
-        private bool onions = true;
+        public bool Onions { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -23,9 +23,9 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onion");
+                if (Bun) ingredients.Add("Whole Wheat Bun");
+                if (Peppers) ingredients.Add("Peppers");
+                if (Onions) ingredients.Add("Onion");
                 return ingredients;
             }
         }
@@ -37,9 +37,9 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!bun) special.Add("Hold Bun");
-                if (!peppers) special.Add("Hold Peppers");
-                if (!onions) special.Add("Hold Onions");
+                if (!Bun) special.Add("Hold Bun");
+                if (!Peppers) special.Add("Hold Peppers");
+                if (!Onions) special.Add("Hold Onions");
                 return special.ToArray();
             }
         }
@@ -56,7 +56,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-            bun = false;
+            Bun = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPeppers()
         {
-            peppers = false;
+            Peppers = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -72,7 +72,32 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldOnion()
         {
-            onions = false;
+            Onions = false;
+            NotifyOfPropertyChange("Special");
+        }
+
+        /// <summary>
+        /// Adds the bun.
+        /// </summary>
+        public void AddBun()
+        {
+            Bun = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the peppers.
+        /// </summary>
+        public void AddPeppers()
+        {
+            Peppers = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the onions.
+        /// </summary>
+        public void AddOnion()
+        {
+            Onions = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

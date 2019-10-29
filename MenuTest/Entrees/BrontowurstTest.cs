@@ -60,6 +60,33 @@ namespace MenuTest.Entrees
         }
 
         [Fact]
+        public void AddBunShouldAddBun()
+        {
+            Brontowurst bw = new Brontowurst();
+            bw.HoldBun();
+            bw.AddBun();
+            Assert.Contains("Whole Wheat Bun", bw.Ingredients);
+        }
+
+        [Fact]
+        public void AddPeppersShouldAddPeppers()
+        {
+            Brontowurst bw = new Brontowurst();
+            bw.HoldPeppers();
+            bw.AddPeppers();
+            Assert.Contains("Peppers", bw.Ingredients);
+        }
+
+        [Fact]
+        public void AddOnionShouldAddOnion()
+        {
+            Brontowurst bw = new Brontowurst();
+            bw.HoldOnion();
+            bw.AddOnion();
+            Assert.Contains("Onion", bw.Ingredients);
+        }
+
+        [Fact]
         public void HoldBunShouldNotifyOfSpecialPropertyChange()
         {
             Brontowurst bw = new Brontowurst();
@@ -86,6 +113,36 @@ namespace MenuTest.Entrees
             Assert.PropertyChanged(bw, "Special", () =>
             {
                 bw.HoldOnion();
+            });
+        }
+
+        [Fact]
+        public void AddBunShouldNotifyOfSpecialPropertyChange()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.PropertyChanged(bw, "Special", () =>
+            {
+                bw.AddBun();
+            });
+        }
+
+        [Fact]
+        public void AddPeppersShouldNotifyOfSpecialPropertyChange()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.PropertyChanged(bw, "Special", () =>
+            {
+                bw.AddPeppers();
+            });
+        }
+
+        [Fact]
+        public void AddOnionShouldNotifyOfSpecialPropertyChange()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.PropertyChanged(bw, "Special", () =>
+            {
+                bw.AddOnion();
             });
         }
 

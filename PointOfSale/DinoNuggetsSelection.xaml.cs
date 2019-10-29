@@ -17,22 +17,20 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PrehistoricPBJSelection.xaml
+    /// Interaction logic for DinoNuggetsSelection.xaml
     /// </summary>
-    public partial class PrehistoricPBJSelection : Page
+    public partial class DinoNuggetsSelection : Page
     {
-        private PrehistoricPBJ pbj;
+        private DinoNuggets dinoNuggets;
         /// <summary>
-        /// Initialize the PrehistoricPBJSelection page.
+        /// Initialize the DinoNuggetsSelection page.
         /// </summary>
-        /// <param name="pbj"></param>
-        public PrehistoricPBJSelection(PrehistoricPBJ pbj)
+        public DinoNuggetsSelection(DinoNuggets dinoNuggets)
         {
             InitializeComponent();
-            this.pbj = pbj;
-            SetUpPrehistoricPBJSelection();
+            this.dinoNuggets = dinoNuggets;
+            SetUpDinoNuggetsSelection();
         }
-
         /// <summary>
         /// Confirms the properties of the pbj.
         /// </summary>
@@ -60,44 +58,31 @@ namespace PointOfSale
             NavigationService.Navigate(new EntreeSelection());
         }
         /// <summary>
-        /// Determines the peanut butter property.
+        /// Adds a nugget to the dino-nuggets item.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectPeanutButter(object sender, RoutedEventArgs args)
+        private void SelectAddNugget(object sender, RoutedEventArgs args)
         {
-            if (pbj.PeanutButter) pbj.HoldPeanutButter();
-            else pbj.AddPeanutButter();
-            SetUpPrehistoricPBJSelection();
+            dinoNuggets.AddNugget();
+            SetUpDinoNuggetsSelection();
         }
         /// <summary>
-        /// Determines the jelly property.
+        /// Resets the dino-nuggets nugget count.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectJelly(object sender, RoutedEventArgs args)
+        private void SelectResetNuggetCount(object sender, RoutedEventArgs args)
         {
-            if (pbj.Jelly) pbj.HoldJelly();
-            else pbj.AddJelly();
-            SetUpPrehistoricPBJSelection();
-        }
-
-        /// <summary>
-        /// Prepares the PrehistoricPBJSelection user interface.
-        /// </summary>
-        private void SetUpPrehistoricPBJSelection()
-        {
-            ClearButtonValues();
-            if (pbj.PeanutButter) PeanutButterButton.Background = UserInterfaceOptions.SelectedColor;
-            if (pbj.Jelly) JellyButton.Background = UserInterfaceOptions.SelectedColor;
+            dinoNuggets = new DinoNuggets();
+            SetUpDinoNuggetsSelection();
         }
         /// <summary>
-        /// Resets the button values.
+        /// Prepares the DinoNuggetsSelection user interface.
         /// </summary>
-        private void ClearButtonValues()
+        private void SetUpDinoNuggetsSelection()
         {
-            PeanutButterButton.Background = UserInterfaceOptions.BaseColor;
-            JellyButton.Background = UserInterfaceOptions.BaseColor;
+            AddNuggetTextBlock.Text = $"Add Nugget ({dinoNuggets.nuggets} Current)";
         }
     }
 }

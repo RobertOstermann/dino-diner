@@ -63,7 +63,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectBun(object sender, RoutedEventArgs args)
         {
-
+            if (brontowurst.Bun) brontowurst.HoldBun();
+            else brontowurst.AddBun();
+            SetUpBrontowurstSelection();
         }
         /// <summary>
         /// Determines the peppers property.
@@ -72,7 +74,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPeppers(object sender, RoutedEventArgs args)
         {
-
+            if (brontowurst.Peppers) brontowurst.HoldPeppers();
+            else brontowurst.AddPeppers();
+            SetUpBrontowurstSelection();
         }
         /// <summary>
         /// Determines the onion property.
@@ -81,7 +85,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectOnion(object sender, RoutedEventArgs args)
         {
-
+            if (brontowurst.Onions) brontowurst.HoldOnion();
+            else brontowurst.AddOnion();
+            SetUpBrontowurstSelection();
         }
         /// <summary>
         /// Prepares the BrontowurstSelection user interface.
@@ -89,7 +95,9 @@ namespace PointOfSale
         private void SetUpBrontowurstSelection()
         {
             ClearButtonValues();
-            
+            if (brontowurst.Bun) BunButton.Background = UserInterfaceOptions.SelectedColor;
+            if (brontowurst.Peppers) PeppersButton.Background = UserInterfaceOptions.SelectedColor;
+            if (brontowurst.Onions) OnionButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Resets the button values.
