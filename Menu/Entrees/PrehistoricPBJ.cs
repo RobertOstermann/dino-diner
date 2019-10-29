@@ -8,9 +8,9 @@ namespace DinoDiner.Menu
     public class PrehistoricPBJ : Entree
     {
         // Indicates the use of peanut butter.
-        public bool peanutButter { get; private set; } = true;
+        public bool PeanutButter { get; private set; } = true;
         // Indicates the use of jelly.
-        public bool jelly { get; private set; } = true;
+        public bool Jelly { get; private set; } = true;
 
         /// <summary>
         /// Gets the ingredients of the entree.
@@ -20,8 +20,8 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>() { "Bread" };
-                if (peanutButter) ingredients.Add("Peanut Butter");
-                if (jelly) ingredients.Add("Jelly");
+                if (PeanutButter) ingredients.Add("Peanut Butter");
+                if (Jelly) ingredients.Add("Jelly");
                 return ingredients;
             }
         }
@@ -34,8 +34,8 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!peanutButter) special.Add("Hold Peanut Butter");
-                if (!jelly) special.Add("Hold Jelly");
+                if (!PeanutButter) special.Add("Hold Peanut Butter");
+                if (!Jelly) special.Add("Hold Jelly");
                 return special.ToArray();
             }
         }
@@ -52,7 +52,15 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPeanutButter()
         {
-            peanutButter = false;
+            PeanutButter = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds peanut butter.
+        /// </summary>
+        public void AddPeanutButter()
+        {
+            PeanutButter = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -60,7 +68,15 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldJelly()
         {
-            jelly = false;
+            Jelly = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds jelly.
+        /// </summary>
+        public void AddJelly()
+        {
+            Jelly = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

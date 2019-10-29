@@ -28,12 +28,12 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             List<string> ingredients = vw.Ingredients;
-            Assert.Contains<string>("Flour Tortilla", ingredients);
-            Assert.Contains<string>("Chicken Breast", ingredients);
-            Assert.Contains<string>("Romaine Lettuce", ingredients);
-            Assert.Contains<string>("Ceasar Dressing", ingredients);
-            Assert.Contains<string>("Parmesan Cheese", ingredients);
-            Assert.Equal<int>(5, ingredients.Count);
+            Assert.Contains("Flour Tortilla", ingredients);
+            Assert.Contains("Chicken Breast", ingredients);
+            Assert.Contains("Romaine Lettuce", ingredients);
+            Assert.Contains("Ceasar Dressing", ingredients);
+            Assert.Contains("Parmesan Cheese", ingredients);
+            Assert.Equal(5, ingredients.Count);
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldDressing();
-            Assert.DoesNotContain<string>("Dressing", vw.Ingredients);
+            Assert.DoesNotContain("Dressing", vw.Ingredients);
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldLettuce();
-            Assert.DoesNotContain<string>("Lettuce", vw.Ingredients);
+            Assert.DoesNotContain("Lettuce", vw.Ingredients);
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldCheese();
-            Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
+            Assert.DoesNotContain("Parmesan Cheese", vw.Ingredients);
         }
 
         [Fact]
@@ -102,7 +102,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldDressing();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Dressing", item);
@@ -115,7 +115,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldLettuce();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Lettuce", item);
@@ -128,7 +128,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldCheese();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Cheese", item);
@@ -142,7 +142,7 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldDressing();
             vw.HoldLettuce();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Dressing", item);
@@ -160,7 +160,7 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldDressing();
             vw.HoldCheese();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Dressing", item);
@@ -178,7 +178,7 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldLettuce();
             vw.HoldCheese();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Lettuce", item);
@@ -197,7 +197,7 @@ namespace MenuTest.Entrees
             vw.HoldDressing();
             vw.HoldLettuce();
             vw.HoldCheese();
-            Assert.Collection<string>(vw.Special,
+            Assert.Collection(vw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Dressing", item);

@@ -33,7 +33,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Adds the PBJ to the order.
+        /// Confirms the properties of the pbj.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -56,7 +56,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCancel(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new EntreeSelection());
         }
         /// <summary>
         /// Adds or removes peanut butter.
@@ -65,10 +65,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPeanutButter(object sender, RoutedEventArgs args)
         {
-            if (pbj.peanutButter)
-            {
-                pbj.HoldPeanutButter();
-            }
+            if (pbj.PeanutButter) pbj.HoldPeanutButter();
+            else pbj.AddPeanutButter();
             SetUpEntreeSelection();
         }
         /// <summary>
@@ -78,10 +76,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectJelly(object sender, RoutedEventArgs args)
         {
-            if (pbj.jelly)
-            {
-                pbj.HoldJelly();
-            }
+            if (pbj.Jelly) pbj.HoldJelly();
+            else pbj.AddJelly();
             SetUpEntreeSelection();
         }
 
@@ -91,8 +87,8 @@ namespace PointOfSale
         private void SetUpEntreeSelection()
         {
             ClearButtonValues();
-            if (pbj.peanutButter) PeanutButterButton.Background = buttonColor;
-            if (pbj.jelly) JellyButton.Background = buttonColor;
+            if (pbj.PeanutButter) PeanutButterButton.Background = buttonColor;
+            if (pbj.Jelly) JellyButton.Background = buttonColor;
         }
         /// <summary>
         /// Resets the button values.

@@ -15,7 +15,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultPrice()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.Equal<double>(0.99, tea.Price);
+            Assert.Equal(0.99, tea.Price);
         }
 
         [Fact]
@@ -29,16 +29,16 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultIngedients()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.Contains<string>("Water", tea.Ingredients);
-            Assert.Contains<string>("Tea", tea.Ingredients);
-            Assert.Equal<int>(2, tea.Ingredients.Count);
+            Assert.Contains("Water", tea.Ingredients);
+            Assert.Contains("Tea", tea.Ingredients);
+            Assert.Equal(2, tea.Ingredients.Count);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.Equal<Size>(Size.Small, tea.Size);
+            Assert.Equal(Size.Small, tea.Size);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.Equal<double>(1.49, tea.Price);
+            Assert.Equal(1.49, tea.Price);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, tea.Size);
+            Assert.Equal(Size.Medium, tea.Size);
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Large;
-            Assert.Equal<double>(1.99, tea.Price);
+            Assert.Equal(1.99, tea.Price);
         }
 
         [Fact]
@@ -86,7 +86,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, tea.Size);
+            Assert.Equal(Size.Large, tea.Size);
         }
 
         [Fact]
@@ -119,7 +119,7 @@ namespace MenuTest.Drinks
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
             List<string> ingredients = tea.Ingredients;
-            Assert.Contains<string>("Lemon", ingredients);
+            Assert.Contains("Lemon", ingredients);
         }
 
         [Fact]
@@ -137,7 +137,7 @@ namespace MenuTest.Drinks
             Tyrannotea tea = new Tyrannotea();
             tea.Sweet = true;
             List<string> ingredients = tea.Ingredients;
-            Assert.Contains<string>("Cane Sugar", ingredients);
+            Assert.Contains("Cane Sugar", ingredients);
         }
 
         [Fact]
@@ -255,7 +255,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.HoldIce();
-            Assert.Collection<string>(tea.Special,
+            Assert.Collection(tea.Special,
                 item =>
                 {
                     Assert.Equal("Hold Ice", item);
@@ -268,7 +268,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
-            Assert.Collection<string>(tea.Special,
+            Assert.Collection(tea.Special,
                 item =>
                 {
                     Assert.Equal("Add Lemon", item);
@@ -282,7 +282,7 @@ namespace MenuTest.Drinks
             Tyrannotea tea = new Tyrannotea();
             tea.HoldIce();
             tea.AddLemon();
-            Assert.Collection<string>(tea.Special,
+            Assert.Collection(tea.Special,
                 item =>
                 {
                     Assert.Equal("Hold Ice", item);

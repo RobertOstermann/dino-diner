@@ -28,10 +28,10 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             List<string> ingredients = pbj.Ingredients;
-            Assert.Contains<string>("Bread", ingredients);
-            Assert.Contains<string>("Peanut Butter", ingredients);
-            Assert.Contains<string>("Jelly", ingredients);
-            Assert.Equal<int>(3, ingredients.Count);
+            Assert.Contains("Bread", ingredients);
+            Assert.Contains("Peanut Butter", ingredients);
+            Assert.Contains("Jelly", ingredients);
+            Assert.Equal(3, ingredients.Count);
         }
 
         [Fact]
@@ -39,7 +39,16 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldPeanutButter();
-            Assert.DoesNotContain<string>("Peanut Butter", pbj.Ingredients);
+            Assert.DoesNotContain("Peanut Butter", pbj.Ingredients);
+        }
+
+        [Fact]
+        public void AddPeanutButterShouldAddPeanutButter()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
+            pbj.AddPeanutButter();
+            Assert.Contains("Peanut Butter", pbj.Ingredients);
         }
 
         [Fact]
@@ -47,7 +56,16 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldJelly();
-            Assert.DoesNotContain<string>("Jelly", pbj.Ingredients);
+            Assert.DoesNotContain("Jelly", pbj.Ingredients);
+        }
+
+        [Fact]
+        public void AddJellyShouldAddJelly()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldJelly();
+            pbj.AddJelly();
+            Assert.Contains("Jelly", pbj.Ingredients);
         }
 
         [Fact]
@@ -61,12 +79,32 @@ namespace MenuTest.Entrees
         }
 
         [Fact]
+        public void AddPeanutButterShouldNotifyOfSpecialPropertyChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+            {
+                pbj.AddPeanutButter();
+            });
+        }
+
+        [Fact]
         public void HoldJellyShouldNotifyOfSpecialPropertyChange()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             Assert.PropertyChanged(pbj, "Special", () =>
             {
                 pbj.HoldJelly();
+            });
+        }
+
+        [Fact]
+        public void AddJellyShouldNotifyOfSpecialPropertyChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+            {
+                pbj.AddJelly();
             });
         }
 
@@ -82,7 +120,7 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldPeanutButter();
-            Assert.Collection<string>(pbj.Special, 
+            Assert.Collection(pbj.Special, 
                 item =>
                 {
                     Assert.Equal("Hold Peanut Butter", item);
@@ -95,7 +133,7 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldJelly();
-            Assert.Collection<string>(pbj.Special,
+            Assert.Collection(pbj.Special,
                 item =>
                 {
                     Assert.Equal("Hold Jelly", item);
@@ -109,7 +147,7 @@ namespace MenuTest.Entrees
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldPeanutButter();
             pbj.HoldJelly();
-            Assert.Collection<string>(pbj.Special,
+            Assert.Collection(pbj.Special,
                 item =>
                 {
                     Assert.Equal("Hold Peanut Butter", item);

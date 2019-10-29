@@ -28,11 +28,11 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             List<string> ingredients = bw.Ingredients;
-            Assert.Contains<string>("Whole Wheat Bun", ingredients);
-            Assert.Contains<string>("Brautwurst", ingredients);
-            Assert.Contains<string>("Peppers", ingredients);
-            Assert.Contains<string>("Onion", ingredients);
-            Assert.Equal<int>(4, ingredients.Count);
+            Assert.Contains("Whole Wheat Bun", ingredients);
+            Assert.Contains("Brautwurst", ingredients);
+            Assert.Contains("Peppers", ingredients);
+            Assert.Contains("Onion", ingredients);
+            Assert.Equal(4, ingredients.Count);
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
-            Assert.DoesNotContain<string>("Whole Wheat Bun", bw.Ingredients);
+            Assert.DoesNotContain("Whole Wheat Bun", bw.Ingredients);
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldPeppers();
-            Assert.DoesNotContain<string>("Peppers", bw.Ingredients);
+            Assert.DoesNotContain("Peppers", bw.Ingredients);
         }
 
         [Fact]
@@ -56,7 +56,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldOnion();
-            Assert.DoesNotContain<string>("Onion", bw.Ingredients);
+            Assert.DoesNotContain("Onion", bw.Ingredients);
         }
 
         [Fact]
@@ -101,7 +101,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -114,7 +114,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldPeppers();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Peppers", item);
@@ -127,7 +127,7 @@ namespace MenuTest.Entrees
         {
             Brontowurst bw = new Brontowurst();
             bw.HoldOnion();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Onions", item);
@@ -141,7 +141,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
             bw.HoldPeppers();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -159,7 +159,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
             bw.HoldOnion();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -177,7 +177,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldOnion();
             bw.HoldPeppers();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Peppers", item);
@@ -196,7 +196,7 @@ namespace MenuTest.Entrees
             bw.HoldBun();
             bw.HoldPeppers();
             bw.HoldOnion();
-            Assert.Collection<string>(bw.Special,
+            Assert.Collection(bw.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);

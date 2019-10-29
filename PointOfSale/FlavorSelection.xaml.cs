@@ -33,10 +33,10 @@ namespace PointOfSale
         /// Initialize the FlavorSelection page.
         /// </summary>
         /// <param name="drink"></param>
-        public FlavorSelection(Sodasaurus drink)
+        public FlavorSelection(Sodasaurus soda)
         {
             InitializeComponent();
-            soda = drink;
+            this.soda = soda;
             flavor = soda.Flavor;
             SetUpFlavorSelection();
         }
@@ -49,18 +49,32 @@ namespace PointOfSale
         private void SelectFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = flavor;
-            NavigationService.Navigate(new DrinkSelection(soda));
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
 
         /// <summary>
-        /// Returns to the category selection page.
-        /// Does not add the drink to the order.
+        /// Returns to the drink selection page.
+        /// Does not change the flavor.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         private void SelectCancel(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection(soda));
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
         /// <summary>
         /// Sets the flavor to cherry.

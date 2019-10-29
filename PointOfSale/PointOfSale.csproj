@@ -54,6 +54,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BrontowurstSelection.xaml.cs">
+      <DependentUpon>BrontowurstSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,10 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Page Include="BrontowurstSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

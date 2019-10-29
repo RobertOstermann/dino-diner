@@ -15,7 +15,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultPrice()
         {
             JurassicJava java = new JurassicJava();
-            Assert.Equal<double>(0.59, java.Price);
+            Assert.Equal(0.59, java.Price);
         }
 
         [Fact]
@@ -29,16 +29,16 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultIngedients()
         {
             JurassicJava java = new JurassicJava();
-            Assert.Contains<string>("Water", java.Ingredients);
-            Assert.Contains<string>("Coffee", java.Ingredients);
-            Assert.Equal<int>(2, java.Ingredients.Count);
+            Assert.Contains("Water", java.Ingredients);
+            Assert.Contains("Coffee", java.Ingredients);
+            Assert.Equal(2, java.Ingredients.Count);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
             JurassicJava java = new JurassicJava();
-            Assert.Equal<Size>(Size.Small, java.Size);
+            Assert.Equal(Size.Small, java.Size);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.Size = Size.Medium;
-            Assert.Equal<double>(0.99, java.Price);
+            Assert.Equal(0.99, java.Price);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, java.Size);
+            Assert.Equal(Size.Medium, java.Size);
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.Size = Size.Large;
-            Assert.Equal<double>(1.49, java.Price);
+            Assert.Equal(1.49, java.Price);
         }
 
         [Fact]
@@ -86,7 +86,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, java.Size);
+            Assert.Equal(Size.Large, java.Size);
         }
 
         [Fact]
@@ -214,7 +214,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.AddIce();
-            Assert.Collection<string>(java.Special,
+            Assert.Collection(java.Special,
                 item =>
                 {
                     Assert.Equal("Add Ice", item);
@@ -227,7 +227,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava java = new JurassicJava();
             java.LeaveRoomForCream();
-            Assert.Collection<string>(java.Special,
+            Assert.Collection(java.Special,
                 item =>
                 {
                     Assert.Equal("Room for Cream", item);
@@ -241,7 +241,7 @@ namespace MenuTest.Drinks
             JurassicJava java = new JurassicJava();
             java.AddIce();
             java.LeaveRoomForCream();
-            Assert.Collection<string>(java.Special,
+            Assert.Collection(java.Special,
                 item =>
                 {
                     Assert.Equal("Add Ice", item);

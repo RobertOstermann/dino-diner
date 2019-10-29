@@ -28,9 +28,9 @@ namespace MenuTest.Entrees
         {
             PterodactylWings pw = new PterodactylWings();
             List<string> ingredients = pw.Ingredients;
-            Assert.Contains<string>("Chicken", ingredients);
-            Assert.Contains<string>("Wing Sauce", ingredients);
-            Assert.Equal<int>(2, ingredients.Count);
+            Assert.Contains("Chicken", ingredients);
+            Assert.Contains("Wing Sauce", ingredients);
+            Assert.Equal(2, ingredients.Count);
         }
 
         [Fact]

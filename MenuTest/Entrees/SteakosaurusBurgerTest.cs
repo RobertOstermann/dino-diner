@@ -28,12 +28,12 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             List<string> ingredients = sb.Ingredients;
-            Assert.Contains<string>("Whole Wheat Bun", ingredients);
-            Assert.Contains<string>("Steakburger Pattie", ingredients);
-            Assert.Contains<string>("Pickle", ingredients);
-            Assert.Contains<string>("Ketchup", ingredients);
-            Assert.Contains<string>("Mustard", ingredients);
-            Assert.Equal<int>(5, ingredients.Count);
+            Assert.Contains("Whole Wheat Bun", ingredients);
+            Assert.Contains("Steakburger Pattie", ingredients);
+            Assert.Contains("Pickle", ingredients);
+            Assert.Contains("Ketchup", ingredients);
+            Assert.Contains("Mustard", ingredients);
+            Assert.Equal(5, ingredients.Count);
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldBun();
-            Assert.DoesNotContain<string>("Whole Wheat Bun", sb.Ingredients);
+            Assert.DoesNotContain("Whole Wheat Bun", sb.Ingredients);
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldPickle();
-            Assert.DoesNotContain<string>("Pickle", sb.Ingredients);
+            Assert.DoesNotContain("Pickle", sb.Ingredients);
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldKetchup();
-            Assert.DoesNotContain<string>("Ketchup", sb.Ingredients);
+            Assert.DoesNotContain("Ketchup", sb.Ingredients);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldMustard();
-            Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
+            Assert.DoesNotContain("Mustard", sb.Ingredients);
         }
 
         [Fact]
@@ -120,7 +120,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldBun();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -132,7 +132,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldPickle();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Pickle", item);
@@ -144,7 +144,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldKetchup();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Ketchup", item);
@@ -156,7 +156,7 @@ namespace MenuTest.Entrees
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldMustard();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Mustard", item);
@@ -169,7 +169,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldBun();
             sb.HoldPickle();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -187,7 +187,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldBun();
             sb.HoldKetchup();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -205,7 +205,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldBun();
             sb.HoldMustard();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -225,7 +225,7 @@ namespace MenuTest.Entrees
             sb.HoldPickle();
             sb.HoldMustard();
             sb.HoldKetchup();
-            Assert.Collection<string>(sb.Special,
+            Assert.Collection(sb.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);

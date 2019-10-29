@@ -28,22 +28,22 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             List<string> ingredients = trex.Ingredients;
-            Assert.Contains<string>("Whole Wheat Bun", ingredients);
+            Assert.Contains("Whole Wheat Bun", ingredients);
             // Should be three patties
             int count = 0;
             foreach(string ingredient in ingredients)
             {
                 if (ingredient.Equals("Steakburger Pattie")) count++;
             }
-            Assert.Equal<int>(3, count);
-            Assert.Contains<string>("Lettuce", ingredients);
-            Assert.Contains<string>("Tomato", ingredients);
-            Assert.Contains<string>("Onion", ingredients);
-            Assert.Contains<string>("Pickle", ingredients);
-            Assert.Contains<string>("Ketchup", ingredients);
-            Assert.Contains<string>("Mustard", ingredients);
-            Assert.Contains<string>("Mayo", ingredients);
-            Assert.Equal<int>(11, ingredients.Count);
+            Assert.Equal(3, count);
+            Assert.Contains("Lettuce", ingredients);
+            Assert.Contains("Tomato", ingredients);
+            Assert.Contains("Onion", ingredients);
+            Assert.Contains("Pickle", ingredients);
+            Assert.Contains("Ketchup", ingredients);
+            Assert.Contains("Mustard", ingredients);
+            Assert.Contains("Mayo", ingredients);
+            Assert.Equal(11, ingredients.Count);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldBun();
-            Assert.DoesNotContain<string>("Whole Wheat Bun", trex.Ingredients);
+            Assert.DoesNotContain("Whole Wheat Bun", trex.Ingredients);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldLettuce();
-            Assert.DoesNotContain<string>("Lettuce", trex.Ingredients);
+            Assert.DoesNotContain("Lettuce", trex.Ingredients);
         }
 
         [Fact]
@@ -67,7 +67,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldTomato();
-            Assert.DoesNotContain<string>("Tomato", trex.Ingredients);
+            Assert.DoesNotContain("Tomato", trex.Ingredients);
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldOnion();
-            Assert.DoesNotContain<string>("Onion", trex.Ingredients);
+            Assert.DoesNotContain("Onion", trex.Ingredients);
         }
 
         [Fact]
@@ -83,7 +83,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldPickle();
-            Assert.DoesNotContain<string>("Pickle", trex.Ingredients);
+            Assert.DoesNotContain("Pickle", trex.Ingredients);
         }
 
         [Fact]
@@ -91,7 +91,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldKetchup();
-            Assert.DoesNotContain<string>("Ketchup", trex.Ingredients);
+            Assert.DoesNotContain("Ketchup", trex.Ingredients);
         }
 
         [Fact]
@@ -99,7 +99,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMustard();
-            Assert.DoesNotContain<string>("Mustard", trex.Ingredients);
+            Assert.DoesNotContain("Mustard", trex.Ingredients);
         }
 
         [Fact]
@@ -107,7 +107,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMayo();
-            Assert.DoesNotContain<string>("Mayo", trex.Ingredients);
+            Assert.DoesNotContain("Mayo", trex.Ingredients);
         }
 
         [Fact]
@@ -202,7 +202,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldBun();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
@@ -215,7 +215,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldLettuce();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Lettuce", item);
@@ -228,7 +228,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldTomato();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Tomato", item);
@@ -241,7 +241,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldOnion();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Onion", item);
@@ -254,7 +254,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldPickle();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Pickle", item);
@@ -267,7 +267,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldKetchup();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Ketchup", item);
@@ -280,7 +280,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMustard();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Mustard", item);
@@ -293,7 +293,7 @@ namespace MenuTest.Entrees
         {
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMayo();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Mayo", item);
@@ -313,7 +313,7 @@ namespace MenuTest.Entrees
             trex.HoldKetchup();
             trex.HoldMustard();
             trex.HoldMayo();
-            Assert.Collection<string>(trex.Special,
+            Assert.Collection(trex.Special,
                 item =>
                 {
                     Assert.Equal("Hold Bun", item);
