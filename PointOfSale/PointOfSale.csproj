@@ -78,6 +78,9 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TRexKingburgerSelection.xaml.cs">
+      <DependentUpon>TRexKingburgerSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaceOptions.cs" />
     <Page Include="BrontowurstSelection.xaml">
       <SubType>Designer</SubType>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TRexKingburgerSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

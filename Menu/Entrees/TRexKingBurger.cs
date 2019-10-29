@@ -10,21 +10,21 @@ namespace DinoDiner.Menu
     public class TRexKingBurger : Entree
     {
         // Indicates the use of a bun.
-        private bool bun = true;
+        public bool Bun { get; private set; } = true;
         // Indicates the use of lettuce.
-        private bool lettuce = true;
+        public bool Lettuce { get; private set; } = true;
         // Indicates the use of tomato.
-        private bool tomato = true;
+        public bool Tomato { get; private set; } = true;
         // Indicates the use of onion.
-        private bool onion = true;
+        public bool Onion { get; private set; } = true;
         // Indicates the use of pickle.
-        private bool pickle = true;
+        public bool Pickle { get; private set; } = true;
         // Indicates the use of ketchup.
-        private bool ketchup = true;
+        public bool Ketchup { get; private set; } = true;
         // Indicates the use of mustard.
-        private bool mustard = true;
+        public bool Mustard { get; private set; } = true;
         // Indicates the use of mayo.
-        private bool mayo = true;
+        public bool Mayo { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -36,14 +36,14 @@ namespace DinoDiner.Menu
                 ingredients.Add("Steakburger Pattie");
                 ingredients.Add("Steakburger Pattie");
                 ingredients.Add("Steakburger Pattie");
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (lettuce) ingredients.Add("Lettuce");
-                if (tomato) ingredients.Add("Tomato");
-                if (onion) ingredients.Add("Onion");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                if (mayo) ingredients.Add("Mayo");
+                if (Bun) ingredients.Add("Whole Wheat Bun");
+                if (Lettuce) ingredients.Add("Lettuce");
+                if (Tomato) ingredients.Add("Tomato");
+                if (Onion) ingredients.Add("Onion");
+                if (Pickle) ingredients.Add("Pickle");
+                if (Ketchup) ingredients.Add("Ketchup");
+                if (Mustard) ingredients.Add("Mustard");
+                if (Mayo) ingredients.Add("Mayo");
                 return ingredients;
             }
         }
@@ -55,14 +55,14 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!bun) special.Add("Hold Bun");
-                if (!lettuce) special.Add("Hold Lettuce");
-                if (!tomato) special.Add("Hold Tomato");
-                if (!onion) special.Add("Hold Onion");
-                if (!pickle) special.Add("Hold Pickle");
-                if (!ketchup) special.Add("Hold Ketchup");
-                if (!mustard) special.Add("Hold Mustard");
-                if (!mayo) special.Add("Hold Mayo");
+                if (!Bun) special.Add("Hold Bun");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Tomato) special.Add("Hold Tomato");
+                if (!Onion) special.Add("Hold Onion");
+                if (!Pickle) special.Add("Hold Pickle");
+                if (!Ketchup) special.Add("Hold Ketchup");
+                if (!Mustard) special.Add("Hold Mustard");
+                if (!Mayo) special.Add("Hold Mayo");
                 return special.ToArray();
             }
         }
@@ -79,7 +79,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-            bun = false;
+            Bun = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
-            lettuce = false;
+            Lettuce = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldTomato()
         {
-            tomato = false;
+            Tomato = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldOnion()
         {
-            onion = false;
+            Onion = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPickle()
         {
-            pickle = false;
+            Pickle = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldKetchup()
         {
-            ketchup = false;
+            Ketchup = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMustard()
         {
-            mustard = false;
+            Mustard = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -135,7 +135,71 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMayo()
         {
-            mayo = false;
+            Mayo = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the bun.
+        /// </summary>
+        public void AddBun()
+        {
+            Bun = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the lettuce.
+        /// </summary>
+        public void AddLettuce()
+        {
+            Lettuce = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the tomato.
+        /// </summary>
+        public void AddTomato()
+        {
+            Tomato = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the onion.
+        /// </summary>
+        public void AddOnion()
+        {
+            Onion = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the pickle.
+        /// </summary>
+        public void AddPickle()
+        {
+            Pickle = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the ketchup.
+        /// </summary>
+        public void AddKetchup()
+        {
+            Ketchup = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the mustard.
+        /// </summary>
+        public void AddMustard()
+        {
+            Mustard = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the mayo.
+        /// </summary>
+        public void AddMayo()
+        {
+            Mayo = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

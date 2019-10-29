@@ -10,13 +10,13 @@ namespace DinoDiner.Menu
     public class SteakosaurusBurger : Entree
     {
         // Indicates the use of a bun.
-        public bool bun { get; private set; } = true;
+        public bool Bun { get; private set; } = true;
         // Indicates the use of a pickle.
-        public bool pickle { get; private set; } = true;
+        public bool Pickle { get; private set; } = true;
         // Indicates the use of ketchup.
-        public bool ketchup { get; private set; } = true;
+        public bool Ketchup { get; private set; } = true;
         // Indicates the use of mustard.
-        public bool mustard { get; private set; } = true;
+        public bool Mustard { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -25,10 +25,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
+                if (Bun) ingredients.Add("Whole Wheat Bun");
+                if (Pickle) ingredients.Add("Pickle");
+                if (Ketchup) ingredients.Add("Ketchup");
+                if (Mustard) ingredients.Add("Mustard");
                 return ingredients;
             }
         }
@@ -40,10 +40,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!bun) special.Add("Hold Bun");
-                if (!pickle) special.Add("Hold Pickle");
-                if (!ketchup) special.Add("Hold Ketchup");
-                if (!mustard) special.Add("Hold Mustard");
+                if (!Bun) special.Add("Hold Bun");
+                if (!Pickle) special.Add("Hold Pickle");
+                if (!Ketchup) special.Add("Hold Ketchup");
+                if (!Mustard) special.Add("Hold Mustard");
                 return special.ToArray();
             }
         }
@@ -60,7 +60,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-            bun = false;
+            Bun = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPickle()
         {
-            pickle = false;
+            Pickle = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldKetchup()
         {
-            ketchup = false;
+            Ketchup = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMustard()
         {
-            mustard = false;
+            Mustard = false;
             NotifyOfPropertyChange("Special");
         }
 
@@ -93,7 +93,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddBun()
         {
-            bun = true;
+            Bun = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddPickle()
         {
-            pickle = true;
+            Pickle = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddKetchup()
         {
-            ketchup = true;
+            Ketchup = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddMustard()
         {
-            mustard = true;
+            Mustard = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

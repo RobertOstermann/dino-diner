@@ -61,7 +61,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectBun(object sender, RoutedEventArgs args)
         {
-            if (steakosaurus.bun) steakosaurus.HoldBun();
+            if (steakosaurus.Bun) steakosaurus.HoldBun();
             else steakosaurus.AddBun();
             SetUpSteakosaurusBurgerSelection();
         }
@@ -72,7 +72,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectPickle(object sender, RoutedEventArgs args)
         {
-            if (steakosaurus.pickle) steakosaurus.HoldPickle();
+            if (steakosaurus.Pickle) steakosaurus.HoldPickle();
             else steakosaurus.AddPickle();
             SetUpSteakosaurusBurgerSelection();
         }
@@ -83,7 +83,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectKetchup(object sender, RoutedEventArgs args)
         {
-            if (steakosaurus.ketchup) steakosaurus.HoldKetchup();
+            if (steakosaurus.Ketchup) steakosaurus.HoldKetchup();
             else steakosaurus.AddKetchup();
             SetUpSteakosaurusBurgerSelection();
         }
@@ -94,7 +94,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectMustard(object sender, RoutedEventArgs args)
         {
-            if (steakosaurus.mustard) steakosaurus.HoldMustard();
+            if (steakosaurus.Mustard) steakosaurus.HoldMustard();
             else steakosaurus.AddMustard();
             SetUpSteakosaurusBurgerSelection();
         }
@@ -104,10 +104,10 @@ namespace PointOfSale
         private void SetUpSteakosaurusBurgerSelection()
         {
             ClearButtonValues();
-            if (steakosaurus.bun) BunButton.Background = UserInterfaceOptions.SelectedColor;
-            if (steakosaurus.pickle) PickleButton.Background = UserInterfaceOptions.SelectedColor;
-            if (steakosaurus.ketchup) KetchupButton.Background = UserInterfaceOptions.SelectedColor;
-            if (steakosaurus.mustard) MustardButton.Background = UserInterfaceOptions.SelectedColor;
+            if (steakosaurus.Bun) BunButton.Background = UserInterfaceOptions.SelectedColor;
+            if (steakosaurus.Pickle) PickleButton.Background = UserInterfaceOptions.SelectedColor;
+            if (steakosaurus.Ketchup) KetchupButton.Background = UserInterfaceOptions.SelectedColor;
+            if (steakosaurus.Mustard) MustardButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Resets the button values.
