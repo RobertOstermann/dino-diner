@@ -12,10 +12,22 @@ namespace DinoDiner.Menu
     {
         private Size size;
 
+        private SodasaurusFlavor flavor;
         /// <summary>
         /// Gets and sets the flavor of the drink.
         /// </summary>
-        public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Description");
+            }
+        }
 
         /// <summary>
         /// Gets the ingredients of the drink.
@@ -48,6 +60,7 @@ namespace DinoDiner.Menu
             Size = Size.Small;
             Price = 1.50;
             Calories = 112;
+            Flavor = SodasaurusFlavor.Cherry;
         }
         /// <summary>
         /// Gets and sets the size.
