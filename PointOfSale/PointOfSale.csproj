@@ -53,66 +53,8 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BrontowurstSelection.xaml.cs">
-      <DependentUpon>BrontowurstSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DinoNuggetsSelection.xaml.cs">
-      <DependentUpon>DinoNuggetsSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DrinkSelection.xaml.cs">
-      <DependentUpon>DrinkSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FlavorSelection.xaml.cs">
-      <DependentUpon>FlavorSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OrderControl.xaml.cs">
-      <DependentUpon>OrderControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PrehistoricPBJSelection.xaml.cs">
-      <DependentUpon>PrehistoricPBJSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SteakosaurusBurgerSelection.xaml.cs">
-      <DependentUpon>SteakosaurusBurgerSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SideSelection.xaml.cs">
-      <DependentUpon>SideSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TRexKingBurgerSelection.xaml.cs">
-      <DependentUpon>TRexKingBurgerSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserInterfaceOptions.cs" />
-    <Compile Include="VelociWrapSelection.xaml.cs">
-      <DependentUpon>VelociWrapSelection.xaml</DependentUpon>
-    </Compile>
-    <Page Include="BrontowurstSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ComboSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomizeCombo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DinoNuggetsSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DrinkSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EntreeSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FlavorSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,52 +63,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ComboSelection.xaml.cs">
-      <DependentUpon>ComboSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizeCombo.xaml.cs">
-      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EntreeSelection.xaml.cs">
-      <DependentUpon>EntreeSelection.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MenuCategorySelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PrehistoricPBJSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SteakosaurusBurgerSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SideSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TRexKingBurgerSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VelociWrapSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuCategorySelection.xaml.cs">
-      <DependentUpon>MenuCategorySelection.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -184,6 +86,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Milestones\1-create-order-pages.workbook" />
+    <None Include="Milestones\2-user-interaction-part-I.workbook" />
+    <None Include="Milestones\3-user-interaction-part-II.workbook" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,23 +102,6 @@
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\DinoDiner-01.png" />
-    <Resource Include="Assets\DinoDiner-02.png" />
-    <Resource Include="Assets\DinoDiner-03.png" />
-    <Resource Include="Assets\DinoDiner-04.png" />
-    <Resource Include="Assets\DinoDiner-05.png" />
-    <Resource Include="Assets\DinoDiner-06.png" />
-    <Resource Include="Assets\DinoDiner-07.png" />
-    <Resource Include="Assets\DinoDiner-08.png" />
-    <Resource Include="Assets\DinoDiner-09.png" />
-    <Resource Include="Assets\DinoDiner-10.png" />
-    <Resource Include="Assets\DinoDiner-11.png" />
-    <Resource Include="Assets\DinoDiner-12.png" />
-    <Resource Include="Assets\DinoDiner-13.png" />
-    <Resource Include="Assets\DinoDiner-14.png" />
-    <Resource Include="Assets\DinoDiner-15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
