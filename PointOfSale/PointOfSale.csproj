@@ -78,10 +78,13 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TRexKingburgerSelection.xaml.cs">
-      <DependentUpon>TRexKingburgerSelection.xaml</DependentUpon>
+    <Compile Include="TRexKingBurgerSelection.xaml.cs">
+      <DependentUpon>TRexKingBurgerSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserInterfaceOptions.cs" />
+    <Compile Include="VelociWrapSelection.xaml.cs">
+      <DependentUpon>VelociWrapSelection.xaml</DependentUpon>
+    </Compile>
     <Page Include="BrontowurstSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,7 +154,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TRexKingburgerSelection.xaml">
+    <Page Include="TRexKingBurgerSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VelociWrapSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

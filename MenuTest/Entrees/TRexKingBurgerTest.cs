@@ -111,6 +111,78 @@ namespace MenuTest.Entrees
         }
 
         [Fact]
+        public void AddBunShouldAddBun()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldBun();
+            trex.AddBun();
+            Assert.Contains("Whole Wheat Bun", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddLettuceShouldAddLettuce()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldLettuce();
+            trex.AddLettuce();
+            Assert.Contains("Lettuce", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddTomatoShouldAddTomato()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldTomato();
+            trex.AddTomato();
+            Assert.Contains("Tomato", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddOnionShouldAddOnion()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldOnion();
+            trex.AddOnion();
+            Assert.Contains("Onion", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddPickleShouldAddPickle()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldPickle();
+            trex.AddPickle();
+            Assert.Contains("Pickle", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddKetchupShouldAddKetchup()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldKetchup();
+            trex.AddKetchup();
+            Assert.Contains("Ketchup", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddMustardShouldAddMustard()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldMustard();
+            trex.AddMustard();
+            Assert.Contains("Mustard", trex.Ingredients);
+        }
+
+        [Fact]
+        public void AddMayoShouldAddMayo()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            trex.HoldMayo();
+            trex.AddMayo();
+            Assert.Contains("Mayo", trex.Ingredients);
+        }
+
+        [Fact]
         public void HoldBunShouldNotifyOfSpecialPropertyChange()
         {
             TRexKingBurger trex = new TRexKingBurger();
@@ -187,6 +259,86 @@ namespace MenuTest.Entrees
             Assert.PropertyChanged(trex, "Special", () =>
             {
                 trex.HoldMayo();
+            });
+        }
+
+        [Fact]
+        public void AddBunShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddBun();
+            });
+        }
+
+        [Fact]
+        public void AddLettuceShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddLettuce();
+            });
+        }
+
+        [Fact]
+        public void AddTomatoShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddTomato();
+            });
+        }
+
+        [Fact]
+        public void AddOnionShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddOnion();
+            });
+        }
+
+        [Fact]
+        public void AddPickleShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddPickle();
+            });
+        }
+
+        [Fact]
+        public void AddKetchupShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddKetchup();
+            });
+        }
+
+        [Fact]
+        public void AddMustardShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddMustard();
+            });
+        }
+
+        [Fact]
+        public void AddMayoShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () =>
+            {
+                trex.AddMayo();
             });
         }
 

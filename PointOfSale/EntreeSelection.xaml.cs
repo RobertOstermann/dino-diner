@@ -152,8 +152,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectTRexKingburger(object sender, RoutedEventArgs args)
         {
-            entree = new TRexKingBurger();
-            SetUpEntreeSelection();
+            if (entree is TRexKingBurger kingBurger)
+            {
+                NavigationService.Navigate(new TRexKingBurgerSelection(kingBurger));
+            }
+            else
+            {
+                entree = new TRexKingBurger();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new TRexKingBurgerSelection((TRexKingBurger)entree));
+            }
         }
 
         /// <summary>
@@ -163,8 +171,16 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectVelociWrap(object sender, RoutedEventArgs args)
         {
-            entree = new VelociWrap();
-            SetUpEntreeSelection();
+            if (entree is VelociWrap velociWrap)
+            {
+                NavigationService.Navigate(new VelociWrapSelection(velociWrap));
+            }
+            else
+            {
+                entree = new VelociWrap();
+                SetUpEntreeSelection();
+                NavigationService.Navigate(new VelociWrapSelection((VelociWrap)entree));
+            }
         }
         /// <summary>
         /// Prepares the EntreeSelection user interface.

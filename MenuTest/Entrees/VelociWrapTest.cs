@@ -41,7 +41,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldDressing();
-            Assert.DoesNotContain("Dressing", vw.Ingredients);
+            Assert.DoesNotContain("Ceasar Dressing", vw.Ingredients);
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace MenuTest.Entrees
         {
             VelociWrap vw = new VelociWrap();
             vw.HoldLettuce();
-            Assert.DoesNotContain("Lettuce", vw.Ingredients);
+            Assert.DoesNotContain("Romaine Lettuce", vw.Ingredients);
         }
 
         [Fact]
@@ -58,6 +58,33 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldCheese();
             Assert.DoesNotContain("Parmesan Cheese", vw.Ingredients);
+        }
+
+        [Fact]
+        public void AddDressingShouldAddDressing()
+        {
+            VelociWrap vw = new VelociWrap();
+            vw.HoldDressing();
+            vw.AddDressing();
+            Assert.Contains("Ceasar Dressing", vw.Ingredients);
+        }
+
+        [Fact]
+        public void AddLettuceShouldAddLettuce()
+        {
+            VelociWrap vw = new VelociWrap();
+            vw.HoldLettuce();
+            vw.AddLettuce();
+            Assert.Contains("Romaine Lettuce", vw.Ingredients);
+        }
+
+        [Fact]
+        public void AddCheeseShouldAddCheese()
+        {
+            VelociWrap vw = new VelociWrap();
+            vw.HoldCheese();
+            vw.AddCheese();
+            Assert.Contains("Parmesan Cheese", vw.Ingredients);
         }
 
         [Fact]
@@ -87,6 +114,36 @@ namespace MenuTest.Entrees
             Assert.PropertyChanged(vw, "Special", () =>
             {
                 vw.HoldCheese();
+            });
+        }
+
+        [Fact]
+        public void AddDressingShouldNotifyOfSpecialPropertyChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.AddDressing();
+            });
+        }
+
+        [Fact]
+        public void AddLettuceShouldNotifyOfSpecialPropertyChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.AddLettuce();
+            });
+        }
+
+        [Fact]
+        public void AddCheeseShouldNotifyOfSpecialPropertyChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.AddCheese();
             });
         }
 

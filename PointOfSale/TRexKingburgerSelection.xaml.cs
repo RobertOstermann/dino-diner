@@ -19,13 +19,13 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for TRexKingburgerSelection.xaml
     /// </summary>
-    public partial class TRexKingburgerSelection : Page
+    public partial class TRexKingBurgerSelection : Page
     {
         private TRexKingBurger kingBurger;
         /// <summary>
         /// Initialize the TRexKingburgerSelection page.
         /// </summary>
-        public TRexKingburgerSelection(TRexKingBurger kingBurger)
+        public TRexKingBurgerSelection(TRexKingBurger kingBurger)
         {
             InitializeComponent();
             this.kingBurger = kingBurger;

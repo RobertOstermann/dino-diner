@@ -10,11 +10,11 @@ namespace DinoDiner.Menu
     public class VelociWrap : Entree
     {
         // Indicates the use of dressing.
-        private bool dressing = true;
+        public bool Dressing { get; private set; } = true;
         // Indicates the use of lettuce.
-        private bool lettuce = true;
+        public bool Lettuce { get; private set; } = true;
         // Indicates the use of cheese.
-        private bool cheese = true;
+        public bool Cheese { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -25,9 +25,9 @@ namespace DinoDiner.Menu
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Flour Tortilla");
                 ingredients.Add("Chicken Breast");
-                if (dressing) ingredients.Add("Ceasar Dressing");
-                if (lettuce) ingredients.Add("Romaine Lettuce");
-                if (cheese) ingredients.Add("Parmesan Cheese");
+                if (Dressing) ingredients.Add("Ceasar Dressing");
+                if (Lettuce) ingredients.Add("Romaine Lettuce");
+                if (Cheese) ingredients.Add("Parmesan Cheese");
                 return ingredients;
             }
         }
@@ -39,9 +39,9 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!dressing) special.Add("Hold Dressing");
-                if (!lettuce) special.Add("Hold Lettuce");
-                if (!cheese) special.Add("Hold Cheese");
+                if (!Dressing) special.Add("Hold Dressing");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Cheese) special.Add("Hold Cheese");
                 return special.ToArray();
             }
         }
@@ -58,7 +58,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldDressing()
         {
-            dressing = false;
+            Dressing = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
-            lettuce = false;
+            Lettuce = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -74,7 +74,31 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldCheese()
         {
-            cheese = false;
+            Cheese = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the dressing.
+        /// </summary>
+        public void AddDressing()
+        {
+            Dressing = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the lettuce.
+        /// </summary>
+        public void AddLettuce()
+        {
+            Lettuce = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Adds the cheese.
+        /// </summary>
+        public void AddCheese()
+        {
+            Cheese = true;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
