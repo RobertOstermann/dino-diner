@@ -50,8 +50,6 @@ namespace DinoDiner.Menu
             nuggets = 6;
             Price = 4.25;
             Calories = 59 * 6;
-            NotifyOfPropertyChange("Special");
-            NotifyOfPropertyChange("Price");
         }
         /// <summary>
         /// Adds a dinonugget.
@@ -61,6 +59,15 @@ namespace DinoDiner.Menu
             nuggets += 1;
             Price += 0.25;
             Calories += 59;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Price");
+        }
+
+        public void ResetNuggetCount()
+        {
+            nuggets = 6;
+            Price = 4.25;
+            Calories = 59 * 6;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Price");
         }

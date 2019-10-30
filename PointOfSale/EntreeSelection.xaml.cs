@@ -25,6 +25,9 @@ namespace PointOfSale
     public partial class EntreeSelection : Page
     {
         private Entree entree;
+
+        private bool isCombo;
+
         /// <summary>
         /// Initialize the EntreeSelection page.
         /// </summary>
@@ -32,20 +35,47 @@ namespace PointOfSale
         {
             InitializeComponent();
             SetUpEntreeSelection();
-            AddToOrderButton.IsEnabled = false;
+            ConfirmButton.IsEnabled = false;
+            isCombo = false;
         }
-
+        /// <summary>
+        /// Initialize the EntreeSelection page.
+        /// Allows user to edit the selected combo.
+        /// </summary>
+        /// <param name="combo"></param>
+        public EntreeSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            entree = combo.Entree;
+            isCombo = true;
+            SetUpEntreeSelection();
+            ConfirmTextBlock.Text = "Confirm Entree";
+        }
         /// <summary>
         /// Adds the entree to the order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectAddToOrder(object sender, RoutedEventArgs args)
+        private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (isCombo)
             {
-                order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
+            else
+            {
+                if (DataContext is Order order)
+                {
+                    order.Add(entree);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
             }
         }
         /// <summary>
@@ -190,47 +220,48 @@ namespace PointOfSale
             ClearButtonValues();
             if (entree is Brontowurst)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 BrontowurstButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 BrontowurstButton.BorderThickness = UserInterfaceOptions.SelectedThickness;
             }
-            if (entree is DinoNuggets)
+            else if (entree is DinoNuggets)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 DinoNuggetsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 DinoNuggetsButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
-            if (entree is PrehistoricPBJ)
+            else if (entree is PrehistoricPBJ)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 PrehistoricPBJButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 PrehistoricPBJButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
-            if (entree is PterodactylWings)
+            else if (entree is PterodactylWings)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 PterodactylWingsButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 PterodactylWingsButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
-            if (entree is SteakosaurusBurger)
+            else if (entree is SteakosaurusBurger)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 SteakosaurusBurgerButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 SteakosaurusBurgerButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
-            if (entree is TRexKingBurger)
+            else if (entree is TRexKingBurger)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 TRexKingburgerButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 TRexKingburgerButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
-            if (entree is VelociWrap)
+            else if (entree is VelociWrap)
             {
-                AddToOrderButton.IsEnabled = true;
+                ConfirmButton.IsEnabled = true;
                 VelociWrapButton.BorderBrush = UserInterfaceOptions.SelectedColor;
                 VelociWrapButton.BorderThickness = UserInterfaceOptions.SelectedThickness; ;
             }
         }
+
         /// <summary>
         /// Resets the button values.
         /// </summary>

@@ -15,6 +15,7 @@
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
+                    <Setter Property="BorderThickness" TargetName="border" Value="2"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" TargetName="border" Value="SpringGreen"/>

@@ -23,10 +23,27 @@ namespace PointOfSale
     {
         private Brontowurst brontowurst;
 
+        private bool isEdit;
+        /// <summary>
+        /// Initializes the BrontowurstSelection page.
+        /// </summary>
+        /// <param name="brontowurst"></param>
         public BrontowurstSelection(Brontowurst brontowurst)
         {
             InitializeComponent();
             this.brontowurst = brontowurst;
+            SetUpBrontowurstSelection();
+        }
+        /// <summary>
+        /// Initializes the BrontowurstSelection page.
+        /// </summary>
+        /// <param name="brontowurst"></param>
+        /// <param name="isEdit"></param>
+        public BrontowurstSelection(Brontowurst brontowurst, bool isEdit)
+        {
+            InitializeComponent();
+            this.brontowurst = brontowurst;
+            this.isEdit = isEdit;
             SetUpBrontowurstSelection();
         }
 
@@ -37,24 +54,33 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
+            if (isEdit)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+            else
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
         /// <summary>
-        /// Returns to the entree selection page.
-        /// Does not add the brontowurst to the order.
+        /// Resets the entree to original values.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
+        private void SelectReset(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            brontowurst.AddBun();
+            brontowurst.AddPeppers();
+            brontowurst.AddOnion();
+            SetUpBrontowurstSelection();
         }
         /// <summary>
         /// Determines the bun property.

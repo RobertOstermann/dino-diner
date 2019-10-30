@@ -22,10 +22,27 @@ namespace PointOfSale
     public partial class SteakosaurusBurgerSelection : Page
     {
         private SteakosaurusBurger steakosaurus;
+
+        private bool isEdit;
+        /// <summary>
+        /// Initializes the SteakosaurusBurgerSelection page.
+        /// </summary>
+        /// <param name="steakosaurus"></param>
         public SteakosaurusBurgerSelection(SteakosaurusBurger steakosaurus)
         {
             InitializeComponent();
             this.steakosaurus = steakosaurus;
+            SetUpSteakosaurusBurgerSelection();
+        }
+        /// <summary>
+        /// Initializes the SteakosaurusBurgerSelection page.
+        /// </summary>
+        /// <param name="steakosaurus"></param>
+        public SteakosaurusBurgerSelection(SteakosaurusBurger steakosaurus, bool isEdit)
+        {
+            InitializeComponent();
+            this.steakosaurus = steakosaurus;
+            this.isEdit = isEdit;
             SetUpSteakosaurusBurgerSelection();
         }
         /// <summary>
@@ -35,24 +52,34 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
+            if (isEdit)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+            else
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
         /// <summary>
-        /// Returns to the entree selection page.
-        /// Does not add the pterodactyl wings to the order.
+        /// Resets the entree to original values.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
+        private void SelectReset(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            steakosaurus.AddBun();
+            steakosaurus.AddPickle();
+            steakosaurus.AddKetchup();
+            steakosaurus.AddMustard();
+            SetUpSteakosaurusBurgerSelection();
         }
         /// <summary>
         /// Determines the bun property.

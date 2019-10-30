@@ -14,7 +14,7 @@ namespace PointOfSale
 
         public static Brush BaseColor { get; } = Brushes.Gainsboro;
 
-        public static Thickness SelectedThickness { get; } = new Thickness(2.5);
+        public static Thickness SelectedThickness { get; } = new Thickness(2);
 
         public static Thickness BaseThickness { get; } = new Thickness(1.0);
     }

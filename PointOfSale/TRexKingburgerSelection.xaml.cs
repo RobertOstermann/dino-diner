@@ -22,13 +22,25 @@ namespace PointOfSale
     public partial class TRexKingBurgerSelection : Page
     {
         private TRexKingBurger kingBurger;
+
+        private bool isEdit;
         /// <summary>
-        /// Initialize the TRexKingburgerSelection page.
+        /// Initializes the TRexKingburgerSelection page.
         /// </summary>
         public TRexKingBurgerSelection(TRexKingBurger kingBurger)
         {
             InitializeComponent();
             this.kingBurger = kingBurger;
+            SetUpTRexKingburgerSelection();
+        }
+        /// <summary>
+        /// Initializes the TRexKingburgerSelection page.
+        /// </summary>
+        public TRexKingBurgerSelection(TRexKingBurger kingBurger, bool isEdit)
+        {
+            InitializeComponent();
+            this.kingBurger = kingBurger;
+            this.isEdit = isEdit;
             SetUpTRexKingburgerSelection();
         }
         /// <summary>
@@ -38,24 +50,38 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
+            if (isEdit)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+            else
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
         /// <summary>
-        /// Returns to the entree selection page.
-        /// Does not add the TRexKingburger to the order.
+        /// Resets the entree to original values.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
+        private void SelectReset(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            kingBurger.AddBun();
+            kingBurger.AddLettuce();
+            kingBurger.AddTomato();
+            kingBurger.AddOnion();
+            kingBurger.AddPickle();
+            kingBurger.AddKetchup();
+            kingBurger.AddMustard();
+            kingBurger.AddMayo();
+            SetUpTRexKingburgerSelection();
         }
         /// <summary>
         /// Determines the bun property.

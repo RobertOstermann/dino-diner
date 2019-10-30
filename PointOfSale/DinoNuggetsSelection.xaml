@@ -24,19 +24,13 @@
                 Add Nugget
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.ColumnSpan="2"
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="1" Grid.ColumnSpan="2" Background="LightPink"
                 Name="ResetNuggetCountButton" Click="SelectResetNuggetCount">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                 Reset Nugget Count
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="2" Grid.Column="0" Background="LightPink"
-                        Name="CancelButton" Click="SelectCancel">
-            <TextBlock Style="{StaticResource SimpleTextBlock}">
-                        Cancel
-            </TextBlock>
-        </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.Column="1" Background="SkyBlue"
+        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.ColumnSpan="2" Background="SkyBlue"
                         Name="ConfirmButton" Click="SelectConfirm">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Confirm

@@ -30,14 +30,14 @@
                      IsSynchronizedWithCurrentItem="True">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Width="190">
+                        <StackPanel Width="190" MouseUp="EditItem">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition />
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition Width="20"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" 
+                                <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" MouseDown="EditItem" 
                                            Text="{Binding Path=Description}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>
                                 <Button Click="OnRemoveItem" Height="20" FontSize="14" Background="Red" Foreground="White" Grid.Column="1">
                                     X

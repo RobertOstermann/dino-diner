@@ -38,7 +38,7 @@
             </TextBlock>
         </Button>
         <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="3" Grid.Column="0" Background="LightPink"
-                        Name="CancelButton" Click="SelectCancel">
+                        Name="ResetButton" Click="SelectReset">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Cancel
             </TextBlock>

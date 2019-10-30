@@ -22,6 +22,8 @@ namespace PointOfSale
     public partial class DinoNuggetsSelection : Page
     {
         private DinoNuggets dinoNuggets;
+
+        private bool isEdit;
         /// <summary>
         /// Initialize the DinoNuggetsSelection page.
         /// </summary>
@@ -32,31 +34,39 @@ namespace PointOfSale
             SetUpDinoNuggetsSelection();
         }
         /// <summary>
+        /// Initialize the DinoNuggetsSelection page.
+        /// </summary>
+        public DinoNuggetsSelection(DinoNuggets dinoNuggets, bool isEdit)
+        {
+            InitializeComponent();
+            this.dinoNuggets = dinoNuggets;
+            this.isEdit = isEdit;
+            SetUpDinoNuggetsSelection();
+        }
+        /// <summary>
         /// Confirms the properties of the pbj.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
+            if (isEdit)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+            else
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
-        /// <summary>
-        /// Returns to the entree selection page.
-        /// Does not add the pbj to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new EntreeSelection());
-        }
+
         /// <summary>
         /// Adds a nugget to the dino-nuggets item.
         /// </summary>
@@ -74,7 +84,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectResetNuggetCount(object sender, RoutedEventArgs args)
         {
-            dinoNuggets = new DinoNuggets();
+            dinoNuggets.ResetNuggetCount();
             SetUpDinoNuggetsSelection();
         }
         /// <summary>

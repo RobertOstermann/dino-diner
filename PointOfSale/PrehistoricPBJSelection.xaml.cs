@@ -22,6 +22,8 @@ namespace PointOfSale
     public partial class PrehistoricPBJSelection : Page
     {
         private PrehistoricPBJ pbj;
+
+        private bool isEdit;
         /// <summary>
         /// Initialize the PrehistoricPBJSelection page.
         /// </summary>
@@ -32,7 +34,17 @@ namespace PointOfSale
             this.pbj = pbj;
             SetUpPrehistoricPBJSelection();
         }
-
+        /// <summary>
+        /// Initialize the PrehistoricPBJSelection page.
+        /// </summary>
+        /// <param name="pbj"></param>
+        public PrehistoricPBJSelection(PrehistoricPBJ pbj, bool isEdit)
+        {
+            InitializeComponent();
+            this.pbj = pbj;
+            this.isEdit = isEdit;
+            SetUpPrehistoricPBJSelection();
+        }
         /// <summary>
         /// Confirms the properties of the pbj.
         /// </summary>
@@ -40,24 +52,32 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
+            if (isEdit)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
             }
+            else
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
         /// <summary>
-        /// Returns to the entree selection page.
-        /// Does not add the pbj to the order.
+        /// Resets the entree to the original values.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
+        private void SelectReset(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            pbj.AddPeanutButter();
+            pbj.AddJelly();
+            SetUpPrehistoricPBJSelection();
         }
         /// <summary>
         /// Determines the peanut butter property.

@@ -39,6 +39,24 @@ namespace PointOfSale
                 //Pass in side.
                 //NavigationService?.Navigate(new SideSelection(side));
             }
+            if (DataContext is Order order)
+            {
+                if (sender is FrameworkElement element)
+                {
+                    if (element.DataContext is IOrderItem item)
+                    {
+                        if (item is Entree entree)
+                        {
+                            if (entree is Brontowurst brontowurst) NavigationService?.Navigate(new BrontowurstSelection(brontowurst, true));
+                            else if (entree is DinoNuggets dinoNuggets) NavigationService?.Navigate(new DinoNuggetsSelection(dinoNuggets, true));
+                            else if (entree is PrehistoricPBJ prehistoricPBJ) NavigationService?.Navigate(new PrehistoricPBJSelection(prehistoricPBJ, true));
+                            else if (entree is SteakosaurusBurger steakosaurusBurger) NavigationService?.Navigate(new SteakosaurusBurgerSelection(steakosaurusBurger, true));
+                            else if (entree is TRexKingBurger kingBurger) NavigationService?.Navigate(new TRexKingBurgerSelection(kingBurger, true));
+                            else if (entree is VelociWrap velociWrap) NavigationService?.Navigate(new VelociWrapSelection(velociWrap, true));
+                        }
+                    }
+                }
+            }
         }
         /// <summary>
         /// Removes the selected order item.
@@ -52,7 +70,9 @@ namespace PointOfSale
                 if (sender is FrameworkElement element)
                 {
                     if (element.DataContext is IOrderItem item)
+                    {
                         order.Remove(item);
+                    }
                 }
             }
         }

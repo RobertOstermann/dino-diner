@@ -22,13 +22,29 @@ namespace PointOfSale
     public partial class VelociWrapSelection : Page
     {
         private VelociWrap velociWrap;
+
+        private bool isEdit;
+        /// <summary>
+        /// Initializes the VelociWrapSelection page.
+        /// </summary>
+        /// <param name="velociWrap"></param>
         public VelociWrapSelection(VelociWrap velociWrap)
         {
             InitializeComponent();
             this.velociWrap = velociWrap;
             SetUpVelociWrapSelection();
         }
-
+        /// <summary>
+        /// Initializes the VelociWrapSelection page.
+        /// </summary>
+        /// <param name="velociWrap"></param>
+        public VelociWrapSelection(VelociWrap velociWrap, bool isEdit)
+        {
+            InitializeComponent();
+            this.velociWrap = velociWrap;
+            this.isEdit = isEdit;
+            SetUpVelociWrapSelection();
+        }
         /// <summary>
         /// Confirms the properties of the veloci wrap.
         /// </summary>
@@ -36,13 +52,20 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isEdit)
             {
-                NavigationService.GoBack();
+                NavigationService.Navigate(new MenuCategorySelection());
             }
             else
             {
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
             }
         }
         /// <summary>
@@ -51,9 +74,12 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectCancel(object sender, RoutedEventArgs args)
+        private void SelectReset(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            velociWrap.AddDressing();
+            velociWrap.AddLettuce();
+            velociWrap.AddCheese();
+            SetUpVelociWrapSelection();
         }
         /// <summary>
         /// Determines the dressing property.
