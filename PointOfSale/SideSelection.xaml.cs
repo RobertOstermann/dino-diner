@@ -26,6 +26,7 @@ namespace PointOfSale
     {
         private Side side;
 
+        private bool isEdit;
         /// <summary>
         /// Initialize the SideSelection page.
         /// </summary>
@@ -33,7 +34,23 @@ namespace PointOfSale
         {
             InitializeComponent();
             DisableButtons();
-            ClearButtonValues();
+            SetUpSideSelection();
+        }
+        /// <summary>
+        /// Initialize the SideSelection page.
+        /// </summary>
+        public SideSelection(Side side, bool isEdit)
+        {
+            InitializeComponent();
+            this.side = side;
+            this.isEdit = isEdit;
+            DisableButtons();
+            if (isEdit)
+            {
+                ConfirmTextBlock.Text = "Confirm";
+                CancelButton.IsEnabled = false;
+            }
+            SetUpSideSelection();
         }
         /// <summary>
         /// Initialize the SideSelection page.
@@ -52,12 +69,19 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectAddToOrder(object sender, RoutedEventArgs args)
+        private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (isEdit)
             {
-                order.Add(side);
                 NavigationService.Navigate(new MenuCategorySelection());
+            }
+            else
+            {
+                if (DataContext is Order order)
+                {
+                    order.Add(side);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
             }
         }
         /// <summary>
@@ -77,7 +101,6 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectFryceritops(object sender, RoutedEventArgs args)
         {
-            EnableButtons();
             side = new Fryceritops();
             SetUpSideSelection();
         }
@@ -89,7 +112,6 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
-            EnableButtons();
             side = new MeteorMacAndCheese();
             SetUpSideSelection();
         }
@@ -101,7 +123,6 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
-            EnableButtons();
             side = new MezzorellaSticks();
             SetUpSideSelection();
         }
@@ -113,7 +134,6 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectTriceritots(object sender, RoutedEventArgs args)
         {
-            EnableButtons();
             side = new Triceritots();
             SetUpSideSelection();
         }
@@ -161,6 +181,7 @@ namespace PointOfSale
             ClearButtonValues();
             if (side is Fryceritops fryceritops)
             {
+                EnableButtons();
                 if (fryceritops.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
                 if (fryceritops.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
                 if (fryceritops.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
@@ -169,6 +190,7 @@ namespace PointOfSale
             }
             if (side is MeteorMacAndCheese mmc)
             {
+                EnableButtons();
                 if (mmc.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
                 if (mmc.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
                 if (mmc.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
@@ -177,6 +199,7 @@ namespace PointOfSale
             }
             if (side is MezzorellaSticks mezzorella)
             {
+                EnableButtons();
                 if (mezzorella.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
                 if (mezzorella.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
                 if (mezzorella.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
@@ -185,6 +208,7 @@ namespace PointOfSale
             }
             if (side is Triceritots triceritots)
             {
+                EnableButtons();
                 if (triceritots.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
                 if (triceritots.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
                 if (triceritots.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
@@ -224,7 +248,7 @@ namespace PointOfSale
         /// </summary>
         private void EnableButtons()
         {
-            AddToOrderButton.IsEnabled = true;
+            ConfirmButton.IsEnabled = true;
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
@@ -234,7 +258,14 @@ namespace PointOfSale
         /// </summary>
         private void DisableButtons()
         {
-            AddToOrderButton.IsEnabled = false;
+            if (isEdit)
+            {
+                if (!(side is Fryceritops)) FryceritopsButton.IsEnabled = false;
+                if (!(side is MeteorMacAndCheese)) MeteorMacAndCheeseButton.IsEnabled = false;
+                if (!(side is MezzorellaSticks)) MezzorellaSticksButton.IsEnabled = false;
+                if (!(side is Triceritots)) TriceritotsButton.IsEnabled = false;
+            }
+            ConfirmButton.IsEnabled = false;
             SmallButton.IsEnabled = false;
             MediumButton.IsEnabled = false;
             LargeButton.IsEnabled = false;

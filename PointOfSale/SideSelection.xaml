@@ -103,8 +103,8 @@
                     </TextBlock>
                 </Button>
                 <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="1" Background="SkyBlue"
-                        Name="AddToOrderButton" Click="SelectAddToOrder">
-                    <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Name="ConfirmButton" Click="SelectConfirm">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}" Name="ConfirmTextBlock">
                         Add to Order
                     </TextBlock>
                 </Button>

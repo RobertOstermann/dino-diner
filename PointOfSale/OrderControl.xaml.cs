@@ -33,13 +33,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void EditItem(object sender, MouseButtonEventArgs args)
         {
-            //TODO: Allow user to edit all items. Add this code to the OrderControl UI.
-            if (OrderList.SelectedItem is Side side)
-            {
-                //Pass in side.
-                //NavigationService?.Navigate(new SideSelection(side));
-            }
-            if (DataContext is Order order)
+            if (DataContext is Order)
             {
                 if (sender is FrameworkElement element)
                 {
@@ -53,6 +47,14 @@ namespace PointOfSale
                             else if (entree is SteakosaurusBurger steakosaurusBurger) NavigationService?.Navigate(new SteakosaurusBurgerSelection(steakosaurusBurger, true));
                             else if (entree is TRexKingBurger kingBurger) NavigationService?.Navigate(new TRexKingBurgerSelection(kingBurger, true));
                             else if (entree is VelociWrap velociWrap) NavigationService?.Navigate(new VelociWrapSelection(velociWrap, true));
+                        }
+                        else if (item is Drink drink)
+                        {
+                            NavigationService?.Navigate(new DrinkSelection(drink, true));
+                        }
+                        else if (item is Side side)
+                        {
+                            NavigationService?.Navigate(new SideSelection(side, true));
                         }
                     }
                 }

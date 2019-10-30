@@ -26,6 +26,7 @@ namespace PointOfSale
     {
         private Drink drink;
 
+        private bool isEdit;
         /// <summary>
         /// Initialize the DrinkSelection page.
         /// </summary>
@@ -40,23 +41,47 @@ namespace PointOfSale
         /// Initializes the DrinkSelection page.
         /// </summary>
         /// <param name="currentDrink"></param>
-        public DrinkSelection(Drink currentDrink)
+        public DrinkSelection(Drink drink)
         {
             InitializeComponent();
-            drink = currentDrink;
+            this.drink = drink;
             SetUpDrinkSelection();
+        }
+        /// <summary>
+        /// Initialize the DrinkSelection page.
+        /// </summary>
+        public DrinkSelection(Drink drink, bool isEdit)
+        {
+            InitializeComponent();
+            this.drink = drink;
+            this.isEdit = isEdit;
+            if (isEdit)
+            {
+                ConfirmTextBlock.Text = "Confirm";
+                CancelButton.IsEnabled = false;
+            }
+            SetUpDrinkSelection();
+            FlavorButton.Visibility = Visibility.Visible;
+            LemonButton.Visibility = Visibility.Visible;
         }
         /// <summary>
         /// Adds the drink to the order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectAddToOrder(object sender, RoutedEventArgs args)
+        private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (isEdit)
             {
-                order.Add(drink);
                 NavigationService.Navigate(new MenuCategorySelection());
+            }
+            else
+            {
+                if (DataContext is Order order)
+                {
+                    order.Add(drink);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
             }
         }
 
@@ -408,6 +433,13 @@ namespace PointOfSale
         /// </summary>
         private void HideAndDisableAndEnableButtons()
         {
+            if (isEdit)
+            {
+                if (!(drink is Water)) WaterButton.IsEnabled = false;
+                if (!(drink is Sodasaurus)) SodasaurusButton.IsEnabled = false;
+                if (!(drink is Tyrannotea)) TyrannoteaButton.IsEnabled = false;
+                if (!(drink is JurassicJava)) JurassicJavaButton.IsEnabled = false;
+            }
             FlavorButton.IsEnabled = false;
             FlavorButton.Visibility = Visibility.Hidden;
             DecafButton.IsEnabled = false;
@@ -422,7 +454,7 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
-            AddToOrderButton.IsEnabled = true;
+            ConfirmButton.IsEnabled = true;
         }
         /// <summary>
         /// Disables all the non-drink buttons.
@@ -438,7 +470,7 @@ namespace PointOfSale
             LemonButton.IsEnabled = false;
             CreamButton.IsEnabled = false;
             IceButton.IsEnabled = false;
-            AddToOrderButton.IsEnabled = false;
+            ConfirmButton.IsEnabled = false;
         }
     }
 }
