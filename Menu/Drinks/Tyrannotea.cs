@@ -28,6 +28,7 @@ namespace DinoDiner.Menu
                     if (sweet) Calories *= 2;
                     else Calories /= 2;
                     NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Description");
                 }
             }
         }

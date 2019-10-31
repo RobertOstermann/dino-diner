@@ -11,6 +11,7 @@ namespace DinoDiner.Menu
     {
         private Size size;
 
+        private bool decaf;
         /// <summary>
         /// Gets and sets the room for cream.
         /// </summary>
@@ -18,7 +19,21 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the decaf.
         /// </summary>
-        public bool Decaf { get; set; }
+        public bool Decaf {
+            get
+            {
+                return decaf;
+            }
+            set
+            {
+                if (decaf != value)
+                {
+                    decaf = value;
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Description");
+                }
+            }
+        }
         /// <summary>
         /// Gets the ingredients of the drink.
         /// </summary>
