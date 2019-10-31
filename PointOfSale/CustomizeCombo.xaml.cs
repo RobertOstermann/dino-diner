@@ -48,11 +48,15 @@ namespace PointOfSale
             this.combo = combo;
             this.isEdit = isEdit;
             SetUpCustomizeComboSelection();
-            ClearButtonValues();
+            if (combo.Size != combo.Drink.Size || combo.Size != combo.Side.Size) ClearButtonValues();
             ComboTextBlock.Text = combo.ToString();
             DrinkChoice.Text = combo.Drink.ToString();
             SideChoice.Text = combo.Side.ToString();
-            if (isEdit) ConfirmTextBlock.Text = "Confirm";
+            if (isEdit)
+            {
+                CancelButton.IsEnabled = false;
+                ConfirmTextBlock.Text = "Confirm";
+            }
         }
         /// <summary>
         /// Adds the combo to the order.
@@ -90,11 +94,19 @@ namespace PointOfSale
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="args"></param>
+        private void SelectEntree(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new EntreeSelection(combo, isEdit));
+        }
+        /// <summary>
+        /// Navigate to the SideSelection page.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="args"></param>
         private void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(combo));
+            NavigationService.Navigate(new SideSelection(combo, isEdit));
         }
-
         /// <summary>
         /// Navigate to the DrinkSelection page.
         /// </summary>
@@ -102,7 +114,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection(combo.Drink));
+            NavigationService.Navigate(new DrinkSelection(combo, isEdit));
         }
 
         /// <summary>
@@ -146,9 +158,11 @@ namespace PointOfSale
             if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
             if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
             if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+            EntreeButton.Background = UserInterfaceOptions.BaseColor;
             SideButton.Background = UserInterfaceOptions.BaseColor;
             DrinkButton.Background = UserInterfaceOptions.BaseColor;
             ComboTextBlock.Text = combo.ToString();
+            EntreeChoice.Text = combo.Entree.ToString();
             DrinkChoice.Text = combo.Drink.ToString();
             SideChoice.Text = combo.Side.ToString();
         }

@@ -37,19 +37,17 @@ namespace PointOfSale
         public SideSelection()
         {
             InitializeComponent();
-            DisableButtons();
             SetUpSideSelection();
         }
 
-        public SideSelection(CretaceousCombo combo)
+        public SideSelection(CretaceousCombo combo, bool isEdit)
         {
             InitializeComponent();
+            this.isEdit = isEdit;
             this.combo = combo;
             side = combo.Side;
             isCombo = true;
-            DisableButtons();
             ConfirmTextBlock.Text = "Confirm";
-            CancelButton.IsEnabled = false;
             SetUpSideSelection();
         }
         /// <summary>
@@ -62,24 +60,9 @@ namespace PointOfSale
             InitializeComponent();
             this.side = side;
             this.isEdit = isEdit;
-            DisableButtons();
-            if (isEdit)
-            {
-                ConfirmTextBlock.Text = "Confirm";
-                CancelButton.IsEnabled = false;
-            }
+            if (isEdit) ConfirmTextBlock.Text = "Confirm";
             SetUpSideSelection();
-        }
-        /// <summary>
-        /// Initialize the SideSelection page.
-        /// </summary>
-        /// <param name="currentSide"></param>
-        public SideSelection(Side currentSide)
-        {
-            InitializeComponent();
-            DisableButtons();
-            side = currentSide;
-            SetUpSideSelection();
+            CancelButton.IsEnabled = false;
         }
 
         /// <summary>
@@ -92,7 +75,7 @@ namespace PointOfSale
             if (isCombo)
             {
                 combo.Side = side;
-                NavigationService.Navigate(new CustomizeCombo(combo, false));
+                NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
             }
             else
             {
@@ -118,7 +101,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCancel(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
         /// <summary>
         /// Selects the specified side.
@@ -204,6 +188,7 @@ namespace PointOfSale
         /// </summary>
         private void SetUpSideSelection()
         {
+            DisableButtons();
             ClearButtonValues();
             if (side is Fryceritops fryceritops)
             {
@@ -284,7 +269,7 @@ namespace PointOfSale
         /// </summary>
         private void DisableButtons()
         {
-            if (isEdit)
+            if (isEdit && !isCombo)
             {
                 if (!(side is Fryceritops)) FryceritopsButton.IsEnabled = false;
                 if (!(side is MeteorMacAndCheese)) MeteorMacAndCheeseButton.IsEnabled = false;

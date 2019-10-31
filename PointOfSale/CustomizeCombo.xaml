@@ -15,7 +15,6 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,25 +24,44 @@
                    Name="ComboTextBlock" VerticalAlignment="Center" FontSize="28">
             Customize Combo
         </TextBlock>
-        <DockPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
-            <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
+        <Grid Grid.Row="1" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
+                Entree
+                </TextBlock>
+                <Button Style="{StaticResource SimpleButton}" 
+                    Name="EntreeButton" Click="SelectEntree">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}" 
+                               Name="EntreeChoice" FontSize="14"/>
+                </Button>
+            </DockPanel>
+            <DockPanel Grid.Row="1">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
                 Side
-            </TextBlock>
-            <Button Style="{StaticResource SimpleButton}" 
+                </TextBlock>
+                <Button Style="{StaticResource SimpleButton}" 
                     Name="SideButton" Click="SelectSide">
-                <TextBlock Style="{StaticResource SimpleTextBlock}" Name="SideChoice"/>
-            </Button>
-        </DockPanel>
-        <DockPanel Grid.Row="3" Grid.Column="0" Grid.RowSpan="2">
-            <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}" 
+                               Name="SideChoice" FontSize="14"/>
+                </Button>
+            </DockPanel>
+            <DockPanel Grid.Row="2">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
                 Drink
-            </TextBlock>
-            <Button Style="{StaticResource SimpleButton}" 
+                </TextBlock>
+                <Button Style="{StaticResource SimpleButton}" 
                     Name="DrinkButton" Click="SelectDrink">
-                <TextBlock Style="{StaticResource SimpleTextBlock}" Name="DrinkChoice"/>
-            </Button>
-        </DockPanel>
-        <DockPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
+                    <TextBlock Style="{StaticResource SimpleTextBlock}" 
+                               Name="DrinkChoice" FontSize="14"/>
+                </Button>
+            </DockPanel>
+        </Grid>
+        <DockPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Size
             </TextBlock>

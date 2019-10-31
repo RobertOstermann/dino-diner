@@ -56,6 +56,10 @@ namespace PointOfSale
                         {
                             NavigationService?.Navigate(new SideSelection(side, true));
                         }
+                        else if (item is CretaceousCombo combo)
+                        {
+                            NavigationService?.Navigate(new CustomizeCombo(combo, true));
+                        }
                     }
                 }
             }

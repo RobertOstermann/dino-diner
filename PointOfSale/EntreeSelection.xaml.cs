@@ -26,8 +26,11 @@ namespace PointOfSale
     {
         private Entree entree;
 
+        private bool isEdit;
+
         private bool isCombo;
 
+        private CretaceousCombo combo;
         /// <summary>
         /// Initialize the EntreeSelection page.
         /// </summary>
@@ -43,13 +46,15 @@ namespace PointOfSale
         /// Allows user to edit the selected combo.
         /// </summary>
         /// <param name="combo"></param>
-        public EntreeSelection(CretaceousCombo combo)
+        public EntreeSelection(CretaceousCombo combo, bool isEdit)
         {
             InitializeComponent();
+            this.isEdit = isEdit;
+            this.combo = combo;
             entree = combo.Entree;
             isCombo = true;
+            ConfirmTextBlock.Text = "Confirm";
             SetUpEntreeSelection();
-            ConfirmTextBlock.Text = "Confirm Entree";
         }
         /// <summary>
         /// Adds the entree to the order.
@@ -60,14 +65,8 @@ namespace PointOfSale
         {
             if (isCombo)
             {
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.GoBack();
-                }
-                else
-                {
-                    NavigationService.Navigate(new MenuCategorySelection());
-                }
+                combo.Entree = entree;
+                NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
             }
             else
             {
@@ -86,7 +85,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCancel(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
         /// <summary>
         /// Selects brontowurst as the entree.

@@ -27,6 +27,10 @@ namespace PointOfSale
         private Drink drink;
 
         private bool isEdit;
+
+        private bool isCombo;
+
+        private CretaceousCombo combo;
         /// <summary>
         /// Initialize the DrinkSelection page.
         /// </summary>
@@ -41,10 +45,14 @@ namespace PointOfSale
         /// Initializes the DrinkSelection page.
         /// </summary>
         /// <param name="currentDrink"></param>
-        public DrinkSelection(Drink drink)
+        public DrinkSelection(CretaceousCombo combo, bool isEdit)
         {
             InitializeComponent();
-            this.drink = drink;
+            this.isEdit = isEdit;
+            this.combo = combo;
+            drink = combo.Drink;
+            isCombo = true;
+            ConfirmTextBlock.Text = "Confirm";
             SetUpDrinkSelection();
         }
         /// <summary>
@@ -71,16 +79,24 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (isEdit)
+            if (isCombo)
             {
-                NavigationService.Navigate(new MenuCategorySelection());
+                combo.Drink = drink;
+                NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
             }
             else
             {
-                if (DataContext is Order order)
+                if (isEdit)
                 {
-                    order.Add(drink);
                     NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    if (DataContext is Order order)
+                    {
+                        order.Add(drink);
+                        NavigationService.Navigate(new MenuCategorySelection());
+                    }
                 }
             }
         }
@@ -93,7 +109,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCancel(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo, isEdit));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
         /// <summary>
         /// Sets the drink to Water.
