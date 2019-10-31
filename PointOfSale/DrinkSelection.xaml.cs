@@ -325,9 +325,7 @@ namespace PointOfSale
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (water.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-                if (water.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-                if (water.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                SetSizeButtonValues();
                 if (water.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (water.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
@@ -342,9 +340,7 @@ namespace PointOfSale
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (soda.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-                if (soda.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-                if (soda.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                SetSizeButtonValues();
                 if (soda.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 //Show or hide the correct property buttons for the drink.
                 FlavorButton.IsEnabled = true;
@@ -358,9 +354,7 @@ namespace PointOfSale
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (tea.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-                if (tea.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-                if (tea.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                SetSizeButtonValues();
                 if (tea.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (tea.Sweet) SweetButton.Background = UserInterfaceOptions.SelectedColor;
                 if (tea.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
@@ -377,9 +371,7 @@ namespace PointOfSale
             {
                 HideAndDisableAndEnableButtons();
                 //Set the correct button backgrounds.
-                if (java.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-                if (java.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-                if (java.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+                SetSizeButtonValues();
                 if (java.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (java.Decaf) DecafButton.Background = UserInterfaceOptions.SelectedColor;
                 if (java.RoomForCream) CreamButton.Background = UserInterfaceOptions.SelectedColor;
@@ -426,6 +418,15 @@ namespace PointOfSale
             SmallButton.Background = UserInterfaceOptions.BaseColor;
             MediumButton.Background = UserInterfaceOptions.BaseColor; 
             LargeButton.Background = UserInterfaceOptions.BaseColor;
+        }
+        /// <summary>
+        /// Sets the size button values.
+        /// </summary>
+        private void SetSizeButtonValues()
+        {
+            if (drink.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+            if (drink.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+            if (drink.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Hides and disables property buttons.

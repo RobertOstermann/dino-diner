@@ -10,11 +10,13 @@ namespace DinoDiner.Menu
 {
     public class CretaceousCombo : IMenuItem, IOrderItem
     {
-        public Entree Entree { get; set; }
-        public Drink Drink { get; set; }
-        public Side Side { get; set; }
-
         private Size size = Size.Small;
+
+        private Entree entree;
+
+        private Drink drink;
+
+        private Side side;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -24,10 +26,45 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public Entree Entree
+        {
+            get { return entree; }
+            set
+            {
+                entree = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
+            }
+        }
+        public Drink Drink
+        {
+            get { return drink; }
+            set
+            {
+                drink = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
+            }
+        }
+        public Side Side
+        {
+            get { return side; }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
+            }
+        }
+
         /// <summary>
         /// Gets and sets the size of the combo.
         /// </summary>
-        public Size Size {
+        public Size Size
+        {
             get { return size; }
             set {
                 size = value;

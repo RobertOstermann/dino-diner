@@ -10,20 +10,22 @@
 
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Style="{StaticResource SimpleTextBlock}" Grid.Row="0" Grid.ColumnSpan="4">
+        <TextBlock Style="{StaticResource SimpleTextBlock}" Grid.Row="0" Grid.ColumnSpan="2"
+                   Name="ComboTextBlock" VerticalAlignment="Center" FontSize="28">
             Customize Combo
         </TextBlock>
-        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Side
             </TextBlock>
@@ -32,7 +34,7 @@
                 <TextBlock Style="{StaticResource SimpleTextBlock}" Name="SideChoice"/>
             </Button>
         </DockPanel>
-        <DockPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+        <DockPanel Grid.Row="3" Grid.Column="0" Grid.RowSpan="2">
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Drink
             </TextBlock>
@@ -41,29 +43,29 @@
                 <TextBlock Style="{StaticResource SimpleTextBlock}" Name="DrinkChoice"/>
             </Button>
         </DockPanel>
-        <DockPanel Grid.Row="2" Grid.ColumnSpan="4">
+        <DockPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
             <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top">
                 Size
             </TextBlock>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource SimpleButton}" Grid.Column="0"
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="0"
                         Name="SmallButton" Click="SelectSmall">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Small
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Column="1"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="1"
                         Name="MediumButton" Click="SelectMedium">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Medium
                     </TextBlock>
                 </Button>
-                <Button Style="{StaticResource SimpleButton}" Grid.Column="2"
+                <Button Style="{StaticResource SimpleButton}" Grid.Row="2"
                         Name="LargeButton" Click="SelectLarge">
                     <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Large
@@ -71,5 +73,17 @@
                 </Button>
             </Grid>
         </DockPanel>
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="5" Background="LightPink"
+                        Name="CancelButton" Click="SelectCancel">
+            <TextBlock Style="{StaticResource SimpleTextBlock}">
+                        Cancel
+            </TextBlock>
+        </Button>
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="5" Grid.Column="2" Background="SkyBlue"
+                        Name="ConfirmButton" Click="SelectConfirm">
+            <TextBlock Style="{StaticResource SimpleTextBlock}" Name="ConfirmTextBlock">
+                        Add to Order
+            </TextBlock>
+        </Button>
     </Grid>
 </Page>

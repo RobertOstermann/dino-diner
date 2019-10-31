@@ -27,6 +27,7 @@ namespace PointOfSale
     {
         private CretaceousCombo combo;
 
+        private bool isEdit;
         /// <summary>
         /// Initialize the CustomizeCombo page.
         /// </summary>
@@ -34,12 +35,56 @@ namespace PointOfSale
         public CustomizeCombo(Entree entree)
         {
             InitializeComponent();
-            SetUpCustomizeComboSelection();
             combo = new CretaceousCombo(entree);
+            SetUpCustomizeComboSelection();
+        }
+        /// <summary>
+        /// Initialize the CustomizeCombo page.
+        /// </summary>
+        /// <param name="combo"></param>
+        public CustomizeCombo(CretaceousCombo combo, bool isEdit)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.isEdit = isEdit;
+            SetUpCustomizeComboSelection();
+            ClearButtonValues();
+            ComboTextBlock.Text = combo.ToString();
             DrinkChoice.Text = combo.Drink.ToString();
             SideChoice.Text = combo.Side.ToString();
+            if (isEdit) ConfirmTextBlock.Text = "Confirm";
+        }
+        /// <summary>
+        /// Adds the combo to the order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectConfirm(object sender, RoutedEventArgs args)
+        {
+            if (isEdit)
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+            else
+            {
+                if (DataContext is Order order)
+                {
+                    order.Add(combo);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+            }
         }
 
+        /// <summary>
+        /// Returns to the category selection page.
+        /// Does not add the combo to the order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectCancel(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
         /// <summary>
         /// Navigate to the SideSelection page.
         /// </summary>
@@ -47,7 +92,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(combo.Side));
+            NavigationService.Navigate(new SideSelection(combo));
         }
 
         /// <summary>
@@ -67,9 +112,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
             combo.Size = DinoDiner.Menu.Size.Small;
-            SmallButton.Background = Brushes.LightGreen;
+            SetUpCustomizeComboSelection();
         }
 
         /// <summary>
@@ -79,9 +123,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectMedium(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
             combo.Size = DinoDiner.Menu.Size.Medium;
-            MediumButton.Background = Brushes.LightGreen;
+            SetUpCustomizeComboSelection();
         }
 
         /// <summary>
@@ -91,9 +134,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectLarge(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
             combo.Size = DinoDiner.Menu.Size.Large;
-            LargeButton.Background = Brushes.LightGreen;
+            SetUpCustomizeComboSelection();
         }
         /// <summary>
         /// Prepares the EntreeSelection user interface.
@@ -101,8 +143,14 @@ namespace PointOfSale
         private void SetUpCustomizeComboSelection()
         {
             ClearButtonValues();
+            if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+            if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+            if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
             SideButton.Background = UserInterfaceOptions.BaseColor;
             DrinkButton.Background = UserInterfaceOptions.BaseColor;
+            ComboTextBlock.Text = combo.ToString();
+            DrinkChoice.Text = combo.Drink.ToString();
+            SideChoice.Text = combo.Side.ToString();
         }
         /// <summary>
         /// Resets the button values.

@@ -27,6 +27,10 @@ namespace PointOfSale
         private Side side;
 
         private bool isEdit;
+
+        private bool isCombo;
+
+        private CretaceousCombo combo;
         /// <summary>
         /// Initialize the SideSelection page.
         /// </summary>
@@ -36,9 +40,23 @@ namespace PointOfSale
             DisableButtons();
             SetUpSideSelection();
         }
+
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            side = combo.Side;
+            isCombo = true;
+            DisableButtons();
+            ConfirmTextBlock.Text = "Confirm";
+            CancelButton.IsEnabled = false;
+            SetUpSideSelection();
+        }
         /// <summary>
-        /// Initialize the SideSelection page.
+        /// Initializes the SideSelection page.
         /// </summary>
+        /// <param name="side"></param>
+        /// <param name="isEdit"></param>
         public SideSelection(Side side, bool isEdit)
         {
             InitializeComponent();
@@ -71,16 +89,24 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectConfirm(object sender, RoutedEventArgs args)
         {
-            if (isEdit)
+            if (isCombo)
             {
-                NavigationService.Navigate(new MenuCategorySelection());
+                combo.Side = side;
+                NavigationService.Navigate(new CustomizeCombo(combo, false));
             }
             else
             {
-                if (DataContext is Order order)
+                if (isEdit)
                 {
-                    order.Add(side);
                     NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    if (DataContext is Order order)
+                    {
+                        order.Add(side);
+                        NavigationService.Navigate(new MenuCategorySelection());
+                    }
                 }
             }
         }
