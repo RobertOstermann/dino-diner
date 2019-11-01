@@ -451,7 +451,7 @@ namespace PointOfSale
         /// </summary>
         private void HideAndDisableAndEnableButtons()
         {
-            if (isEdit)
+            if (isEdit && !isCombo)
             {
                 if (!(drink is Water)) WaterButton.IsEnabled = false;
                 if (!(drink is Sodasaurus)) SodasaurusButton.IsEnabled = false;

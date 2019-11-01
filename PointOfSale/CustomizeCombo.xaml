@@ -31,33 +31,33 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <DockPanel Grid.Row="0">
-                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="16">
                 Entree
                 </TextBlock>
                 <Button Style="{StaticResource SimpleButton}" 
                     Name="EntreeButton" Click="SelectEntree">
                     <TextBlock Style="{StaticResource SimpleTextBlock}" 
-                               Name="EntreeChoice" FontSize="14"/>
+                               Name="EntreeChoice" FontSize="20"/>
                 </Button>
             </DockPanel>
             <DockPanel Grid.Row="1">
-                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="16">
                 Side
                 </TextBlock>
                 <Button Style="{StaticResource SimpleButton}" 
                     Name="SideButton" Click="SelectSide">
                     <TextBlock Style="{StaticResource SimpleTextBlock}" 
-                               Name="SideChoice" FontSize="14"/>
+                               Name="SideChoice" FontSize="20"/>
                 </Button>
             </DockPanel>
             <DockPanel Grid.Row="2">
-                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="14">
+                <TextBlock Style="{StaticResource SimpleTextBlock}" DockPanel.Dock="Top" FontSize="16">
                 Drink
                 </TextBlock>
                 <Button Style="{StaticResource SimpleButton}" 
                     Name="DrinkButton" Click="SelectDrink">
                     <TextBlock Style="{StaticResource SimpleTextBlock}" 
-                               Name="DrinkChoice" FontSize="14"/>
+                               Name="DrinkChoice" FontSize="20"/>
                 </Button>
             </DockPanel>
         </Grid>
