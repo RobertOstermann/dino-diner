@@ -35,7 +35,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="5"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" MouseDown="EditItem" 
                                            Text="{Binding Path=Description}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>

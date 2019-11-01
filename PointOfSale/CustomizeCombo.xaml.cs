@@ -48,7 +48,7 @@ namespace PointOfSale
             this.combo = combo;
             this.isEdit = isEdit;
             SetUpCustomizeComboSelection();
-            if (combo.Size != combo.Drink.Size || combo.Size != combo.Side.Size) ClearButtonValues();
+            if (combo.Size != combo.Drink.Size || combo.Size != combo.Side.Size) ClearSizeButtonValues();
             ComboTextBlock.Text = combo.ToString();
             DrinkChoice.Text = combo.Drink.ToString();
             SideChoice.Text = combo.Side.ToString();
@@ -154,10 +154,7 @@ namespace PointOfSale
         /// </summary>
         private void SetUpCustomizeComboSelection()
         {
-            ClearButtonValues();
-            if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-            if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-            if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+            SetSizeButtonValues();
             EntreeButton.Background = UserInterfaceOptions.BaseColor;
             SideButton.Background = UserInterfaceOptions.BaseColor;
             DrinkButton.Background = UserInterfaceOptions.BaseColor;
@@ -167,9 +164,19 @@ namespace PointOfSale
             SideChoice.Text = combo.Side.ToString();
         }
         /// <summary>
+        /// Sets the size button values.
+        /// </summary>
+        private void SetSizeButtonValues()
+        {
+            ClearSizeButtonValues();
+            if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+            if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+            if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+        }
+        /// <summary>
         /// Resets the button values.
         /// </summary>
-        private void ClearButtonValues()
+        private void ClearSizeButtonValues()
         {
             SmallButton.Background = UserInterfaceOptions.BaseColor;
             MediumButton.Background = UserInterfaceOptions.BaseColor;

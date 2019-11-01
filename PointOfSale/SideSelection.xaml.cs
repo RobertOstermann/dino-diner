@@ -156,8 +156,7 @@ namespace PointOfSale
         private void SelectSmall(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Small;
-            ClearSizeButtonValues();
-            SmallButton.Background = UserInterfaceOptions.SelectedColor;
+            SetSizeButtonValues();
         }
 
         /// <summary>
@@ -168,8 +167,7 @@ namespace PointOfSale
         private void SelectMedium(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Medium;
-            ClearSizeButtonValues();
-            MediumButton.Background = UserInterfaceOptions.SelectedColor;
+            SetSizeButtonValues();
         }
 
         /// <summary>
@@ -180,8 +178,7 @@ namespace PointOfSale
         private void SelectLarge(object sender, RoutedEventArgs args)
         {
             side.Size = DinoDiner.Menu.Size.Large;
-            ClearSizeButtonValues();
-            LargeButton.Background = UserInterfaceOptions.SelectedColor;
+            SetSizeButtonValues();
         }
         /// <summary>
         /// Prepares the SideSelection user interface.
@@ -246,13 +243,16 @@ namespace PointOfSale
             LargeButton.Background = UserInterfaceOptions.BaseColor;
         }
         /// <summary>
-        /// Resets the size button values.
+        /// Sets the size button values.
         /// </summary>
-        private void ClearSizeButtonValues()
+        private void SetSizeButtonValues()
         {
             SmallButton.Background = UserInterfaceOptions.BaseColor;
             MediumButton.Background = UserInterfaceOptions.BaseColor;
             LargeButton.Background = UserInterfaceOptions.BaseColor;
+            if (side.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+            if (side.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+            if (side.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
         }
         /// <summary>
         /// Enables all buttons.
