@@ -1,11 +1,8 @@
 ﻿/* OrderTest.cs
  * Author: Robert Ostermann
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
 using DinoDiner.Menu;
+using Xunit;
 
 namespace MenuTest
 {

@@ -22,7 +22,7 @@
         <Button Style="{StaticResource BackgroundImageButton}"
                 Grid.Row="0" Grid.Column="0" Click="BrontowurstCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-01.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-16.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Brontowurst Combo
@@ -31,7 +31,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="0" Grid.Column="1" Click="DinoNuggetsCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-17.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Dino-Nuggets Combo
@@ -40,7 +40,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="0" Grid.Column="3" Click="PrehistoricPBJCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-03.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-18.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Prehistoric PB&amp;J Combo
@@ -49,7 +49,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="1" Grid.Column="1" Click="PterodactylWingsCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-04.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-19.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Pterodactyl Wings Combo
@@ -58,7 +58,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="2" Grid.Column="0" Click="SteakosaurusBurgerCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-05.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-20.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Steakosaurus Burger Combo
@@ -67,7 +67,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="2" Grid.Column="1" Click="TRexKingburgerCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-06.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-21.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 T-Rex Kingburger Combo
@@ -76,7 +76,7 @@
         <Button Style="{StaticResource BackgroundImageButton}" 
                 Grid.Row="2" Grid.Column="2" Click="VelociWrapCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-07.png" Opacity="0.25"/>
+                <ImageBrush ImageSource="Assets/DinoDiner-22.png" Opacity="0.25"/>
             </Button.Background>
             <TextBlock Style="{StaticResource BackgroundImageTextBlock}">
                 Veloci-Wrap Combo

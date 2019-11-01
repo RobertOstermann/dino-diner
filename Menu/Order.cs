@@ -71,12 +71,13 @@ namespace DinoDiner.Menu
 
         public Order()
         {
-            //Items = new ObservableCollection<IOrderItem>();
+            
         }
 
         public void Add(IOrderItem item)
         {
             items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
             NotifyOfAllPropertyChanged();
         }
 
