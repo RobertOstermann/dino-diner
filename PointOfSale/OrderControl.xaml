@@ -30,7 +30,7 @@
                      IsSynchronizedWithCurrentItem="True">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Width="190" MouseUp="EditItem">
+                        <StackPanel Width="190" MouseDown="EditItem">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
