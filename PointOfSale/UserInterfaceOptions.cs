@@ -16,6 +16,6 @@ namespace PointOfSale
 
         public static Thickness SelectedThickness { get; } = new Thickness(2);
 
-        public static Thickness BaseThickness { get; } = new Thickness(1.0);
+        public static Thickness BaseThickness { get; } = new Thickness(1);
     }
 }
