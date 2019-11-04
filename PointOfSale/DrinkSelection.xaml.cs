@@ -42,20 +42,6 @@ namespace PointOfSale
             LemonButton.Visibility = Visibility.Visible;
         }
         /// <summary>
-        /// Initializes the DrinkSelection page.
-        /// </summary>
-        /// <param name="currentDrink"></param>
-        public DrinkSelection(CretaceousCombo combo, bool isEdit)
-        {
-            InitializeComponent();
-            this.isEdit = isEdit;
-            this.combo = combo;
-            drink = combo.Drink;
-            isCombo = true;
-            ConfirmTextBlock.Text = "Confirm";
-            SetUpDrinkSelection();
-        }
-        /// <summary>
         /// Initialize the DrinkSelection page.
         /// </summary>
         public DrinkSelection(Drink drink, bool isEdit)
@@ -73,7 +59,21 @@ namespace PointOfSale
             LemonButton.Visibility = Visibility.Visible;
         }
         /// <summary>
-        /// Adds the drink to the order.
+        /// Initializes the DrinkSelection page.
+        /// </summary>
+        /// <param name="currentDrink"></param>
+        public DrinkSelection(CretaceousCombo combo, bool isEdit)
+        {
+            InitializeComponent();
+            this.isEdit = isEdit;
+            this.combo = combo;
+            drink = combo.Drink;
+            isCombo = true;
+            ConfirmTextBlock.Text = "Confirm";
+            SetUpDrinkSelection();
+        }
+        /// <summary>
+        /// Confirms the drink selection.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -338,11 +338,9 @@ namespace PointOfSale
             if (drink is Water water)
             {
                 HideAndDisableAndEnableButtons();
-                //Set the correct button backgrounds.
                 SetSizeButtonValues();
                 if (water.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (water.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
-                //Show or hide the correct property buttons for the drink.
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
                 LemonButton.Visibility = Visibility.Visible;
@@ -353,10 +351,8 @@ namespace PointOfSale
             if (drink is Sodasaurus soda)
             {
                 HideAndDisableAndEnableButtons();
-                //Set the correct button backgrounds.
                 SetSizeButtonValues();
                 if (soda.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
-                //Show or hide the correct property buttons for the drink.
                 FlavorButton.IsEnabled = true;
                 FlavorButton.Visibility = Visibility.Visible;
                 LemonButton.Visibility = Visibility.Visible;
@@ -367,12 +363,10 @@ namespace PointOfSale
             if (drink is Tyrannotea tea)
             {
                 HideAndDisableAndEnableButtons();
-                //Set the correct button backgrounds.
                 SetSizeButtonValues();
                 if (tea.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (tea.Sweet) SweetButton.Background = UserInterfaceOptions.SelectedColor;
                 if (tea.Lemon) LemonButton.Background = UserInterfaceOptions.SelectedColor;
-                //Show or hide the correct property buttons for the drink.
                 SweetButton.IsEnabled = true;
                 SweetButton.Visibility = Visibility.Visible;
                 LemonButton.IsEnabled = true;
@@ -384,12 +378,10 @@ namespace PointOfSale
             if (drink is JurassicJava java)
             {
                 HideAndDisableAndEnableButtons();
-                //Set the correct button backgrounds.
                 SetSizeButtonValues();
                 if (java.Ice) IceButton.Background = UserInterfaceOptions.SelectedColor;
                 if (java.Decaf) DecafButton.Background = UserInterfaceOptions.SelectedColor;
                 if (java.RoomForCream) CreamButton.Background = UserInterfaceOptions.SelectedColor;
-                //Show or hide the correct property buttons for the drink.
                 DecafButton.IsEnabled = true;
                 DecafButton.Visibility = Visibility.Visible;
                 CreamButton.IsEnabled = true;

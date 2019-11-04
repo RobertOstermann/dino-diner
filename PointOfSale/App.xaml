@@ -15,10 +15,10 @@
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
-                    <Setter Property="BorderThickness" TargetName="border" Value="2"/>
+                    <Setter Property="BorderThickness" TargetName="border" Value="{x:Static local:UserInterfaceOptions.SelectedThickness}"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" TargetName="border" Value="SpringGreen"/>
+                    <Setter Property="Background" TargetName="border" Value="{x:Static local:UserInterfaceOptions.SelectedColor}"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
                 </Trigger>
                 <Trigger Property="ToggleButton.IsChecked" Value="True">

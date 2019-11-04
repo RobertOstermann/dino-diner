@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* OrderControl.xaml.cs
+ * Author: Robert Ostermann
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +25,9 @@ namespace PointOfSale
     public partial class OrderControl : UserControl
     {
         public NavigationService NavigationService { get; set; }
+        /// <summary>
+        /// Initialize the OrderControl page.
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();

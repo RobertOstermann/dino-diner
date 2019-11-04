@@ -23,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuCategorySelection : Page
     {
+        /// <summary>
+        /// Initialize the MenuCategorySelection page.
+        /// </summary>
         public MenuCategorySelection()
         {
             InitializeComponent();

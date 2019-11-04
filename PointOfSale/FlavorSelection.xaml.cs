@@ -41,7 +41,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Adds the drink to the order.
+        /// Confirms the flavor selection.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -82,9 +82,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCherry(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            CherryButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Cherry;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to chocolate.
@@ -93,9 +92,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectChocolate(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            ChocolateButton.Background = UserInterfaceOptions.SelectedColor; 
             flavor = SodasaurusFlavor.Chocolate;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to cola.
@@ -104,9 +102,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectCola(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            ColaButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Cola;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to lime.
@@ -115,9 +112,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectLime(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            LimeButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Lime;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to orange.
@@ -126,9 +122,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectOrange(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            OrangeButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Orange;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to root beer.
@@ -137,9 +132,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectRootBeer(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            RootBeerButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.RootBeer;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Sets the flavor to cherry.
@@ -148,9 +142,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectVanilla(object sender, RoutedEventArgs args)
         {
-            ClearButtonValues();
-            VanillaButton.Background = UserInterfaceOptions.SelectedColor;
             flavor = SodasaurusFlavor.Vanilla;
+            SetUpFlavorSelection();
         }
         /// <summary>
         /// Prepares the FlavorSelection user interface.

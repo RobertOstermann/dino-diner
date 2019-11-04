@@ -39,17 +39,6 @@ namespace PointOfSale
             InitializeComponent();
             SetUpSideSelection();
         }
-
-        public SideSelection(CretaceousCombo combo, bool isEdit)
-        {
-            InitializeComponent();
-            this.isEdit = isEdit;
-            this.combo = combo;
-            side = combo.Side;
-            isCombo = true;
-            ConfirmTextBlock.Text = "Confirm";
-            SetUpSideSelection();
-        }
         /// <summary>
         /// Initializes the SideSelection page.
         /// </summary>
@@ -64,9 +53,23 @@ namespace PointOfSale
             SetUpSideSelection();
             CancelButton.IsEnabled = false;
         }
-
         /// <summary>
-        /// Adds the entree to the order.
+        /// Initialize the SideSelection page.
+        /// </summary>
+        /// <param name="combo"></param>
+        /// <param name="isEdit"></param>
+        public SideSelection(CretaceousCombo combo, bool isEdit)
+        {
+            InitializeComponent();
+            this.isEdit = isEdit;
+            this.combo = combo;
+            side = combo.Side;
+            isCombo = true;
+            ConfirmTextBlock.Text = "Confirm";
+            SetUpSideSelection();
+        }
+        /// <summary>
+        /// Confirms the entree selection.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -105,7 +108,7 @@ namespace PointOfSale
             else NavigationService.Navigate(new MenuCategorySelection());
         }
         /// <summary>
-        /// Selects the specified side.
+        /// Sets the side to fryceritops.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -116,7 +119,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the specified side.
+        /// Sets the side to meteor mac and cheese.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -127,7 +130,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the specified side.
+        /// Sets the side to mezzorella sticks.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -138,7 +141,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Selects the specified side.
+        /// Sets the side to triceritots.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

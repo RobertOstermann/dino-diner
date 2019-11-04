@@ -43,7 +43,6 @@ namespace PointOfSale
         }
         /// <summary>
         /// Initialize the EntreeSelection page.
-        /// Allows user to edit the selected combo.
         /// </summary>
         /// <param name="combo"></param>
         public EntreeSelection(CretaceousCombo combo, bool isEdit)
@@ -57,7 +56,7 @@ namespace PointOfSale
             SetUpEntreeSelection();
         }
         /// <summary>
-        /// Adds the entree to the order.
+        /// Confirms the entree selection.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

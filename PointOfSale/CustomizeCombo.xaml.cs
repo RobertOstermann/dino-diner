@@ -48,10 +48,6 @@ namespace PointOfSale
             this.combo = combo;
             this.isEdit = isEdit;
             SetUpCustomizeComboSelection();
-            if (combo.Size != combo.Drink.Size || combo.Size != combo.Side.Size) ClearSizeButtonValues();
-            ComboTextBlock.Text = combo.ToString();
-            DrinkChoice.Text = combo.Drink.ToString();
-            SideChoice.Text = combo.Side.ToString();
             if (isEdit)
             {
                 CancelButton.IsEnabled = false;
@@ -169,9 +165,13 @@ namespace PointOfSale
         private void SetSizeButtonValues()
         {
             ClearSizeButtonValues();
-            if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
-            if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
-            if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+            if (combo.Drink.Size == combo.Side.Size)
+            {
+                combo.Size = combo.Drink.Size;
+                if (combo.Size == DinoDiner.Menu.Size.Small) SmallButton.Background = UserInterfaceOptions.SelectedColor;
+                if (combo.Size == DinoDiner.Menu.Size.Medium) MediumButton.Background = UserInterfaceOptions.SelectedColor;
+                if (combo.Size == DinoDiner.Menu.Size.Large) LargeButton.Background = UserInterfaceOptions.SelectedColor;
+            }
         }
         /// <summary>
         /// Resets the button values.
