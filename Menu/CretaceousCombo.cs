@@ -17,15 +17,23 @@ namespace DinoDiner.Menu
         private Drink drink;
 
         private Side side;
-
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes
+        /// to the Price, Description, and Special properties.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //Helper function for notifying of property changes.
+        /// <summary>
+        /// Helper function for notifying of property changes.
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
+        /// <summary>
+        /// Gets and sets the entree.
+        /// </summary>
         public Entree Entree
         {
             get { return entree; }
@@ -37,6 +45,9 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Description");
             }
         }
+        /// <summary>
+        /// Gets and sets the drink.
+        /// </summary>
         public Drink Drink
         {
             get { return drink; }
@@ -48,6 +59,9 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Description");
             }
         }
+        /// <summary>
+        /// Gets and sets the side.
+        /// </summary>
         public Side Side
         {
             get { return side; }
@@ -59,7 +73,6 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Description");
             }
         }
-
         /// <summary>
         /// Gets and sets the size of the combo.
         /// </summary>
@@ -119,7 +132,9 @@ namespace DinoDiner.Menu
                 return ToString();
             }
         }
-
+        /// <summary>
+        /// Gets the preparation instruction for the combo.
+        /// </summary>
         public string [] Special
         {
             get

@@ -17,7 +17,6 @@ namespace DinoDiner.Menu
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //Backing variable
         List<IOrderItem> items = new List<IOrderItem>();
         /// <summary>
         /// Represents the items added to the order.
@@ -49,7 +48,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public double SalesTaxRate { get; protected set; } = 0.15;
         /// <summary>
-        /// Calculates the sales tax.
+        /// Gets the sales tax.
         /// </summary>
         public double SalesTaxCost
         {
@@ -59,7 +58,7 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// Calculates the total cost of the order.
+        /// Gets the total cost of the order.
         /// </summary>
         public double TotalCost
         {
@@ -68,19 +67,28 @@ namespace DinoDiner.Menu
                 return SubtotalCost + SalesTaxCost;
             }
         }
-
+        /// <summary>
+        /// Initializes the Order.
+        /// </summary>
         public Order()
         {
             
         }
-
+        /// <summary>
+        /// Adds an item to the order.
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
             items.Add(item);
             item.PropertyChanged += OnPropertyChanged;
             NotifyOfAllPropertyChanged();
         }
-
+        /// <summary>
+        /// Removes an item from the order.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool Remove(IOrderItem item)
         {
             bool removed = items.Remove(item);
@@ -91,12 +99,18 @@ namespace DinoDiner.Menu
             }
             return removed;
         }
-
+        /// <summary>
+        /// Helper function for notifying of property changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             NotifyOfAllPropertyChanged();
         }
-
+        /// <summary>
+        /// Helper function for notifying of property changes.
+        /// </summary>
         protected void NotifyOfAllPropertyChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
