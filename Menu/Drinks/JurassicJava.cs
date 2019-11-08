@@ -58,7 +58,7 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// Initializes the Tyrannotea drink.
+        /// Initializes the JurassicJava drink.
         /// </summary>
         public JurassicJava()
         {
@@ -113,7 +113,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
-        /// Sets the room for cream property to true.
+        /// Sets the room for cream property to false.
         /// </summary>
         public void RemoveRoomForCream()
         {

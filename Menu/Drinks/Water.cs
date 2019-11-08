@@ -51,7 +51,6 @@ namespace DinoDiner.Menu
         }
         /// <summary>
         /// Gets and sets the size.
-        /// Alters the price and calories according to size.
         /// </summary>
         public override Size Size
         {

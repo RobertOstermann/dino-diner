@@ -32,7 +32,6 @@ namespace DinoDiner.Menu
                 }
             }
         }
-
         /// <summary>
         /// Gets and sets the lemon.
         /// </summary>
