@@ -30,7 +30,7 @@
                 Reset Nugget Count
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="2" Grid.ColumnSpan="2" Background="SkyBlue"
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="2" Grid.ColumnSpan="2" Background="SkyBlue"
                         Name="ConfirmButton" Click="SelectConfirm">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Confirm

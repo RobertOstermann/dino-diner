@@ -37,13 +37,13 @@
                 Parmesan Cheese
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}"  Margin="5" Grid.Row="3" Grid.Column="0" Background="LightPink"
+        <Button Style="{StaticResource SimpleButton}"  Grid.Row="3" Grid.Column="0" Background="LightPink"
                         Name="ResetButton" Click="SelectReset">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Reset
             </TextBlock>
         </Button>
-        <Button Style="{StaticResource SimpleButton}" Margin="5" Grid.Row="3" Grid.Column="1" Background="SkyBlue"
+        <Button Style="{StaticResource SimpleButton}" Grid.Row="3" Grid.Column="1" Background="SkyBlue"
                         Name="ConfirmButton" Click="SelectConfirm">
             <TextBlock Style="{StaticResource SimpleTextBlock}">
                         Confirm
