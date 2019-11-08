@@ -95,7 +95,7 @@ namespace PointOfSale
         /// </summary>
         private void SetUpDinoNuggetsSelection()
         {
-            AddNuggetTextBlock.Text = $"Add Nugget ({dinoNuggets.nuggets} Current)";
+            AddNuggetTextBlock.Text = $"Add Nugget ({dinoNuggets.Nuggets} Current)";
         }
     }
 }

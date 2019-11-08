@@ -7,9 +7,13 @@ namespace DinoDiner.Menu
 {
     public class PrehistoricPBJ : Entree
     {
-        // Indicates the use of peanut butter.
+        /// <summary>
+        /// Gets the peanut butter value.
+        /// </summary>
         public bool PeanutButter { get; private set; } = true;
-        // Indicates the use of jelly.
+        /// <summary>
+        /// Gets the jelly value.
+        /// </summary>
         public bool Jelly { get; private set; } = true;
 
         /// <summary>
@@ -48,14 +52,6 @@ namespace DinoDiner.Menu
             Calories = 483;
         }
         /// <summary>
-        /// Removes the peanut butter.
-        /// </summary>
-        public void HoldPeanutButter()
-        {
-            PeanutButter = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
         /// Adds peanut butter.
         /// </summary>
         public void AddPeanutButter()
@@ -64,11 +60,11 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
-        /// Removes the jelly.
+        /// Removes the peanut butter.
         /// </summary>
-        public void HoldJelly()
+        public void HoldPeanutButter()
         {
-            Jelly = false;
+            PeanutButter = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>
@@ -77,6 +73,14 @@ namespace DinoDiner.Menu
         public void AddJelly()
         {
             Jelly = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the jelly.
+        /// </summary>
+        public void HoldJelly()
+        {
+            Jelly = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

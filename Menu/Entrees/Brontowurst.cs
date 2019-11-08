@@ -9,11 +9,17 @@ namespace DinoDiner.Menu
 {
     public class Brontowurst : Entree
     {
-        // Indicates the use of a bun.
+        /// <summary>
+        /// Gets the bun value.
+        /// </summary>
         public bool Bun { get; private set; } = true;
-        // Indicates the use of peppers.
+        /// <summary>
+        /// Gets the peppers value.
+        /// </summary>
         public bool Peppers { get; private set; } = true;
-        // Indicates the use of onions.
+        /// <summary>
+        /// Gets the onions value.
+        /// </summary>
         public bool Onions { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
@@ -52,31 +58,6 @@ namespace DinoDiner.Menu
             Calories = 498;
         }
         /// <summary>
-        /// Removes the bun.
-        /// </summary>
-        public void HoldBun()
-        {
-            Bun = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the peppers.
-        /// </summary>
-        public void HoldPeppers()
-        {
-            Peppers = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the onions.
-        /// </summary>
-        public void HoldOnion()
-        {
-            Onions = false;
-            NotifyOfPropertyChange("Special");
-        }
-
-        /// <summary>
         /// Adds the bun.
         /// </summary>
         public void AddBun()
@@ -98,6 +79,30 @@ namespace DinoDiner.Menu
         public void AddOnion()
         {
             Onions = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the bun.
+        /// </summary>
+        public void HoldBun()
+        {
+            Bun = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the peppers.
+        /// </summary>
+        public void HoldPeppers()
+        {
+            Peppers = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the onions.
+        /// </summary>
+        public void HoldOnion()
+        {
+            Onions = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

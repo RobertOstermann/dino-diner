@@ -9,13 +9,21 @@ namespace DinoDiner.Menu
 {
     public class SteakosaurusBurger : Entree
     {
-        // Indicates the use of a bun.
+        /// <summary>
+        /// Gets the bun value.
+        /// </summary>
         public bool Bun { get; private set; } = true;
-        // Indicates the use of a pickle.
+        /// <summary>
+        /// Gets the pickle value.
+        /// </summary>
         public bool Pickle { get; private set; } = true;
-        // Indicates the use of ketchup.
+        /// <summary>
+        /// Gets the ketchup value.
+        /// </summary>
         public bool Ketchup { get; private set; } = true;
-        // Indicates the use of mustard.
+        /// <summary>
+        /// Gets the mustard value.
+        /// </summary>
         public bool Mustard { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
@@ -56,39 +64,6 @@ namespace DinoDiner.Menu
             Calories = 621;
         }
         /// <summary>
-        /// Removes the bun.
-        /// </summary>
-        public void HoldBun()
-        {
-            Bun = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the pickles.
-        /// </summary>
-        public void HoldPickle()
-        {
-            Pickle = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the ketchup.
-        /// </summary>
-        public void HoldKetchup()
-        {
-            Ketchup = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the mustard.
-        /// </summary>
-        public void HoldMustard()
-        {
-            Mustard = false;
-            NotifyOfPropertyChange("Special");
-        }
-
-        /// <summary>
         /// Adds the bun.
         /// </summary>
         public void AddBun()
@@ -118,6 +93,38 @@ namespace DinoDiner.Menu
         public void AddMustard()
         {
             Mustard = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the bun.
+        /// </summary>
+        public void HoldBun()
+        {
+            Bun = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the pickles.
+        /// </summary>
+        public void HoldPickle()
+        {
+            Pickle = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the ketchup.
+        /// </summary>
+        public void HoldKetchup()
+        {
+            Ketchup = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the mustard.
+        /// </summary>
+        public void HoldMustard()
+        {
+            Mustard = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

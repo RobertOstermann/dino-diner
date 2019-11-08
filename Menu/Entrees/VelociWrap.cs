@@ -9,11 +9,17 @@ namespace DinoDiner.Menu
 {
     public class VelociWrap : Entree
     {
-        // Indicates the use of dressing.
+        /// <summary>
+        /// Gets the dressing value.
+        /// </summary>
         public bool Dressing { get; private set; } = true;
-        // Indicates the use of lettuce.
+        /// <summary>
+        /// Gets the lettuce value.
+        /// </summary>
         public bool Lettuce { get; private set; } = true;
-        // Indicates the use of cheese.
+        /// <summary>
+        /// Gets the cheese value.
+        /// </summary>
         public bool Cheese { get; private set; } = true;
         /// <summary>
         /// Gets the ingredients of the entree.
@@ -54,30 +60,6 @@ namespace DinoDiner.Menu
             Calories = 356;
         }
         /// <summary>
-        /// Removes the dressing.
-        /// </summary>
-        public void HoldDressing()
-        {
-            Dressing = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the lettuce.
-        /// </summary>
-        public void HoldLettuce()
-        {
-            Lettuce = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
-        /// Removes the cheese.
-        /// </summary>
-        public void HoldCheese()
-        {
-            Cheese = false;
-            NotifyOfPropertyChange("Special");
-        }
-        /// <summary>
         /// Adds the dressing.
         /// </summary>
         public void AddDressing()
@@ -99,6 +81,30 @@ namespace DinoDiner.Menu
         public void AddCheese()
         {
             Cheese = true;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the dressing.
+        /// </summary>
+        public void HoldDressing()
+        {
+            Dressing = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the lettuce.
+        /// </summary>
+        public void HoldLettuce()
+        {
+            Lettuce = false;
+            NotifyOfPropertyChange("Special");
+        }
+        /// <summary>
+        /// Removes the cheese.
+        /// </summary>
+        public void HoldCheese()
+        {
+            Cheese = false;
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

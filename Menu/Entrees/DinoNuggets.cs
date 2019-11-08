@@ -9,8 +9,10 @@ namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
-        // Indicates the amount of nuggets.
-        public int nuggets { get; private set; }
+        /// <summary>
+        /// Gets the nuggets value.
+        /// </summary>
+        public int Nuggets { get; private set; }
         /// <summary>
         /// Gets the ingredients of the entree.
         /// </summary>
@@ -19,7 +21,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>();
-                for (int i = 0; i < nuggets; i++)
+                for (int i = 0; i < Nuggets; i++)
                 {
                     ingredients.Add("Chicken Nugget");
                 }
@@ -34,9 +36,9 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (nuggets > 6)
+                if (Nuggets > 6)
                 {
-                    int i = nuggets - 6;
+                    int i = Nuggets - 6;
                     special.Add($"Add {i} Nuggets");
                 }
                 return special.ToArray();
@@ -47,7 +49,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public DinoNuggets()
         {
-            nuggets = 6;
+            Nuggets = 6;
             Price = 4.25;
             Calories = 59 * 6;
         }
@@ -56,16 +58,18 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddNugget()
         {
-            nuggets += 1;
+            Nuggets += 1;
             Price += 0.25;
             Calories += 59;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Price");
         }
-
+        /// <summary>
+        /// Resets the entree.
+        /// </summary>
         public void ResetNuggetCount()
         {
-            nuggets = 6;
+            Nuggets = 6;
             Price = 4.25;
             Calories = 59 * 6;
             NotifyOfPropertyChange("Special");
