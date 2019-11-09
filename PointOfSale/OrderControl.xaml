@@ -27,15 +27,17 @@
             </Border>
             <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}"
                      FontFamily="Tahoma" FontSize="16" Background="Transparent" Name="OrderList"
-                     IsSynchronizedWithCurrentItem="True">
+                     IsSynchronizedWithCurrentItem="True" 
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Width="190" MouseDown="EditItem">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="20"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" MouseDown="EditItem" 
                                            Text="{Binding Path=Description}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>
@@ -43,7 +45,8 @@
                                     X
                                 </Button>
                             </Grid>
-                            <ListBox ItemsSource="{Binding Path=Special}" Margin="15,0,0,0" FontSize="14" Background="Transparent" BorderThickness="0"/>
+                            <ListBox ItemsSource="{Binding Path=Special}" Margin="15,0,0,0" FontSize="14" 
+                                     Background="Transparent" BorderThickness="0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
