@@ -37,15 +37,15 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="25"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="14" MouseDown="EditItem" 
+                                <TextBlock Style="{StaticResource SimpleTextBlock}" FontSize="12" MouseDown="EditItem" 
                                            Text="{Binding Path=Description}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>
                                 <Button Click="OnRemoveItem" Height="20" FontSize="14" Background="Red" Foreground="White" Grid.Column="1">
                                     X
                                 </Button>
                             </Grid>
-                            <ListBox ItemsSource="{Binding Path=Special}" Margin="15,0,0,0" FontSize="14" 
+                            <ListBox ItemsSource="{Binding Path=Special}" Margin="10,0,0,0" FontSize="12" 
                                      Background="Transparent" BorderThickness="0"/>
                         </StackPanel>
                     </DataTemplate>

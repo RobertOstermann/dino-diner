@@ -146,7 +146,12 @@ namespace DinoDiner.Menu
                 special.AddRange(Side.Special);
                 special.Add("-----DRINK-----");
                 special.Add(Drink.ToString());
-                special.AddRange(Drink.Special);
+                //special.AddRange(Drink.Special);
+                foreach(string item in Drink.Special)
+                {
+                    special.Add($"   {item}");
+                }
+
                 return special.ToArray();
             }
         }
