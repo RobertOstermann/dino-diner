@@ -1,10 +1,7 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    background-image: url('../images/DinoDiner-35.png');
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -16,7 +13,9 @@ body {
 }
 
 .banner {
-    width: 100% auto;
+    background-image: url('../images/DinoDiner-35.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .link {
