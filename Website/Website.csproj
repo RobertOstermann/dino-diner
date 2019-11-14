@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <None Include="wwwroot\images\DinoDiner-35.png" />
   </ItemGroup>
 
   <ItemGroup>
