@@ -4,5 +4,32 @@
     ViewData["Title"] = "Menu";
 }
 
-    <h1>Dino-Diner Menu</h1>
-
+<h1>Dino-Diner Menu</h1>
+<h2>Combos</h2>
+<div class="menu-item">
+    @for(int i = 0; i < Model.menu.AvailableCombos.Count; i++)
+    {
+        <p>@Model.menu.AvailableCombos[i]</p>
+    }
+</div>
+<h2>Entrees</h2>
+<div class="menu-item">
+    @for (int i = 0; i < Model.menu.AvailableEntrees.Count; i++)
+    {
+        <p>@Model.menu.AvailableEntrees[i]</p>
+    }
+</div>
+<h2>Sides</h2>
+<div class="menu-item">
+    @for (int i = 0; i < Model.menu.AvailableSides.Count; i++)
+    {
+        <p>@Model.menu.AvailableSides[i]</p>
+    }
+</div>
+<h2>Drinks</h2>
+<div class="menu-item">
+    @for (int i = 0; i < Model.menu.AvailableDrinks.Count; i++)
+    {
+        <p>@Model.menu.AvailableDrinks[i]</p>
+    }
+</div>
