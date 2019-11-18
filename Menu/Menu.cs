@@ -67,7 +67,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a list of available entrees.
         /// </summary>
-        public List<object> AvailableEntrees
+        public List<Entree> AvailableEntrees
         {
             get
             {
@@ -78,7 +78,7 @@ namespace DinoDiner.Menu
                 SteakosaurusBurger steakosaurusBurger = new SteakosaurusBurger();
                 TRexKingBurger kingBurger = new TRexKingBurger();
                 VelociWrap velociWrap = new VelociWrap();
-                List<object> items = new List<object>();
+                List<Entree> items = new List<Entree>();
                 items.Add(brontowurst);
                 items.Add(dinoNuggets);
                 items.Add(prehistoricPBJ);
@@ -92,7 +92,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a list of available sides.
         /// </summary>
-        public List<object> AvailableSides
+        public List<Side> AvailableSides
         {
             get
             {
@@ -100,7 +100,7 @@ namespace DinoDiner.Menu
                 MeteorMacAndCheese meteorMacAndCheese = new MeteorMacAndCheese();
                 MezzorellaSticks mezzorellaSticks = new MezzorellaSticks();
                 Triceritots triceritots = new Triceritots();
-                List<object> items = new List<object>();
+                List<Side> items = new List<Side>();
                 items.Add(fryceritops);
                 items.Add(meteorMacAndCheese);
                 items.Add(mezzorellaSticks);
@@ -111,7 +111,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a list of available drinks.
         /// </summary>
-        public List<object> AvailableDrinks
+        public List<Drink> AvailableDrinks
         {
             get
             {
@@ -119,7 +119,7 @@ namespace DinoDiner.Menu
                 Sodasaurus sodasaurus = new Sodasaurus();
                 Tyrannotea tyrannotea = new Tyrannotea();
                 Water water = new Water();
-                List<object> items = new List<object>();
+                List<Drink> items = new List<Drink>();
                 items.Add(jurassicJava);
                 items.Add(sodasaurus);
                 items.Add(tyrannotea);
