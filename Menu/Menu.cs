@@ -159,6 +159,22 @@ namespace DinoDiner.Menu
                 return items;
             }
         }
+
+        public HashSet<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> ingredients = new HashSet<string>();
+                foreach (IMenuItem item in AvailableMenuItems)
+                {
+                    foreach (string ingredient in item.Ingredients)
+                    {
+                        ingredients.Add(ingredient);
+                    }
+                }
+                return ingredients;
+            }
+        }
         /// <summary>
         /// Displays  the full menu contents.
         /// </summary>
