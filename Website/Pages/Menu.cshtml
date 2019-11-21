@@ -6,7 +6,7 @@
 <div class="container" id="menu-container">
     <div class="results">
         <h1>Dino-Diner Menu</h1>
-        @if (Model.Combos.Count != 0 && Model.Combos != null)
+        @if (Model.ShowCombos)
         {
             <h2>Combos</h2>
             @for (int i = 0; i < Model.Combos.Count; i++)
@@ -36,7 +36,7 @@
                 </div>
             }
         }
-        @if (Model.Entrees.Count != 0 && Model.Entrees != null)
+        @if (Model.ShowEntrees)
         {
             <h2>Entrees</h2>
             @for (int i = 0; i < Model.Entrees.Count; i++)
@@ -66,7 +66,7 @@
                 </div>
             }
         }
-        @if (Model.Sides.Count != 0 && Model.Sides != null)
+        @if (Model.ShowSides)
         {
             <h2>Sides</h2>
             @for (int i = 0; i < Model.Sides.Count; i++)
@@ -96,7 +96,7 @@
                 </div>
             }
         }
-        @if (Model.Drinks.Count != 0 && Model.Drinks != null)
+        @if (Model.ShowDrinks)
         {
             <h2>Drinks</h2>
             @for (int i = 0; i < Model.Drinks.Count; i++)
@@ -129,9 +129,26 @@
     </div>
     <form method="post">
         <h3>Search</h3>
-        <input type="text" name="search" value="@Model.search"/>
-        <input type="submit" value="Search"/>
+        <input type="text" name="search" value="@Model.search" />
+        <input type="submit" value="Search" />
         <h3>Filter</h3>
-        <input type="submit" value="Filter"/>
+        <input type="submit" value="Filter" />
+        <h4>Menu Category</h4>
+        <label>
+            <input type="checkbox" value="Combos" name="category" checked="@Model.category.Contains("Combos")"/>
+            Combo
+        </label>
+        <label>
+            <input type="checkbox" value="Entrees" name="category" checked="@Model.category.Contains("Entrees")"/>
+            Entree
+        </label>
+        <label>
+            <input type="checkbox" value="Sides" name="category" checked="@Model.category.Contains("Sides")"/>
+            Side
+        </label>
+        <label>
+            <input type="checkbox" value="Drinks" name="category" checked="@Model.category.Contains("Drinks")"/>
+            Drink
+        </label>
     </form>
 </div>
