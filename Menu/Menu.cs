@@ -159,7 +159,9 @@ namespace DinoDiner.Menu
                 return items;
             }
         }
-
+        /// <summary>
+        /// Gets a hashset of ingredients.
+        /// </summary>
         public HashSet<string> PossibleIngredients
         {
             get
@@ -174,6 +176,74 @@ namespace DinoDiner.Menu
                 }
                 return ingredients;
             }
+        }
+        /// <summary>
+        /// Searches the available combos.
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<CretaceousCombo> SearchCombos(string search)
+        {
+            List<CretaceousCombo> combos = new List<CretaceousCombo>();
+            foreach(CretaceousCombo combo in AvailableCombos)
+            {
+                if (combo.ToString().Contains(search))
+                {
+                    combos.Add(combo);
+                }
+            }
+            return combos;
+        }
+        /// <summary>
+        /// Searches the available entrees.
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<Entree> SearchEntrees(string search)
+        {
+            List<Entree> entrees = new List<Entree>();
+            foreach (Entree entree in AvailableEntrees)
+            {
+                if (entree.ToString().Contains(search))
+                {
+                    entrees.Add(entree);
+                }
+            }
+            return entrees;
+        }
+        /// <summary>
+        /// Searches the available drinks.
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<Drink> SearchDrinks(string search)
+        {
+            List<Drink> drinks = new List<Drink>();
+            foreach (Drink drink in AvailableDrinks)
+            {
+                if (drink.ToString().Contains(search))
+                {
+                    drinks.Add(drink);
+                }
+            }
+            return drinks;
+        }
+        /// <summary>
+        /// Searches the available sides.
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<Side> SearchSides(string search)
+        {
+            List<Side> sides = new List<Side>();
+            foreach (Side side in AvailableSides)
+            {
+                if (side.ToString().Contains(search))
+                {
+                    sides.Add(side);
+                }
+            }
+            return sides;
         }
         /// <summary>
         /// Displays  the full menu contents.

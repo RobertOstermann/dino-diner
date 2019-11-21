@@ -12,8 +12,16 @@ body {
     padding-right: 15px;
 }
 
+form {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+}
+
 #menu-container {
-    width: 100vw;
+    width: 95vw;
     display: flex;
     flex-direction: row;
 }
