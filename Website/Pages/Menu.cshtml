@@ -3,115 +3,123 @@
 @{
     ViewData["Title"] = "Menu";
 }
+<div class="container" id="menu-container">
+    <div class="results">
+        <h1>Dino-Diner Menu</h1>
+        <h2>Combos</h2>
+            @for(int i = 0; i < Model.menu.AvailableCombos.Count; i++)
+            {
+                <div class="menu-item">
+                    <p>
+                        <h4 style="margin: 0">@Model.menu.AvailableCombos[i]</h4>
+                        <br />Price - @Model.menu.AvailableCombos[i].Price.ToString("c")
+                        <br />Calories - @Model.menu.AvailableCombos[i].Calories
+                        <br />Ingredients -
+                        @for (int j = 0; j < Model.menu.AvailableCombos[i].Ingredients.Count; j++)
+                        {
+                            @if (j == Model.menu.AvailableCombos[i].Ingredients.Count - 1)
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableCombos[i].Ingredients[j]
+                                </smaller>
+                            }
+                            else
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableCombos[i].Ingredients[j],
+                                </smaller>
+                            }
+                        }
+                    </p>
+                </div>
+            }
+        <h2>Entrees</h2>
+            @for (int i = 0; i < Model.menu.AvailableEntrees.Count; i++)
+            {
+                <div class="menu-item">
+                    <p>
+                        <h4 style="margin: 0">@Model.menu.AvailableEntrees[i]</h4>
+                        <br />Price - @Model.menu.AvailableEntrees[i].Price.ToString("c")
+                        <br />Calories - @Model.menu.AvailableEntrees[i].Calories
+                        <br />Ingredients -
+                        @for (int j = 0; j < Model.menu.AvailableEntrees[i].Ingredients.Count; j++)
+                        {
+                            @if (j == Model.menu.AvailableEntrees[i].Ingredients.Count - 1)
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableEntrees[i].Ingredients[j]
+                                </smaller>
+                            }
+                            else
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableEntrees[i].Ingredients[j],
+                                </smaller>
+                            }
+                        }
+                    </p>
+                </div>
+            }
 
-<h1>Dino-Diner Menu</h1>
-<h2>Combos</h2>
-    @for(int i = 0; i < Model.menu.AvailableCombos.Count; i++)
-    {
-        <div class="menu-item">
-            <p>
-                <h4 style="margin: 0">@Model.menu.AvailableCombos[i]</h4>
-                <br />Price - @Model.menu.AvailableCombos[i].Price.ToString("c")
-                <br />Calories - @Model.menu.AvailableCombos[i].Calories
-                <br />Ingredients -
-                @for (int j = 0; j < Model.menu.AvailableCombos[i].Ingredients.Count; j++)
-                {
-                    @if (j == Model.menu.AvailableCombos[i].Ingredients.Count - 1)
-                    {
-                        <smaller>
-                            @Model.menu.AvailableCombos[i].Ingredients[j]
-                        </smaller>
-                    }
-                    else
-                    {
-                        <smaller>
-                            @Model.menu.AvailableCombos[i].Ingredients[j],
-                        </smaller>
-                    }
-                }
-            </p>
-        </div>
-    }
-<h2>Entrees</h2>
-    @for (int i = 0; i < Model.menu.AvailableEntrees.Count; i++)
-    {
-        <div class="menu-item">
-            <p>
-                <h4 style="margin: 0">@Model.menu.AvailableEntrees[i]</h4>
-                <br />Price - @Model.menu.AvailableEntrees[i].Price.ToString("c")
-                <br />Calories - @Model.menu.AvailableEntrees[i].Calories
-                <br />Ingredients -
-                @for (int j = 0; j < Model.menu.AvailableEntrees[i].Ingredients.Count; j++)
-                {
-                    @if (j == Model.menu.AvailableEntrees[i].Ingredients.Count - 1)
-                    {
-                        <smaller>
-                            @Model.menu.AvailableEntrees[i].Ingredients[j]
-                        </smaller>
-                    }
-                    else
-                    {
-                        <smaller>
-                            @Model.menu.AvailableEntrees[i].Ingredients[j],
-                        </smaller>
-                    }
-                }
-            </p>
-        </div>
-    }
+        <h2>Sides</h2>
+            @for (int i = 0; i < Model.menu.AvailableSides.Count; i++)
+            {
+                <div class="menu-item">
+                    <p>
+                        <h4 style="margin: 0">@Model.menu.AvailableSides[i]</h4>
+                        <br />Price - @Model.menu.AvailableSides[i].Price.ToString("c")
+                        <br />Calories - @Model.menu.AvailableSides[i].Calories
+                        <br />Ingredients -
+                        @for (int j = 0; j < Model.menu.AvailableSides[i].Ingredients.Count; j++)
+                        {
+                            @if (j == Model.menu.AvailableSides[i].Ingredients.Count - 1)
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableSides[i].Ingredients[j]
+                                </smaller>
+                            }
+                            else
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableSides[i].Ingredients[j],
+                                </smaller>
+                            }
+                        }
+                    </p>
+                </div>
+            }
 
-<h2>Sides</h2>
-    @for (int i = 0; i < Model.menu.AvailableSides.Count; i++)
-    {
-        <div class="menu-item">
-            <p>
-                <h4 style="margin: 0">@Model.menu.AvailableSides[i]</h4>
-                <br />Price - @Model.menu.AvailableSides[i].Price.ToString("c")
-                <br />Calories - @Model.menu.AvailableSides[i].Calories
-                <br />Ingredients -
-                @for (int j = 0; j < Model.menu.AvailableSides[i].Ingredients.Count; j++)
-                {
-                    @if (j == Model.menu.AvailableSides[i].Ingredients.Count - 1)
-                    {
-                        <smaller>
-                            @Model.menu.AvailableSides[i].Ingredients[j]
-                        </smaller>
-                    }
-                    else
-                    {
-                        <smaller>
-                            @Model.menu.AvailableSides[i].Ingredients[j],
-                        </smaller>
-                    }
-                }
-            </p>
-        </div>
-    }
-
-<h2>Drinks</h2>
-    @for (int i = 0; i < Model.menu.AvailableDrinks.Count; i++)
-    {
-        <div class="menu-item">
-            <p>
-                <h4 style="margin: 0">@Model.menu.AvailableDrinks[i]</h4>
-                <br />Price - @Model.menu.AvailableDrinks[i].Price.ToString("c")
-                <br />Calories - @Model.menu.AvailableDrinks[i].Calories
-                <br />Ingredients -
-                @for (int j = 0; j < Model.menu.AvailableDrinks[i].Ingredients.Count; j++)
-                {
-                    @if (j == Model.menu.AvailableDrinks[i].Ingredients.Count - 1)
-                    {
-                        <smaller>
-                            @Model.menu.AvailableDrinks[i].Ingredients[j]
-                        </smaller>
-                    }
-                    else
-                    {
-                        <smaller>
-                            @Model.menu.AvailableDrinks[i].Ingredients[j],
-                        </smaller>
-                    }
-                }
-            </p>
-        </div>
-    }
+        <h2>Drinks</h2>
+            @for (int i = 0; i < Model.menu.AvailableDrinks.Count; i++)
+            {
+                <div class="menu-item">
+                    <p>
+                        <h4 style="margin: 0">@Model.menu.AvailableDrinks[i]</h4>
+                        <br />Price - @Model.menu.AvailableDrinks[i].Price.ToString("c")
+                        <br />Calories - @Model.menu.AvailableDrinks[i].Calories
+                        <br />Ingredients -
+                        @for (int j = 0; j < Model.menu.AvailableDrinks[i].Ingredients.Count; j++)
+                        {
+                            @if (j == Model.menu.AvailableDrinks[i].Ingredients.Count - 1)
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableDrinks[i].Ingredients[j]
+                                </smaller>
+                            }
+                            else
+                            {
+                                <smaller>
+                                    @Model.menu.AvailableDrinks[i].Ingredients[j],
+                                </smaller>
+                            }
+                        }
+                    </p>
+                </div>
+            }
+    </div>
+    <form method="post">
+        <h3>Search</h3>
+        <input type="text" name="search"/>
+        <input type="submit" value="Search and Filter"/>
+    </form>
+</div>

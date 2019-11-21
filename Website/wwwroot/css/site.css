@@ -12,6 +12,12 @@ body {
     padding-right: 15px;
 }
 
+#menu-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
 .banner {
     background-image: url('../images/DinoDiner-35.png');
     background-repeat: no-repeat;
