@@ -128,27 +128,42 @@
         }
     </div>
     <form method="post">
-        <h3>Search</h3>
+        <h3>Search and Filter</h3>
         <input type="text" name="search" value="@Model.search" />
-        <input type="submit" value="Search" />
-        <h3>Filter</h3>
-        <input type="submit" value="Filter" />
+        <input type="submit" name="filter" id="filter" value="Search And Filter" />
         <h4>Menu Category</h4>
         <label>
-            <input type="checkbox" value="Combos" name="category" checked="@Model.category.Contains("Combos")"/>
+            <input type="checkbox" value="Combos" name="category" checked="@Model.category.Contains("Combos")" />
             Combo
         </label>
         <label>
-            <input type="checkbox" value="Entrees" name="category" checked="@Model.category.Contains("Entrees")"/>
+            <input type="checkbox" value="Entrees" name="category" checked="@Model.category.Contains("Entrees")" />
             Entree
         </label>
         <label>
-            <input type="checkbox" value="Sides" name="category" checked="@Model.category.Contains("Sides")"/>
+            <input type="checkbox" value="Sides" name="category" checked="@Model.category.Contains("Sides")" />
             Side
         </label>
         <label>
-            <input type="checkbox" value="Drinks" name="category" checked="@Model.category.Contains("Drinks")"/>
+            <input type="checkbox" value="Drinks" name="category" checked="@Model.category.Contains("Drinks")" />
             Drink
         </label>
+        <h3>Price</h3>
+        <label>
+            Minimum Price:
+            <input type="number" min="0" max="20" step="0.5" name="minimumPrice" id="minimum-price" value="@Model.minimumPrice" />
+        </label>
+        <label>
+            Maximum Price:
+            <input type="number" min="0" max="20" step="0.5" name="maximumPrice" id="maximum-price" value="@Model.maximumPrice" />
+        </label>
+        <h3>Exclude Ingredients</h3>
+        @foreach (string ingredients in Model.menu.PossibleIngredients)
+        {
+            <label>
+                <input type="checkbox" value="@ingredients" name="ingredients" checked="@Model.ingredients.Contains(ingredients.ToString())" />
+                @ingredients
+            </label>
+        }
     </form>
 </div>

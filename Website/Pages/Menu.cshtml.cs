@@ -12,7 +12,13 @@ namespace Website.Pages
     {
         public Menu menu = new DinoDiner.Menu.Menu();
 
-        public List<CretaceousCombo> Combos;
+        public List<IMenuItem> Combos;
+
+        public List<IMenuItem> Entrees;
+
+        public List<IMenuItem> Drinks;
+
+        public List<IMenuItem> Sides;
 
         public bool ShowCombos
         {
@@ -26,8 +32,6 @@ namespace Website.Pages
             }
         }
 
-        public List<Entree> Entrees;
-
         public bool ShowEntrees
         {
             get
@@ -40,8 +44,6 @@ namespace Website.Pages
             }
         }
 
-        public List<Drink> Drinks;
-
         public bool ShowDrinks
         {
             get
@@ -53,8 +55,6 @@ namespace Website.Pages
                 return false;
             }
         }
-
-        public List<Side> Sides;
 
         public bool ShowSides
         {
@@ -74,6 +74,12 @@ namespace Website.Pages
         [BindProperty]
         public List<string> category { get; set; } = new List<string>() { "Combos", "Entrees", "Drinks", "Sides" };
 
+        [BindProperty]
+        public float? minimumPrice { get; set; }
+        [BindProperty]
+        public float? maximumPrice { get; set; }
+        [BindProperty]
+        public List<string> ingredients { get; set; } = new List<string>();
         public void OnGet()
         {
             Combos = menu.AvailableCombos;
@@ -89,10 +95,10 @@ namespace Website.Pages
                 Entrees = null;
                 Drinks = null;
                 Sides = null;
-                if (category.Contains("Combos")) Combos = menu.SearchCombos(search);
-                if (category.Contains("Entrees")) Entrees = menu.SearchEntrees(search);
-                if (category.Contains("Drinks")) Drinks = menu.SearchDrinks(search);
-                if (category.Contains("Sides")) Sides = menu.SearchSides(search);
+                if (category.Contains("Combos")) Combos = menu.SearchMenuItems(menu.AvailableCombos, search);
+                if (category.Contains("Entrees")) Entrees = menu.SearchMenuItems(menu.AvailableEntrees, search);
+                if (category.Contains("Drinks")) Drinks = menu.SearchMenuItems(menu.AvailableDrinks, search);
+                if (category.Contains("Sides")) Sides = menu.SearchMenuItems(menu.AvailableSides, search);
             }
             else
             {
@@ -100,6 +106,27 @@ namespace Website.Pages
                 if (category.Contains("Entrees")) Entrees = menu.AvailableEntrees;
                 if (category.Contains("Drinks")) Drinks = menu.AvailableDrinks;
                 if (category.Contains("Sides")) Sides = menu.AvailableSides;
+            }
+            if (minimumPrice is float min)
+            {
+                Combos = menu.FilterByMin(Combos, min);
+                Entrees = menu.FilterByMin(Entrees, min);
+                Drinks = menu.FilterByMin(Drinks, min);
+                Sides = menu.FilterByMin(Sides, min);
+            }
+            if (maximumPrice is float max)
+            {
+                Combos = menu.FilterByMax(Combos, max);
+                Entrees = menu.FilterByMax(Entrees, max);
+                Drinks = menu.FilterByMax(Drinks, max);
+                Sides = menu.FilterByMax(Sides, max);
+            }
+            if (ingredients.Count > 0)
+            {
+                Combos = menu.FilterByIngredients(Combos, ingredients);
+                Entrees = menu.FilterByIngredients(Entrees, ingredients);
+                Drinks = menu.FilterByIngredients(Drinks, ingredients);
+                Sides = menu.FilterByIngredients(Sides, ingredients);
             }
         }
     }
