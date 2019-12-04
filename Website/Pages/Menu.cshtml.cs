@@ -10,15 +10,17 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-        public Menu menu = new DinoDiner.Menu.Menu();
+        public Menu menu = new Menu();
 
-        public List<IMenuItem> Combos;
+        public IEnumerable<IMenuItem> Items;
 
-        public List<IMenuItem> Entrees;
+        public List<CretaceousCombo> Combos;
 
-        public List<IMenuItem> Drinks;
+        public List<Entree> Entrees;
 
-        public List<IMenuItem> Sides;
+        public List<Drink> Drinks;
+
+        public List<Side> Sides;
 
         public bool ShowCombos
         {
@@ -82,51 +84,71 @@ namespace Website.Pages
         public List<string> ingredients { get; set; } = new List<string>();
         public void OnGet()
         {
-            Combos = menu.AvailableCombos;
+            Items = menu.AvailableMenuItems;
+            Combos = Items.OfType<CretaceousCombo>().ToList();
+            Entrees = Items.OfType<Entree>().ToList();
+            Drinks = Items.OfType<Drink>().ToList();
+            Sides = Items.OfType<Side>().ToList();
+            /*Combos = menu.AvailableCombos;
             Entrees = menu.AvailableEntrees;
             Drinks = menu.AvailableDrinks;
-            Sides = menu.AvailableSides;
+            Sides = menu.AvailableSides;*/
         }
         public void OnPost()
         {
+            Items = menu.AvailableMenuItems;
             if (search != null)
             {
-                Combos = null;
+                /*Combos = null;
                 Entrees = null;
                 Drinks = null;
                 Sides = null;
                 if (category.Contains("Combos")) Combos = menu.SearchMenuItems(menu.AvailableCombos, search);
                 if (category.Contains("Entrees")) Entrees = menu.SearchMenuItems(menu.AvailableEntrees, search);
                 if (category.Contains("Drinks")) Drinks = menu.SearchMenuItems(menu.AvailableDrinks, search);
-                if (category.Contains("Sides")) Sides = menu.SearchMenuItems(menu.AvailableSides, search);
+                if (category.Contains("Sides")) Sides = menu.SearchMenuItems(menu.AvailableSides, search);*/
+                Items = Items.Where(item => item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
             }
-            else
+            /*else
             {
                 if (category.Contains("Combos")) Combos = menu.AvailableCombos;
                 if (category.Contains("Entrees")) Entrees = menu.AvailableEntrees;
                 if (category.Contains("Drinks")) Drinks = menu.AvailableDrinks;
                 if (category.Contains("Sides")) Sides = menu.AvailableSides;
-            }
+            }*/
             if (minimumPrice is float min)
             {
-                Combos = menu.FilterByMin(Combos, min);
+                /*Combos = menu.FilterByMin(Combos, min);
                 Entrees = menu.FilterByMin(Entrees, min);
                 Drinks = menu.FilterByMin(Drinks, min);
-                Sides = menu.FilterByMin(Sides, min);
+                Sides = menu.FilterByMin(Sides, min);*/
+                Items = Items.Where(item => item.Price >= minimumPrice);
             }
             if (maximumPrice is float max)
             {
-                Combos = menu.FilterByMax(Combos, max);
+                /*Combos = menu.FilterByMax(Combos, max);
                 Entrees = menu.FilterByMax(Entrees, max);
                 Drinks = menu.FilterByMax(Drinks, max);
-                Sides = menu.FilterByMax(Sides, max);
+                Sides = menu.FilterByMax(Sides, max);*/
+                Items = Items.Where(item => item.Price <= maximumPrice);
             }
             if (ingredients.Count > 0)
             {
-                Combos = menu.FilterByIngredients(Combos, ingredients);
+                /*Combos = menu.FilterByIngredients(Combos, ingredients);
                 Entrees = menu.FilterByIngredients(Entrees, ingredients);
                 Drinks = menu.FilterByIngredients(Drinks, ingredients);
-                Sides = menu.FilterByIngredients(Sides, ingredients);
+                Sides = menu.FilterByIngredients(Sides, ingredients);*/
+                foreach(string ingredient in ingredients)
+                {
+                    Items = Items.Where(item => !item.Ingredients.Contains(ingredient));
+                }
+            }
+            if (Items != null)
+            {
+                if (category.Contains("Combos")) Combos = Items.OfType<CretaceousCombo>().ToList();
+                if (category.Contains("Entrees")) Entrees = Items.OfType<Entree>().ToList();
+                if (category.Contains("Drinks")) Drinks = Items.OfType<Drink>().ToList();
+                if (category.Contains("Sides")) Sides = Items.OfType<Side>().ToList();
             }
         }
     }
