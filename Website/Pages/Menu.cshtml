@@ -12,26 +12,41 @@
             @for (int i = 0; i < Model.Combos.Count; i++)
             {
                 <div class="menu-item">
+                    <h4 style="margin: 0">@Model.Combos[i]</h4>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@Model.Combos[i].Price</td>
+                            <td>@Model.Combos[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            @{Model.Combos[i].Size = DinoDiner.Menu.Size.Medium;}
+                            <td>@Model.Combos[i].Price</td>
+                            <td>@Model.Combos[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            @{Model.Combos[i].Size = DinoDiner.Menu.Size.Large;}
+                            <td>@Model.Combos[i].Price</td>
+                            <td>@Model.Combos[i].Calories</td>
+                        </tr>
+                    </table>
                     <p>
-                        <h4 style="margin: 0">@Model.Combos[i]</h4>
-                        <br />Price - @Model.Combos[i].Price.ToString("c")
-                        <br />Calories - @Model.Combos[i].Calories
-                        <br />Ingredients -
-                        @for (int j = 0; j < Model.Combos[i].Ingredients.Count; j++)
-                        {
-                            @if (j == Model.Combos[i].Ingredients.Count - 1)
+                        Ingredients
+                        <ul>
+                            @for (int j = 0; j < Model.Combos[i].Ingredients.Count; j++)
                             {
-                                <smaller>
+                                <li>
                                     @Model.Combos[i].Ingredients[j]
-                                </smaller>
+                                </li>
                             }
-                            else
-                            {
-                                <smaller>
-                                    @Model.Combos[i].Ingredients[j],
-                                </smaller>
-                            }
-                        }
+                        </ul>
                     </p>
                 </div>
             }
@@ -46,22 +61,15 @@
                         <h4 style="margin: 0">@Model.Entrees[i]</h4>
                         <br />Price - @Model.Entrees[i].Price.ToString("c")
                         <br />Calories - @Model.Entrees[i].Calories
-                        <br />Ingredients -
-                        @for (int j = 0; j < Model.Entrees[i].Ingredients.Count; j++)
-                        {
-                            @if (j == Model.Entrees[i].Ingredients.Count - 1)
+                        <br />Ingredients
+                        <ul>
+                            @for (int j = 0; j < Model.Entrees[i].Ingredients.Count; j++)
                             {
-                                <smaller>
+                                <li>
                                     @Model.Entrees[i].Ingredients[j]
-                                </smaller>
+                                </li>
                             }
-                            else
-                            {
-                                <smaller>
-                                    @Model.Entrees[i].Ingredients[j],
-                                </smaller>
-                            }
-                        }
+                        </ul>
                     </p>
                 </div>
             }
@@ -72,26 +80,41 @@
             @for (int i = 0; i < Model.Sides.Count; i++)
             {
                 <div class="menu-item">
+                    <h4 style="margin: 0">@Model.Sides[i].Description.Substring(6)</h4>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@Model.Sides[i].Price</td>
+                            <td>@Model.Sides[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            @{Model.Sides[i].Size = DinoDiner.Menu.Size.Medium;}
+                            <td>@Model.Sides[i].Price</td>
+                            <td>@Model.Sides[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            @{Model.Sides[i].Size = DinoDiner.Menu.Size.Large;}
+                            <td>@Model.Sides[i].Price</td>
+                            <td>@Model.Sides[i].Calories</td>
+                        </tr>
+                    </table>
                     <p>
-                        <h4 style="margin: 0">@Model.Sides[i]</h4>
-                        <br />Price - @Model.Sides[i].Price.ToString("c")
-                        <br />Calories - @Model.Sides[i].Calories
-                        <br />Ingredients -
-                        @for (int j = 0; j < Model.Sides[i].Ingredients.Count; j++)
-                        {
-                            @if (j == Model.Sides[i].Ingredients.Count - 1)
+                        <br />Ingredients
+                        <ul>
+                            @for (int j = 0; j < Model.Sides[i].Ingredients.Count; j++)
                             {
-                                <smaller>
+                                <li>
                                     @Model.Sides[i].Ingredients[j]
-                                </smaller>
+                                </li>
                             }
-                            else
-                            {
-                                <smaller>
-                                    @Model.Sides[i].Ingredients[j],
-                                </smaller>
-                            }
-                        }
+                        </ul>
                     </p>
                 </div>
             }
@@ -102,27 +125,42 @@
             @for (int i = 0; i < Model.Drinks.Count; i++)
             {
                 <div class="menu-item">
+                    <h4 style="margin: 0">@Model.Drinks[i].Description.Substring(6)</h4>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@Model.Drinks[i].Price</td>
+                            <td>@Model.Drinks[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            @{Model.Drinks[i].Size = DinoDiner.Menu.Size.Medium;}
+                            <td>@Model.Drinks[i].Price</td>
+                            <td>@Model.Drinks[i].Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            @{Model.Drinks[i].Size = DinoDiner.Menu.Size.Large;}
+                            <td>@Model.Drinks[i].Price</td>
+                            <td>@Model.Drinks[i].Calories</td>
+                        </tr>
+                    </table>
                     <p>
-                        <h4 style="margin: 0">@Model.Drinks[i]</h4>
-                        <br />Price - @Model.Drinks[i].Price.ToString("c")
-                        <br />Calories - @Model.Drinks[i].Calories
-                        <br />Ingredients -
-                        @for (int j = 0; j < Model.Drinks[i].Ingredients.Count; j++)
-                        {
-                            @if (j == Model.Drinks[i].Ingredients.Count - 1)
+                        Ingredients
+                        <ul>
+                            @for (int j = 0; j < Model.Drinks[i].Ingredients.Count; j++)
                             {
-                                <smaller>
+                                <li>
                                     @Model.Drinks[i].Ingredients[j]
-                                </smaller>
+                                </li>
                             }
-                            else
-                            {
-                                <smaller>
-                                    @Model.Drinks[i].Ingredients[j],
-                                </smaller>
-                            }
-                        }
-                    </p>
+                        </ul>
+</p>
                 </div>
             }
         }
